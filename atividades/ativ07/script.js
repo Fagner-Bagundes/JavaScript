@@ -4,7 +4,7 @@ function meuEscopo( ){
 
     const pessoas = [] ;
 
-    function recebeEventoForm(evento,) {
+    function recebeEventoForm(evento) {
         
         evento.preventDefault();
 
