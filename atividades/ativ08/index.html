@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <section class="conteiner">
+        <h1>Tabela IMC</h1>
+        <div id="palavras">
+            <div id="part1">
+                <h2>IMC:</h2>
+                <p>
+                    Menos do que 18,5 <br>
+                    Entre 18,5 e 24,9 <br>
+                    Entre 25 e 29,9 <br>
+                    Entre 30 e 34,9 <br>
+                    Mais do que 40 <br>
+                </p>
+            </div>
+            <part2>
+                <h2>RESULTADO:</h2>
+                <p>
+                    Abaixo do peso <br>
+                    Peso normal <br>
+                    Sobrepeso<br>
+                    Obesidade grau 1 <br>
+                    Obesidade grau 2 <br>
+                    Obesidade grau 3 <br>
+                </p>
+            </part2>
+        </div>
+
+        <div id="areaIMC">
+            <h1>Calcule seu IMC</h1>
+
+            <form class="formulario" method="get">
+                <p>
+                    <label for="idpeso">Peso</label>
+                    <input type="number" name="peso" id="idpeso">
+                </p>
+
+                <p>
+                    <label for="altura">altura</label>
+                    <input type="number" name="altura" id="idaltura">
+                </p>
+                <p>
+                    <input id="botao" type="submit" value="Enviar">
+                </p>
+            </form>
+
+            <div class="resposta"></div>
+
+        </div>
+
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
