@@ -1,5 +1,6 @@
-let num1 = 25;
+const altura = 1.65;
+const peso = 56;
 
-num1.toString;
+const imc = peso / (altura * altura);
 
-console.log(typeof num1);
+console.log(imc);

@@ -27,6 +27,7 @@ body{
 .conteiner {
     margin: auto;
     margin-top: 100px;
+    min-width: 400px;
     max-width: 500px;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
@@ -35,7 +36,9 @@ body{
     align-items: center;
     border-radius: 30px;
     box-shadow: 1px 1px 2px;
-    height: 600px;
+    height: 680px;
+
+    
     
 }
 h1{
@@ -89,7 +92,12 @@ input:focus{
 }
 
 .resposta{
-    background-color: aqua;
+    background-color: aquamarine;
     max-width: 300px;
-
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: -16px;
+    font-weight: bold;
+    padding: 10px ;
+    text-align: center;
 }
