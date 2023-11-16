@@ -15,57 +15,53 @@
 
 <body>
 
-    <section class="conteiner">
-        <h1>Tabela IMC</h1>
-        <div id="palavras">
-            <div id="part1">
-                <h2>IMC:</h2>
-                <p>
-                    Menos do que 18,5 <br>
-                    Entre 18,5 e 24,9 <br>
-                    Entre 25 e 29,9 <br>
-                    Entre 30 e 34,9 <br>
-                    entre 35 e 39,9 <br>
-                    Mais do que 40 <br>
-                </p>
+    <main id="corpo">
+        <section class="conteiner">
+            <h1>Tabela IMC</h1>
+            <div id="palavras">
+                <div id="part1">
+                    <h2>IMC:</h2>
+                    <p>
+                        Menos do que 18,5<br>
+                        Entre 18,5 e 24,9 <br>
+                        Entre 25 e 29,9 <br>
+                        Entre 30 e 34,9 <br>
+                        entre 35 e 39,9 <br>
+                        Mais do que 40 <br>
+                    </p>
+                </div>
+                <part2>
+                    <h2>RESULTADO:</h2>
+                    <p>
+                        Abaixo do peso <br>
+                        Peso normal <br>
+                        Sobrepeso<br>
+                        Obesidade grau 1 <br>
+                        Obesidade grau 2 <br>
+                        Obesidade grau 3 <br>
+                    </p>
+                </part2>
             </div>
-            <part2>
-                <h2>RESULTADO:</h2>
-                <p>
-                    Abaixo do peso <br>
-                    Peso normal <br>
-                    Sobrepeso<br>
-                    Obesidade grau 1 <br>
-                    Obesidade grau 2 <br>
-                    Obesidade grau 3 <br>
-                </p>
-            </part2>
-        </div>
-
-        <div id="areaIMC">
-            <h1>Calcule seu IMC</h1>
-
-            <form class="formulario" method="get">
-                <p>
-                    <label for="idpeso">Peso</label>
-                    <input type="number" name="peso" id="idpeso">
-                </p>
-
-                <p>
-                    <label for="altura">altura</label>
-                    <input type="number" step="any"  name="altura" id="idaltura">
-                </p>
-                <p>
-                    <input id="botao" type="submit" value="Enviar">
-                </p>
-            </form>
-
-
-        </div>
-        <div class="resposta">resultado vai aparecer aqui</div>
-    </section>
-
-    <script src="./js/script.js"></script>
+            <div id="areaIMC">
+                <h1>Calcule seu IMC</h1>
+                <form class="formulario" method="get">
+                    <p>
+                        <label for="idpeso">Peso: </label>
+                        <input type="number" name="peso" id="idpeso">
+                    </p>
+                    <p>
+                        <label for="altura">Altura: </label>
+                        <input type="number" step="any"  name="altura" id="idaltura">
+                    </p>
+                    <p>
+                        <input id="botao" type="submit" value="Enviar">
+                    </p>
+                </form>
+            </div>
+            <div class="resposta">O resultado vai aparecer aqui</div>
+        </section>
+        <script src="./js/script.js"></script>
+    </main>
 </body>
 
 </html>

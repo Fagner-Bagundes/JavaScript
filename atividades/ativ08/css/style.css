@@ -24,9 +24,14 @@ body{
     
 }
 
+#corpo{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
 .conteiner {
     margin: auto;
-    margin-top: 100px;
     min-width: 400px;
     max-width: 500px;
     flex-direction: column;
@@ -37,6 +42,7 @@ body{
     border-radius: 30px;
     box-shadow: 1px 1px 2px;
     height: 680px;
+    padding: 20px;
 
     
     
@@ -92,8 +98,9 @@ input:focus{
 }
 
 .resposta{
-    background-color: aquamarine;
+    background-color: rgb(28, 153, 111);
     max-width: 300px;
+    color: white;
     border-radius: 15px;
     padding: 10px;
     margin-top: -16px;
