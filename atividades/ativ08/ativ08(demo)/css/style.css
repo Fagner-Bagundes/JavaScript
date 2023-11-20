@@ -10,18 +10,16 @@
 }
 
 
-
 body{
     padding: 0;
     margin: 0;
-    background-color: var(--primary-color);
+    background-color: black;
+    background-image:url(../img/download.jpeg);
     font-family: 'Open Sans', sans-serif;
-    background-image: url(../img/sdfçasjçf.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
     background-position: center;
-   
+    background-size: cover;
 }
 
 #corpo{
@@ -88,7 +86,7 @@ input:focus{
     text-align: center;
 }
 
-.paragrafoResultado{
+.paragrafoResultado, .bad{
    
     background-color: rgb(75, 248, 104);
     padding: 10px 20px ;
@@ -96,5 +94,11 @@ input:focus{
     color: white;
     font-size: 1.2em;
     font-weight: bold;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     
+}
+
+.bad{
+    background-color: rgb(219, 104, 104);
 }

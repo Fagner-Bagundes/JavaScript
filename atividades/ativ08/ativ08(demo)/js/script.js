@@ -25,11 +25,12 @@ formulario.addEventListener(`submit`, function (event) {
 
         
     }
-
     const imc = getIMC(peso, altura)
     const nivelIMC = getNivelImc(imc);
 
-    console.log(imc, nivelIMC);
+    const msg = `Seu IMC é ${imc}, (${nivelIMC}).`;
+
+    setResultado(msg, true);
 });
 
 /*
@@ -70,8 +71,17 @@ function criaP() {
 function setResultado(msg, isValid) {
     const resultado = document.querySelector(`.resultado`)
     resultado.innerHTML = ``;
-   
-   const p = criaP();
+
+    
+    const p = criaP();
+    
+    if (isValid){
+         p.classList.add(`paragrafoResultado`)
+         }
+         else {
+            p.classList.add(`bad`)
+         }
+
    p.innerHTML = msg;
    resultado.appendChild(p);
 }
