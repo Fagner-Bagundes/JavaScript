@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main id="corpo">
+        <section class="conteiner">
+          
+            <div id="areaIMC">
+                <h1>Calcule seu IMC</h1>
+                <form class="formulario" method="get">
+                    <p>
+                        <label for="idpeso">Peso: <br></label>
+                        <input type="text" name="peso" id="peso">
+                    </p>
+                    <p>
+                        <label for="altura">Altura: <br> </label>
+                        <input type="text"  name="altura" id="altura">
+                    </p>
+                    <p>
+                        <input id="botao" type="submit" value="Enviar">
+                    </p>
+                    <div class="resultado"></div>
+                </form>
+            </div>
+        </section>
+        <script src="./js/script.js"></script>
+    </main>
+</body>
+
+</html>
