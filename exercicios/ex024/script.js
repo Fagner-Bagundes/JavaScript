@@ -1,5 +1,5 @@
 const data = new Date();
-const diaSemana = data.getDay() + 1;
+const diaSemana = data.getDay();
 let diaSemanaTexto;
 
 function getDiaSemanaTexto(diaSemana) {
