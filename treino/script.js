@@ -1,7 +1,3 @@
-const conteiner = document.querySelector(`.conteiner`);
+const data = new Date();
 
-let div = document.createElement(`div`);
-let texto = document.createTextNode(`Salve salve família`);
-
-div.appendChild(texto)
-conteiner.appendChild(div);
+console.log(data.toLocaleTimeString(`pt-BR`));

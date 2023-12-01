@@ -30,13 +30,15 @@ body{
     align-items: center;
     border-radius: 30px;
     box-shadow: 1px 1px 6px;
+    padding: 10px;
     
 }
 h1{
     font-size: 5vh;
     color: rgb(77, 74, 74);
     font-weight: bolder;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    margin-top: 10px;
 
 }
 .conteiner > p{
@@ -46,14 +48,17 @@ h1{
     padding: 0px 60px;
 }
 
+.relogio{
+    font-size: 3em;
+    margin: 10px;
+
+}
 
 
 input{
-    width: 350px;
-    height: 35px;
-    border-radius: 10px;
-    border-width: 1px;
-    font-size: 17px;
+  width: 100px;
+  height: 30px;
+
     
 }
 
