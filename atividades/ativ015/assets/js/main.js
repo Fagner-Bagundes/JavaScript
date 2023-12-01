@@ -10,7 +10,7 @@ iniciar.addEventListener(`click`, function(event){
     let minutos = 0;
     let horas = 0;
 
-    const timer = setInterval(function(){
+    const timer = setInterval(function(valor){
      segundos++
      if (segundos>=59){
         minutos++
@@ -22,23 +22,25 @@ iniciar.addEventListener(`click`, function(event){
      }
         const data = new Date(`2023-12-1 ${horas}:${minutos}:${segundos}`);
 
-
-        relogio.innerHTML = data.toLocaleTimeString(`pt-BR`);
+        return relogio.innerHTML = data.toLocaleTimeString(`pt-BR`);
+         
     }, 1000)
 
+    console.log(timer);
+}) 
 
-
+ pausar.addEventListener(`click`, function(event){
 });
 
-pausar.addEventListener(`click`, function(event){
-});
 
 
 zerar.addEventListener(`click`, function(event){
+
 });
 
 
 
 }
+
 
 escopo();
