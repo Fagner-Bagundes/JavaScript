@@ -12,6 +12,11 @@
 
 
 body{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0;
     background-color: var(--primary-color);
@@ -20,9 +25,9 @@ body{
 }
 
 .conteiner {
-    margin: auto;
-    margin-top: 100px;
+
     max-width: 650px;
+    height: 400px;
     flex-direction: column;
     background-color: white;
     display: flex;
@@ -31,11 +36,11 @@ body{
     border-radius: 30px;
     box-shadow: 1px 1px 6px;
     padding: 10px;
+    margin: 10px;
     
 }
 h1{
     font-size: 5vh;
-    color: rgb(77, 74, 74);
     font-weight: bolder;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -58,25 +63,17 @@ h1{
 input{
   width: 100px;
   height: 30px;
-
-    
+  margin: 2px;
 }
 
 input:focus{
     outline: 2px solid var(--primary-color);
 }
 
-#botao{
-    margin: 20px;
-    height: 40px;
-    width: 200px;
-    color: white;
-    background-color: rgb(17, 101, 109);
-    border: 0;
-    border-radius: 15px;
-
-}
-
 #botao:hover{
     background-color: rgb(23, 133, 143) ;
+}
+
+.pausado{
+    color: red;
 }
