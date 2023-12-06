@@ -16,13 +16,15 @@ body{
     margin: 0;
     background-color: var(--primary-color);
     font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+
     
 }
 
 .conteiner {
     margin: auto;
     margin-top: 100px;
-    max-width: 650px;
+    max-width: 400px;
     flex-direction: column;
     background-color: white;
     display: flex;
@@ -30,10 +32,22 @@ body{
     align-items: center;
     border-radius: 30px;
     box-shadow: 1px 1px 6px;
+
     
 }
+p{
+    
+    height: 85px;
+    margin-bottom: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+
+}
 h1{
-    font-size: 5vh;
+    font-size: 4vh;
     color: rgb(77, 74, 74);
     font-weight: bolder;
     margin-bottom: 10px
@@ -49,11 +63,13 @@ h1{
 
 
 .input-tarefa{
-    width: 350px;
+    
     height: 35px;
     border-radius: 10px;
     border-width: 1px;
     font-size: 17px;
+    max-width: 100%;
+    
     
 }
 
@@ -61,17 +77,48 @@ input:focus{
     outline: 2px solid var(--primary-color);
 }
 
-#botao{
-    margin: 20px;
+.btn-tarefa{
+    display: block;
     height: 40px;
     width: 200px;
     color: white;
     background-color: rgb(17, 101, 109);
     border: 0;
     border-radius: 15px;
+    margin-bottom: -20px;
 
 }
 
-#botao:hover{
+.apagar:hover{
     background-color: rgb(23, 133, 143) ;
 }
+
+.tarefas{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: start;
+    font-weight: bold;
+    font-size: 1.2em;
+    list-style: decimal;
+    width: 100%;
+    color: rgb(77, 74, 74);
+}
+
+.apagar{
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: rgb(10, 111, 122);
+    border: 0;
+    border-radius: 5px;
+    flex-wrap:wrap;
+}
+
+
+li{
+    max-width: 90%;
+    overflow-wrap: break-word;
+}
+
