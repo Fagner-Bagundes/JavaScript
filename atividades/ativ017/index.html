@@ -14,35 +14,60 @@
 <body>
     
     <section class="conteiner"> 
-    <h1>calculadora</h1>
-    <div class="areaNumeros">
-        <input class="numeros" type="text" name="" id="numeros">
-    </div>
+    <h1>Calculadora</h1>
 
-    <div class="botoes">
-        <input class="botao" type="button" value="C">
-        <input class="botao" type="button" value="(">
-        <input class="botao" type="button" value=")">
-        <input class="botao" type="button" value="/">
-        <input class="botao" type="button" value="7">
-        <input class="botao" type="button" value="8">
-        <input class="botao" type="button" value="9">
-        <input class="botao" type="button" value="*">
-        <input class="botao" type="button" value="4">
-        <input class="botao" type="button" value="5">
-        <input class="botao" type="button" value="6">
-        <input class="botao" type="button" value="+">
-        <input class="botao" type="button" value="1">
-        <input class="botao" type="button" value="2">
-        <input class="botao" type="button" value="3">
-        <input class="botao" type="button" value="-">
-        <input class="botao" type="button" value=".">
-        <input class="botao" type="button" value="0">
-        <input class="botao" type="button" value="{}">
-        <input class="botao" type="button" value="=">
-    </div>
+    <table class="calculadora">
+        <tr> 
+            <td colspan="4"><input class="display" type="text" name="" id="numeros"></td>
+        </tr>
 
-    <ul class="tarefas"></ul>
+        <tr>
+            <td>
+                <input class="btn btn-clear" type="button" value="C">
+                <input class="btn btn-num" type="button" value="(">
+                <input class="btn btn-num" type="button" value=")">
+                <input class="btn btn-num" type="button" value="/">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <input class="btn btn-num" type="button" value="7">
+                <input class="btn btn-num" type="button" value="8">
+                <input class="btn btn-num" type="button" value="9">
+                <input class="btn btn-num" type="button" value="*">
+            </td>
+        </tr>
+
+        <tr>
+           <td>
+            <input class="btn btn-num" type="button" value="4">
+            <input class="btn btn-num" type="button" value="5">
+            <input class="btn btn-num" type="button" value="6">
+            <input class="btn btn-num" type="button" value="+">
+           </td>
+        </tr>
+
+        <tr>
+           <td>
+            <input class="btn btn-num" type="button" value="1">
+            <input class="btn btn-num" type="button" value="2">
+            <input class="btn btn-num" type="button" value="3">
+            <input class="btn btn-num" type="button" value="-">
+           </td>
+        </tr>
+
+        <tr>
+           <td>
+            <input class="btn btn-num" type="button" value=".">
+            <input class="btn btn-num" type="button" value="0">
+            <input class="btn btn-del" type="button" value="«">
+            <input class="btn btn-eq" type="button" value="=">
+           </td>
+        </tr>
+
+    </table>
+
     </section>
 
     <script src="./assets/js/main.js"></script>
