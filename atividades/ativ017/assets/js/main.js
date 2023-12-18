@@ -11,7 +11,9 @@ function criaCalculadora() {
 
         pressionaEnter() {
             this.display.addEventListener(`keyup`, (e) =>{
-                console.log(e);
+               if(e.keyCode === 13) {
+                this.realizaConta();
+               }
             })
         },
 
@@ -60,6 +62,8 @@ function criaCalculadora() {
                 if(el.classList.contains(`btn-eq`)){
                     this.realizaConta();
                 }
+
+                this.display.focus();
              });
         },
 
