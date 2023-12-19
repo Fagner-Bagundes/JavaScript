@@ -22,7 +22,7 @@ function criaCalculadora() {
             try {
                 conta = eval(conta)
                 if(!conta) {
-                    alert(`conta incalidade`)
+                    alert(`conta invalida`)
                     return;
                 }
                 this.display.value = conta;
