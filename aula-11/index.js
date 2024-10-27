@@ -22,5 +22,10 @@ console.log(nomes);
 // Fatiando uma parte da Array com o slice()
 let fatiado = nomes.slice(0,2)
 console.log(fatiado);
+// descobrindo se uma variavel é um array
+let nome = `Fagnelson`
+console.log(`a variavel nomes: `,nomes,`é uma Array? :`, nomes instanceof Array );
+console.log(`a variavel nome: `,nome,` é uma Array?: `, nome instanceof Array)
+
 
 
