@@ -13,4 +13,6 @@ console.log(nomes);
 // Adicionando um elemento no incio com a funcão unshift():
 nomes.unshift(`Vagner`)
 console.log(nomes);
-
+// Removendo o ultimo elemento com a funcao pop()
+nomes.pop()
+console.log(nomes);
