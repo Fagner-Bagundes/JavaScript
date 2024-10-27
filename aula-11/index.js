@@ -19,4 +19,8 @@ console.log(nomes);
 // Removendo o primeiro elemento com a funcao shift()
 nomes.shift()
 console.log(nomes);
+// Fatiando uma parte da Array com o slice()
+let fatiado = nomes.slice(0,2)
+console.log(fatiado);
+
 
