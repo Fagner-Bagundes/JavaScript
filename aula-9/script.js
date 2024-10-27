@@ -21,6 +21,32 @@ colocaBarra();
 const numFalso = 8
 console.log(`Descobrindo se o numero da váriavel numFalso(${numFalso}) é um NaN, um numero invalido`);
 console.log(`O numero ${numFalso} é um numero inválido?: ${isNaN(numFalso)}`);
+colocaBarra();
+console.log(`Resovendo uma impressisão do js em relção a calculos com numeros muito pequenos`);
+let numero1 = 0.7
+let numero2 = 0.1
+let calc = numero1 + numero2;
+console.log(` `);
+console.log(`a baixo está o cálculo impreciso de`, 0.7 + 0.1);
+console.log(calc);
+console.log(`Fazendo o calculo ser preciso`);
+let calcP = (numero1 * 100) + (numero2 * 100)
+console.log(calcP / 100)
+
+
+
+console.log(` `)
+console.log(`resultado corrigido, porem usando funções nativas do js`);
+calc = Number(calc.toFixed(2))
+console.log(`o verdadeiro resultado é: ${calc}`)
+
+
+
+
+
+
+
+
 
 
 
