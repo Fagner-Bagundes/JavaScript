@@ -3,3 +3,10 @@ function saudacao() {
 };
 
 saudacao()
+
+function saudacao2(){
+    return `Olá meu Mundo`
+}
+
+let saudacaoV = saudacao2()
+console.log(saudacaoV)
