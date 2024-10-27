@@ -10,6 +10,12 @@ console.log( num1.toString(),`=`, typeof(num1.toString()));
 colocaBarra();
 console.log(`colocanco mostrando o numero de variavel em binário`)
 console.log(num1.toString(2));
+colocaBarra();
+let num2 = 12.9034490230433
+console.log(`deixando o número ${num2} com duas casas decimias`);
+console.log(num2.toFixed(2));
+
+
 
 
 
