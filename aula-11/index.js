@@ -16,3 +16,7 @@ console.log(nomes);
 // Removendo o ultimo elemento com a funcao pop()
 nomes.pop()
 console.log(nomes);
+// Removendo o primeiro elemento com a funcao shift()
+nomes.shift()
+console.log(nomes);
+
