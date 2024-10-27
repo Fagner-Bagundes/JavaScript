@@ -10,3 +10,8 @@ function saudacao2(){
 
 let saudacaoV = saudacao2()
 console.log(saudacaoV)
+
+function saudacao3(nome){
+    console.log( `Olá meu amigo ${nome}`)
+}
+saudacao3(`Fagner`)
