@@ -9,8 +9,8 @@ nomes[3] = `Fagner`
 console.log(nomes)
 // adcionando mais um elemento no final com a funcão push()
 nomes.push(`Magno`)
-// console.log(nomes);
-// // Adicionando um elemento no incio com a funcão unshift():
-// nomes.unshift(`Vagner`)
-// console.log(nomes);
+console.log(nomes);
+// Adicionando um elemento no incio com a funcão unshift():
+nomes.unshift(`Vagner`)
+console.log(nomes);
 
