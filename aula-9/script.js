@@ -17,6 +17,11 @@ console.log(num2.toFixed(2));
 colocaBarra()
 console.log(`Descobrindo se o número da variável num1(${num1}) é um numero inteiro`);
 console.log(`o numero ${num1} é inteiro?: ${Number.isInteger(num1)}`);
+colocaBarra();
+const numFalso = 8
+console.log(`Descobrindo se o numero da váriavel numFalso(${numFalso}) é um NaN, um numero invalido`);
+console.log(`O numero ${numFalso} é um numero inválido?: ${isNaN(numFalso)}`);
+
 
 
 
