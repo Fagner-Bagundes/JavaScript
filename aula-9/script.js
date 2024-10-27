@@ -14,6 +14,11 @@ colocaBarra();
 let num2 = 12.9034490230433
 console.log(`deixando o número ${num2} com duas casas decimias`);
 console.log(num2.toFixed(2));
+colocaBarra()
+console.log(`Descobrindo se o número da variável num1(${num1}) é um numero inteiro`);
+console.log(`o numero ${num1} é inteiro?: ${Number.isInteger(num1)}`);
+
+
 
 
 
