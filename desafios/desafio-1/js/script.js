@@ -9,11 +9,13 @@ const form = document.querySelector(`.formulario`);
 // };
 
 let contador = 0;
-form.addEventListener(`submit`, (event) =>{
+function inpedeAt(event){
     event.preventDefault()
     contador++
-    console.log(`O formulário não foi envido: ${contador}`)
-})
+    console.log(contador)
+}
+
+form.addEventListener(`submit`, inpedeAt)
 
 const nome = document.querySelector(`.nome`);
 const sobrenome = document.querySelector(`.sobrenome`);
