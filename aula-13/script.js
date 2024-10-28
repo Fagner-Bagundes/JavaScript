@@ -21,3 +21,33 @@ function criaPessoa2(nome, apelido, idade){
 const pessoa4 = criaPessoa2(`Eduardo`, `Dudu`, 12)
 console.log(pessoa4);
 
+console.log(`------------------------------------------`);
+console.log(` `);
+let pessoa5 = {
+    nome: `Kakaroto`,
+    sobrenome: `Goku`,
+    idade: 40,
+
+    falaOi() {
+        console.log( this.nome, `Está Falando oi`)
+    },
+
+    aumentaIdade(){
+        console.log(`idade: `,this.idade);
+        console.log(`aumentando a idade em + 1: ${this.idade++}`);
+        console.log(`aumentando a idade em + 1: ${this.idade++}`);
+        console.log(`aumentando a idade em + 1: ${this.idade++}`);
+        console.log(`aumentando a idade em + 1: ${this.idade++}`);
+        console.log(`aumentando a idade em + 1: ${this.idade++}`);
+        console.log(`aumentando a idade em + 1: ${this.idade++}`);
+        
+    }
+};
+
+console.log(pessoa5);
+pessoa5.falaOi();
+pessoa5.aumentaIdade();
+
+
+
+
