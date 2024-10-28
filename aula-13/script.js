@@ -14,3 +14,10 @@ console.log(pessoa1)
 console.log(pessoa2)
 console.log(pessoa3)
 
+function criaPessoa2(nome, apelido, idade){
+    return {nome, apelido, idade}
+}
+
+const pessoa4 = criaPessoa2(`Eduardo`, `Dudu`, 12)
+console.log(pessoa4);
+
