@@ -1,83 +1,62 @@
-function meuEscopo() {
+
     
 const formulario = document.querySelector(`.formulario`)
 const btn = document.querySelector('.btn')
 const resultado = document.querySelector(`.resultado-calculo`)
-let peso;
-let altura;
+let pesoInput;
+let alturaInput;
+let pesoN;
+let alturaN;
 
 
-function valoresInvalidos() {
+function camposInvalidos() {
+    if (pesoN === 0 && alturaN === 0)  {
+        console.log(`Digite alguma coisa nas caixas de textos`)
+    } else if( isNaN(alturaN) && isNaN(pesoN)){
+        console.log(`Digite Numeros validos nos campos de textos`)
+    } else{
+        alturaInvalida()
+        pesoInvalido()
+    }
+    
+}
 
+function pesoInvalido() {
 
-    if (peso.value === "" && altura.value === ""){
-        console.log(`Coloque Algum valor`)
-
-    } else if(typeof (peso.value) === NaN|| peso.value >= 350){
+    if (isNaN(pesoN)) {
         console.log(`O valor de peso é inválido!!`);
+    } else if(pesoN >= 350){
+        console.log(`Digite um valor menor na area de peso`);
+
     }
 }
 
+function alturaInvalida() {
+
+    if (isNaN(alturaN)) {
+        console.log(`O valor da altura é inválido!!`);
+    } else if(alturaN >= 3){
+        console.log(`Digite um valor menor na area de altura`);
+
+    }
+}
 
 
 function clickOnButton(event) {
     event.preventDefault()
 
-    peso = document.querySelector(`.peso-input`);
-    altura = document.querySelector('.altura-input');
-    peso.value = Number(peso.value)
-    altura.value = Number(altura.value)
-    console.log(typeof peso.value)
-    valoresInvalidos()
+    pesoInput = document.querySelector(`.peso-input`);
+    alturaInput = document.querySelector('.altura-input');
+    pesoN = Number(pesoInput.value)
+    alturaN = Number(alturaInput.value)
+
+    ;
+    camposInvalidos()
 
     
 }
 
+
 formulario.addEventListener(`submit`, clickOnButton)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-meuEscopo();
