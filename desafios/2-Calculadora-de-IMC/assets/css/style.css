@@ -57,10 +57,24 @@ h1{
     margin-top: 20px;
 }
 
+.resultado-calculo{
+    background-color: blue;
+    margin: auto;
+    margin-top: 20px;
+    padding-block: 20px;
+    text-align: center;
+    width: 106%;
+    color: white;
+    font-weight: bold;
+}
+
 .resultado-invalido{
     background-color: rgba(255, 0, 0, 0.514);
 }
-
+.resultado-valido{
+    background-color: rgb(67, 185, 67);
+    color: black;
+}
 
 
 @media  screen and (max-width: 408px) {

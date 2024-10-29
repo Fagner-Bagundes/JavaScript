@@ -12,6 +12,16 @@ let valorIMC;
 let estadosR = [`Abaixo do peso`, `Peso Normal`, `Sobrepeso`, `Obesidade Grau 1`, `Obedidade Grau 2`, `Obesidade Grau 3`]
 
 
+formulario.addEventListener(`submit`, clickOnButton)
+
+function adicionaOuRemoveEstilo(){
+    if (iniciarMostraResultado === true) {
+        resultadoInput.classList.add(`resultado-valido`)
+    } else {
+        resultadoInput.classList.add(`resultado-invalido`)
+    };
+}
+
 function mostraResultado(){
     if (iniciarMostraResultado === true) {
         if (valorIMC > 40) {
@@ -35,19 +45,20 @@ function mostraResultado(){
 }
 
 
-formulario.addEventListener(`submit`, clickOnButton)
 
 function verificaDados() {
 
     if (pesoN === 0 && alturaN === 0) {
         resultadoInput.innerHTML =`Digite alguma coisa nas caixas de textos`
         iniciarMostraResultado = false;
+        
     } else if (isNaN(alturaN) && isNaN(pesoN)) {
         resultadoInput.innerHTML =`Digite Numeros validos nos campos de textos`
         
-        resultadoInput.classList.add(`.resultado-invalido`)
+        
         iniciarMostraResultado = false;
     } else {
+        iniciarMostraResultado = true;
         alturaInvalida()
         pesoInvalido()
         
@@ -59,10 +70,13 @@ function verificaDados() {
         if (isNaN(pesoN)) {
             resultadoInput.innerHTML =`O valor de peso é inválido!!`;
             iniciarMostraResultado = false;
+            
         } else if (pesoN >= 350) {
             resultadoInput.innerHTML =`Digite um valor menor na area de peso`;
             iniciarMostraResultado = false;
-
+            
+        } else{
+            iniciarMostraResultado = true
         }
     }
 
@@ -71,10 +85,13 @@ function verificaDados() {
         if (isNaN(alturaN)) {
             resultadoInput.innerHTML =`O valor da altura é inválido!!`;
             iniciarMostraResultado = false;
+            
         } else if (alturaN >= 3) {
             resultadoInput.innerHTML =`Digite um valor menor na area de altura`;
             iniciarMostraResultado = false;
-
+            
+        } else{
+            iniciarMostraResultado = true
         }
     }
 
