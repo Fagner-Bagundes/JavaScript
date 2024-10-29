@@ -57,6 +57,12 @@ h1{
     margin-top: 20px;
 }
 
+.resultado-invalido{
+    background-color: rgba(255, 0, 0, 0.514);
+}
+
+
+
 @media  screen and (max-width: 408px) {
     body{
         padding: 0;
