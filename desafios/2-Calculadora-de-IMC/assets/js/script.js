@@ -14,10 +14,12 @@ let estadosR = [`Abaixo do peso`, `Peso Normal`, `Sobrepeso`, `Obesidade Grau 1`
 
 formulario.addEventListener(`submit`, clickOnButton)
 
-function adicionaOuRemoveEstilo(){
+function adicionaOuRemoveEstilos(){
     if (iniciarMostraResultado === true) {
+        resultadoInput.classList.remove(`resultado-invalido`)
         resultadoInput.classList.add(`resultado-valido`)
     } else {
+        resultadoInput.classList.remove(`resultado-valido`)
         resultadoInput.classList.add(`resultado-invalido`)
     };
 }
@@ -116,6 +118,7 @@ function clickOnButton(event) {
     verificaDados()
     calculaIMC()
     mostraResultado()
+    adicionaOuRemoveEstilos()
     
 }
 
