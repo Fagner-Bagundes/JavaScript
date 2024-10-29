@@ -13,49 +13,46 @@ let estadosR = [`Abaixo do peso`, `Peso Normal`, `Sobrepeso`, `Obesidade Grau 1`
 
 function mostraResultado(){
     if (valorIMC > 40) {
-        console.log(`Seu IMC é ${valorIMC} e você está: ${estadosR[5]}`)
-
+        resultadoInput.innerHTML =`<p> Seu IMC é ${valorIMC} e você está: ${estadosR[5]}</p>`;
     }else if (valorIMC <= 39.9 && valorIMC>= 35){
-        console.log(`Seu IMC é ${valorIMC} e você está: ${estadosR[4]}`)
+        resultadoInput.innerHTML =`<p> Seu IMC é ${valorIMC} e você está: ${estadosR[4]}</p>`;
 
     } else if(valorIMC <= 34.9 && valorIMC>= 30){
-        console.log(`Seu IMC é ${valorIMC} e você está: ${estadosR[3]}`)
+        resultadoInput.innerHTML =`<p> Seu IMC é ${valorIMC} e você está: ${estadosR[3]}</p>`;
 
     } else if(valorIMC <= 29.9 && valorIMC >= 25){
-        console.log(`Seu IMC é ${valorIMC} e você está: ${estadosR[2]}`)
+        resultadoInput.innerHTML =`<p> Seu IMC é ${valorIMC} e você está: ${estadosR[2]}</p>`;
 
     } else if(valorIMC<= 24.9 && valorIMC >= 18.5){
-        console.log(`Seu IMC é ${valorIMC} e você está: ${estadosR[1]}`)
+        resultadoInput.innerHTML =`<p> Seu IMC é ${valorIMC} e você está: ${estadosR[1]}</p>`;
 
     } else {
-        console.log(`Seu IMC é ${valorIMC} e você está: ${estadosR[0]}`)
+        resultadoInput.innerHTML =`<p> Seu IMC é ${valorIMC} e você está: ${estadosR[0]}</p>`;
     }
 }
-
-
-
 
 
 formulario.addEventListener(`submit`, clickOnButton)
 
 function verificaDados() {
+
     if (pesoN === 0 && alturaN === 0) {
-        console.log(`Digite alguma coisa nas caixas de textos`)
+        resultadoInput.innerHTML =`Digite alguma coisa nas caixas de textos`
     } else if (isNaN(alturaN) && isNaN(pesoN)) {
-        console.log(`Digite Numeros validos nos campos de textos`)
+        resultadoInput.innerHTML =`Digite Numeros validos nos campos de textos`
     } else {
         alturaInvalida()
         pesoInvalido()
-        calculaIMC()
+        
     }
 
 
     function pesoInvalido() {
 
         if (isNaN(pesoN)) {
-            console.log(`O valor de peso é inválido!!`);
+            resultadoInput.innerHTML =`O valor de peso é inválido!!`;
         } else if (pesoN >= 350) {
-            console.log(`Digite um valor menor na area de peso`);
+            resultadoInput.innerHTML =`Digite um valor menor na area de peso`;
 
         }
     }
@@ -63,9 +60,9 @@ function verificaDados() {
     function alturaInvalida() {
 
         if (isNaN(alturaN)) {
-            console.log(`O valor da altura é inválido!!`);
+            resultadoInput.innerHTML =`O valor da altura é inválido!!`;
         } else if (alturaN >= 3) {
-            console.log(`Digite um valor menor na area de altura`);
+            resultadoInput.innerHTML =`Digite um valor menor na area de altura`;
 
         }
     }
@@ -77,6 +74,7 @@ function calculaIMC() {
     let calc = pesoN / (alturaN * alturaN)
     valorIMC = calc.toFixed(1)
     console.log(valorIMC)
+    mostraResultado()
 }
 
 
@@ -90,7 +88,7 @@ function clickOnButton(event) {
 
         ;
     verificaDados()
-    mostraResultado()
+    
 
 
 }
