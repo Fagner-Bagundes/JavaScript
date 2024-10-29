@@ -31,62 +31,50 @@ main{
 .container-input{
     width: 100%;
     padding: 20px;
-    
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.txt-input{
-    margin-bottom:-1px ;
-    justify-self: start;
-    align-self: start;
-}
+
 
 h1{
     text-align: center;
 }
 
-input{
+.altura-input, .peso-input{
     height: 45px;
     font-size: 1rem;
     padding-left: 10px;
     width: 100%;
 
-
-
 }
 .btn{
     height: 60px;
     text-align: center;
-    width: 104%;
+    width: 106%;
+    margin-top: 20px;
 }
 
-@media  screen and (max-width: 375px) {
+@media  screen and (max-width: 598px) {
     body{
         padding: 0;
         background-color: white;
         
     }
-    .container-input{
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        
-    }
     main{
         width: 100%;
         margin: 0;
+        display: flex;
+        
 
     }
     .information-container{
         grid-template: 1fr / 200px 200px;
     }
     .container-input{
-        width: 90%;
+        width: 80%;
 
         
-    }
-    input{
-       width: 300px;
     }
 }
