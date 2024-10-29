@@ -90,9 +90,11 @@ h1{
         margin-left: 1%;
     }
     .container-input{
-        width: 70%;
+        width: 85%;
 
-        
+    }
+    h1{
+        align-self: center;
     }
 }
 
