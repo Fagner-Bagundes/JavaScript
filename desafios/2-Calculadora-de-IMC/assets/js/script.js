@@ -18,28 +18,31 @@ function camposInvalidos() {
         alturaInvalida()
         pesoInvalido()
     }
+
+
+    function pesoInvalido() {
+
+        if (isNaN(pesoN)) {
+            console.log(`O valor de peso é inválido!!`);
+        } else if(pesoN >= 350){
+            console.log(`Digite um valor menor na area de peso`);
+    
+        }
+    }
+    
+    function alturaInvalida() {
+    
+        if (isNaN(alturaN)) {
+            console.log(`O valor da altura é inválido!!`);
+        } else if(alturaN >= 3){
+            console.log(`Digite um valor menor na area de altura`);
+    
+        }
+    }
+    
     
 }
 
-function pesoInvalido() {
-
-    if (isNaN(pesoN)) {
-        console.log(`O valor de peso é inválido!!`);
-    } else if(pesoN >= 350){
-        console.log(`Digite um valor menor na area de peso`);
-
-    }
-}
-
-function alturaInvalida() {
-
-    if (isNaN(alturaN)) {
-        console.log(`O valor da altura é inválido!!`);
-    } else if(alturaN >= 3){
-        console.log(`Digite um valor menor na area de altura`);
-
-    }
-}
 
 
 function clickOnButton(event) {
