@@ -1,0 +1,20 @@
+@use '../0-base/_variables' as v
+@use '../0-base/_base-mixins' as b-m
+
+.apresentation-container 
+    display: flex
+    flex-direction: column
+    gap: 10px
+    text-align: center
+    padding: 0px 20px
+
+    &-h1
+        color: v.$titles
+    p
+        color: white
+        line-height: 1.5
+        margin: auto
+        @include b-m.tablet
+            width: 70%
+
+    

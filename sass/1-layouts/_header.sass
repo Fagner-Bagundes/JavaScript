@@ -1,0 +1,24 @@
+@use '../0-base/base-mixins' as b-m
+@use '../0-base/_variables' as v
+@use 'sass:color'
+
+header
+    background-color: #0a0013
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 15px
+    font-size: 0.9rem
+    img
+        width: 40px
+        filter: (invert(100%))
+    nav
+        a
+            margin-right: 10px
+            color: v.$links
+            padding: 5px
+            transition: .4s
+
+            &:hover
+                border-bottom: solid 1px v.$links
