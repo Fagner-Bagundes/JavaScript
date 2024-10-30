@@ -16,4 +16,9 @@ let num3;
 [num1, num2, num3] = [10, 20, 30]
 console.log(num1, num2, num3);
 
+console.log(`-----------------------------------------------------------------`)
+const numeros = [100, 200, 300, 400, 500 ,600]
+
+const [numero1, numero2, numero3, ...resto] = numeros
+console.log(numero1, numero2, numero3, resto)
 
