@@ -22,7 +22,7 @@ function formataDatas(data2) {
 
     let datas = {
         dia: adiciona0(data2.getDate()),
-        mes: adiciona0(data2.getMonth()),
+        mes: adiciona0(data2.getMonth() + 1), 
         ano: adiciona0(data2.getFullYear()),
         hora: adiciona0(data2.getHours()),
         min: adiciona0(data2.getMinutes()),
