@@ -9,11 +9,6 @@ const lista = [
     {tag: `p`, txt: `Seu nome era shiva`},
 ]
 
-// for (let i=0; i<lista.length; i++){
-
-// }
-
-
 let [objeto1 , objeto2, objeto3, objeto4] = lista;
 
 
@@ -22,46 +17,32 @@ let {tag: tag2, txt: frase2} = objeto2;
 let {tag: tag3, txt: frase3} = objeto3;
 let {tag: tag4, txt: frase4} = objeto4;
 
-// listaTags = [tag1, tag2, tag3, tag4];
-// listaFrases = [frase1, frase2, frase3];
+let listaTags = [tag1, tag2, tag3, tag4]
+let listaFrases = [frase1, frase2, frase3, frase4];
 
+for(let i = 0; i<4; i++){
+    let tags = document.createElement(listaTags[i]);
+    container.appendChild(tags)
 
-// for(let i = 0; listaTags.length>=4; i++){
+    const tagContainer = container.querySelector(listaTags[i])
+    console.log(tagContainer)
 
-
-
-
-//     h1Container.innerHTML = frase1;
-//     sectionContainer.innerHTML = frase2;
-//     divContainer.innerHTML = frase3;
-//     pContainer.innerHTML = frase4;
-
-// }
-
-let h1 = document.createElement(tag1)
-let section = document.createElement(tag2)
-let div = document.createElement(tag3)
-let p = document.createElement(tag4)
-
-container.appendChild(h1)
-container.appendChild(section)
-container.appendChild(div)
-container.appendChild(p)
-
-const h1Container = container.querySelector(`h1`)
-const sectionContainer = container.querySelector(`section`)
-const divContainer = container.querySelector(`div`)
-const pContainer= container.querySelector(`p`)
+    tagContainer.innerHTML = listaFrases[i];
+}
 
 
 
+// const sectionContainer = container.querySelector(`section`)
+// const divContainer = container.querySelector(`div`)
+// const pContainer= container.querySelector(`p`)
 
 
 
-h1Container.innerHTML = frase1;
-sectionContainer.innerHTML = frase2;
-divContainer.innerHTML = frase3;
-pContainer.innerHTML = frase4;
+// sectionContainer.innerHTML = frase2;
+// divContainer.innerHTML = frase3;
+// pContainer.innerHTML = frase4;
+
+
 
 
 
