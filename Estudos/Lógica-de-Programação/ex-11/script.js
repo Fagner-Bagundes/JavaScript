@@ -23,3 +23,5 @@ const {nome: nome2, endereco: {rua, numero} } = pessoa
 console.log(nome2, rua, numero);
 
 // rest oparator
+const {nome: nome3, sobrenome: sobrenome3, idade: idade3, ...resto} = pessoa
+console.log(nome3, sobrenome3, idade3, resto);
