@@ -1,6 +1,2 @@
-let objeto = {
-    nome: `FAgner`,
-    Sobrenome: `Ferreira`
-}
-
-console.log(objeto);
+const tagnome = `Tagnome` + 1;
+console.log(tagnome);
