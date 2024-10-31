@@ -2,9 +2,9 @@ const pessoa = {
     nome: `Fagner`,
     sobrenome: `Ferreira`,
     idade: 19,
-    endereço: { 
+    endereco: { 
         rua: `Dr. Braulino`,
-        nume: 764
+        numero: 764
     }
 }
 
@@ -17,3 +17,9 @@ console.log(nome, sobrenome, idade);
 const {nome: N, sobrenome: SN, idade:ID} = pessoa
 console.log(N,SN,ID);
 
+// modo 3
+
+const {nome: nome2, endereco: {rua, numero} } = pessoa
+console.log(nome2, rua, numero);
+
+// rest oparator
