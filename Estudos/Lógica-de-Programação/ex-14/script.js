@@ -21,11 +21,11 @@ for (let valor of nome){
 }
 
 
-
-
-
 console.log(`---------------------------------------------`);
+// percorrendo uma array com for of
 
+const estadosH2O = [`Solido`, `Gasoso`, `Liquido`];
 
-
-console.log(`---------------------------------------------`);
+for(valor of estadosH2O){
+    console.log(valor)
+}
