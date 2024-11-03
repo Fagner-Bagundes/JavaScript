@@ -19,6 +19,8 @@ function soma(x,y) {
     return x + y;
 };
 
+console.log(soma(3,`fd `));
+
 try {
     console.log(soma(1,5));
     console.log(soma(3,`fd `));
