@@ -65,10 +65,12 @@ const atualizaEstilos = {
 
 
 let contadorDeClicks = 0;
+let timerRondando = true;
 
 btnIniciar.addEventListener(`click`, (event) => {
     contadorDeClicks = ++contadorDeClicks
     if (contadorDeClicks < 2){
+        timerRondando = true;
         adicionaSegundos();
         adicionaMinutos();
         adicionaHoras()
@@ -82,17 +84,23 @@ btnIniciar.addEventListener(`click`, (event) => {
 })
 
 btnPausar.addEventListener(`click`, (event) => {
-    contadorDeClicks = 0;
-    clearInterval(segContador);
-    clearInterval(minContador);
-    clearInterval(hrContador);
-    divAviso.innerHTML = `O timer está está Pausado🥱`
-    atualizaEstilos.positivo()
+
+    if (timerRondando === true) {
+        contadorDeClicks = 0;
+        clearInterval(segContador);
+        clearInterval(minContador);
+        clearInterval(hrContador);
+        divAviso.innerHTML = `O timer está está Pausado🥱`
+        atualizaEstilos.positivo()
+    } else{
+        return
+    }
     
 })
 
 btnZerar.addEventListener(`click`, (event) => {
     contadorDeClicks = 0;
+    timerRondando = false
     clearInterval(segContador);
     clearInterval(minContador);
     clearInterval(hrContador);
