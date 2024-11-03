@@ -5,11 +5,16 @@ function mostraHora(){
 }
 
 
+setTimeout(() =>{
+    console.log(`Hello World`)
+}, 1000)
+
+
 const timer = setInterval(function(){
     console.log(mostraHora());
     
-}, 1000);
+}, 2000);
 
 setTimeout(() => {
    clearInterval(timer)
-}, 10000);
+}, 5000);
