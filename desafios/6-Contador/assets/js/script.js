@@ -62,8 +62,6 @@ const atualizaEstilos = {
 }
 
 
-
-
 let contadorDeClicks = 0;
 let timerRondando = true;
 
