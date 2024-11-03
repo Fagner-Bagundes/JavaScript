@@ -80,3 +80,32 @@ h1{
 .relogio{
     font-size: 3em;
 }
+
+.aviso{
+    text-align: center;
+    color: rgb(38, 167, 38);
+    padding-block: 20px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.avisoError{
+    color: rgb(241, 68, 68);
+    text-align: center;
+    padding-block: 20px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.botao{
+    padding: 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(94, 172, 142);
+    color: white;
+}
+.botao:hover{
+    background-color: rgb(60, 110, 91);
+    cursor: pointer;
+}
