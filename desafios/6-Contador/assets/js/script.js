@@ -45,35 +45,49 @@ function atualizaHoario() {
     relogio.innerHTML = new Date(`10/10/2005 ${hr}:${min}:${seg}`).toLocaleTimeString(`pt-BR`);
 }
 
+const atualizaEstilos = {
+
+    positivo(){
+        divAviso.classList.remove(`avisoError`)
+        divAviso.classList.add(`aviso`)
+    },
+
+    negativo(){
+        divAviso.classList.remove(`aviso`)
+        divAviso.classList.add(`avisoError`)
+    }
+}
+
+
+
 
 let contadorDeClicks = 0;
 
 btnIniciar.addEventListener(`click`, (event) => {
     contadorDeClicks = ++contadorDeClicks
     if (contadorDeClicks < 2){
-        divAviso.innerHTML = `O timer está rodando...`
         adicionaSegundos();
         adicionaMinutos();
         adicionaHoras()
+        divAviso.innerHTML = `O timer está rodando...`
+        atualizaEstilos.positivo();
     } else {
         divAviso.innerHTML = `para iniciar um novo timer, voce tem que zerar o antigo!!`
-        divAviso.classList.remove(`aviso`)
-        divAviso.classList.add(`avisoError`)
+        atualizaEstilos.negativo()
     }
 
 })
 
 btnPausar.addEventListener(`click`, (event) => {
-    console.log(`Botão pausar clicado`)
     contadorDeClicks = 0;
     clearInterval(segContador);
     clearInterval(minContador);
     clearInterval(hrContador);
     divAviso.innerHTML = `O timer está está Pausado🥱`
+    atualizaEstilos.positivo()
 })
 
 btnZerar.addEventListener(`click`, (event) => {
-    console.log(`Botão zerar clicado`)
     contadorDeClicks = 0;
     clearInterval(segContador);
     clearInterval(minContador);
@@ -83,7 +97,6 @@ btnZerar.addEventListener(`click`, (event) => {
     seg = 0
     atualizaHoario()
     divAviso.innerHTML = `Aperte inciar para começar o timer😁`;
-    divAviso.classList.remove(`avisoError`)
-    divAviso.classList.add(`aviso`)
+    atualizaEstilos.positivo()
     
 })
