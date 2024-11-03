@@ -5,9 +5,11 @@ function mostraHora(){
 }
 
 
-function funcaoDoInterval(){
+const timer = setInterval(function(){
     console.log(mostraHora());
     
-}
-setInterval(funcaoDoInterval, 1000);
+}, 1000);
 
+setTimeout(() => {
+   clearInterval(timer)
+}, 10000);
