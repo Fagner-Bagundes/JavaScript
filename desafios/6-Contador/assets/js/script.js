@@ -41,7 +41,7 @@ function adicionaMinutos() {
         if (min === 60) min = 0
 
 
-    }, 10000)
+    }, 60000)
 };
 
 
@@ -54,7 +54,7 @@ function adicionaHoras() {
         if (hr === 60) hr = 0
 
 
-    }, 100000)
+    }, 600000)
 };
 
 
@@ -75,6 +75,9 @@ btnIniciar.addEventListener(`click`, (event) => {
 
 btnPausar.addEventListener(`click`, (event) => {
     console.log(`Botão pausar clicado`)
+    clearInterval(segContador);
+    clearInterval(minContador);
+    clearInterval(hrContador);
 })
 
 btnZerar.addEventListener(`click`, (event) => {
