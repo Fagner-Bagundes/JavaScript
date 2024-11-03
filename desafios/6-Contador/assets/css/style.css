@@ -96,6 +96,9 @@ h1{
     font-weight: bold;
     width: 100%;
 }
+.pausado{
+    color: rgb(219, 198, 80);
+}
 
 .botao{
     padding: 15px;

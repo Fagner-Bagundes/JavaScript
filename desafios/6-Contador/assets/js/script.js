@@ -50,11 +50,14 @@ const atualizaEstilos = {
     positivo(){
         divAviso.classList.remove(`avisoError`)
         divAviso.classList.add(`aviso`)
+        relogio.style.color = `green`
+        
     },
 
     negativo(){
         divAviso.classList.remove(`aviso`)
         divAviso.classList.add(`avisoError`)
+        relogio.classList.add(`avisoError`)
     }
 }
 
@@ -85,6 +88,7 @@ btnPausar.addEventListener(`click`, (event) => {
     clearInterval(hrContador);
     divAviso.innerHTML = `O timer está está Pausado🥱`
     atualizaEstilos.positivo()
+    
 })
 
 btnZerar.addEventListener(`click`, (event) => {
@@ -98,5 +102,6 @@ btnZerar.addEventListener(`click`, (event) => {
     atualizaHoario()
     divAviso.innerHTML = `Aperte inciar para começar o timer😁`;
     atualizaEstilos.positivo()
+    relogio.style.color = ``
     
 })
