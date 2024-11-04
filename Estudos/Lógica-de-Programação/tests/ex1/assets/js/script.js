@@ -34,9 +34,9 @@ function filtraDados() {
     } else if (isNaN(peso) && isNaN(altura)) {
         mostraErros(`Digite Valores Válidos`)
         return
-    } else if (isNaN(peso)) {
+    } else if (isNaN(peso) || peso > 350 || peso<=5) {
         mostraErros(`O valor do peso é invalido`);
-    } else if (isNaN(altura)) {
+    } else if (isNaN(altura) || altura>3 || altura<0.50) {
         mostraErros(`O valor da altura é invalido`)
     } else if(contadorClick === 0){
         carrega();
