@@ -12,10 +12,7 @@ function criaData(){
 }
 
 setInterval(()=>{
-    criaData()
-    console.log(`oi`);
-    
-    
+    criaData()   
 }, 1000);
 
 
