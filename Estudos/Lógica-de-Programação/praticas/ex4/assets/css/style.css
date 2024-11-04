@@ -1,0 +1,114 @@
+body{
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(4, 26, 36, 0.947);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    
+}
+ 
+
+main{
+    margin-top: 60px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.information-container{
+    display: grid;
+    grid-template: 1fr / 200px 200px;
+    text-align: center;
+}
+.container-input{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1{
+    text-align: center;
+}
+
+.altura-input, .peso-input{
+    height: 45px;
+    font-size: 1rem;
+    padding-left: 10px;
+    width: 100%;
+    margin-block: 10px;
+
+}
+.btn{
+    height: 60px;
+    text-align: center;
+    width: 106%;
+    margin-top: 20px;
+}
+
+.resultado-calculo{
+    margin: auto;
+    margin-top: 20px;
+    padding-block: 20px;
+    text-align: center;
+    width: 106%;
+    color: white;
+    font-weight: bold;
+}
+
+.resultado-invalido{
+    background-color: rgba(255, 0, 0, 0.514);
+}
+.resultado-valido{
+    background-color: rgb(67, 185, 67);
+    color: black;
+}
+
+.relogio{
+    font-size: 3em;
+}
+
+.aviso{
+    text-align: center;
+    color: rgb(38, 167, 38);
+    padding-block: 20px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.avisoError{
+    color: rgb(241, 68, 68);
+    text-align: center;
+    padding-block: 20px;
+    font-weight: bold;
+    width: 100%;
+}
+.pausado{
+    color: rgb(219, 198, 80);
+}
+
+.botao{
+    padding: 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(94, 172, 142);
+    color: white;
+}
+.botao:hover{
+    background-color: rgb(60, 110, 91);
+    cursor: pointer;
+}
