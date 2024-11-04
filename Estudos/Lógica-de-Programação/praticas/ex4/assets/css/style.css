@@ -20,9 +20,11 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 20px 20px 40px 20px ;
     background-color: white;
     border-radius: 15px;
+    position: relative;
+    height: 300px;
 }
 
 .information-container{
@@ -69,11 +71,12 @@ h1{
     font-weight: bold;
 }
 
-.resultado-invalido{
+.negativo{
     background-color: rgba(255, 0, 0, 0.514);
+    color: #fff;
 }
-.resultado-valido{
-    background-color: rgb(67, 185, 67);
+.positivo{
+    background-color: rgba(171, 232, 171, 0.429);
     color: black;
 }
 
@@ -83,14 +86,15 @@ h1{
 
 .aviso{
     text-align: center;
-    color: rgb(38, 167, 38);
     padding-block: 20px;
     font-weight: bold;
+    margin-top: 260px;
     width: 100%;
+    position: absolute;
 }
 
 .avisoError{
-    color: rgb(241, 68, 68);
+    color: rgba(225, 122, 122, 0.307);
     text-align: center;
     padding-block: 20px;
     font-weight: bold;

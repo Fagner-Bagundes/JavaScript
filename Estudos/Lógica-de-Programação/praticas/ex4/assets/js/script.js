@@ -2,6 +2,7 @@ const relogio = document.querySelector(`.relogio`)
 const btnIniciar = document.querySelector(`.iniciar`)
 const btnPausar = document.querySelector(`.pausar`)
 const btnZerar = document.querySelector(`.zerar`)
+const aviso = document.querySelector(`.aviso`)
 let hrTimer;
 let minTimer;
 let segTimer;
@@ -11,6 +12,24 @@ let min = 0;
 let seg = 0;
 
 let hora;
+
+// Funções que mudam estilos
+
+let mudarEstilos = {
+    positivo(){
+        aviso.classList.remove(`negativo`)
+        aviso.classList.add(`positivo`)
+    },
+    negativo(){
+        aviso.classList.remove(`positivo`)
+        aviso.classList.add(`negativo`)
+    },
+    semEstilos(){
+        aviso.classList.remove(`positivo`)
+        aviso.classList.remove(`negativo`)
+    }
+}
+
 
 // Funções que manipulam os horários
 function criaData(){
@@ -63,16 +82,24 @@ let numerosDeClicks = 0;
 // Pegando eventos de click
 
 btnIniciar.addEventListener(`click`,(e)=>{
-    if (numerosDeClicks > 0) return
+    if (numerosDeClicks > 0){
+        aviso.innerHTML = `Você precisa zerar um timer, para iniciar outro`
+        mudarEstilos.negativo()
+        return  
+    } 
     numerosDeClicks = 1;
     console.log(e);
     AdiconaSeg()
     Adicionamin()
     AdiconaHr()
+    aviso.innerHTML = `timer está rodando🤠.....`
+    mudarEstilos.positivo();
 })
 
 btnPausar.addEventListener(`click`, (e)=>{
 paraHrs();
+mudarEstilos.semEstilos()
+aviso.innerHTML = `aperte Iniciar para retomar o timer😎`
 })
 
 btnZerar.addEventListener(`click`,() =>{
@@ -81,5 +108,7 @@ btnZerar.addEventListener(`click`,() =>{
     hr = 0;
     criaData();
     paraHrs();
+    mudarEstilos.semEstilos()
+    aviso.innerHTML = `Aperte inciar para começar o timer😁`
 
-})
+});
