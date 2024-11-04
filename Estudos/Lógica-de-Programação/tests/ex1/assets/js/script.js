@@ -5,13 +5,24 @@ const resutadoCalculo = document.querySelector(`.resultado-calculo`)
 let peso;
 let altura;
 let IMC;
+let contadorClick = 0;
+
+function estiloNegativos() {
+    resutadoCalculo.style.color = `red`
+}
+
+function estilosPositivo(){
+    resutadoCalculo.style.color = `white`
+}
 
 function mostraErros(error) {
     resutadoCalculo.innerHTML = error
+    estiloNegativos()
 }
 
 function mostraIMC(estadoFisico) {
     resutadoCalculo.innerHTML = `Seu IMC é: ${IMC} e o seu estado é: ${estadoFisico} `
+    estilosPositivo()
 }
 
 function calculaIMC(params) {
@@ -34,11 +45,11 @@ function filtraDados() {
     } else if (isNaN(peso) && isNaN(altura)) {
         mostraErros(`Digite Valores Válidos`)
         return
-    } else if (isNaN(peso) || peso > 350 || peso<=5) {
+    } else if (isNaN(peso) || peso > 350 || peso <= 5) {
         mostraErros(`O valor do peso é invalido`);
-    } else if (isNaN(altura) || altura>3 || altura<0.50) {
+    } else if (isNaN(altura) || altura > 3 || altura < 0.50) {
         mostraErros(`O valor da altura é invalido`)
-    } else if(contadorClick === 0){
+    } else if (contadorClick === 0) {
         carrega();
     }
 };
@@ -56,10 +67,10 @@ formulario.addEventListener(`submit`, (e) => {
 });
 
 
-let contadorClick = 0;
 function carrega() {
     let adicionaPonto = `fazendo calculo`
     let timer;
+    estilosPositivo()
 
 
 
