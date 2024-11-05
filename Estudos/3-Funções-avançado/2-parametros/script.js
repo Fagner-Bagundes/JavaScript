@@ -53,5 +53,14 @@ function fucao3({fruta1, fruta2, fruta3}){
 }
 
 fucao3({fruta1: `maça`,fruta2: `pera`,fruta3: `jaca` })
+barra()
+console.log(`funcções com parâmetros com valores padrões`);
+espaco
+function funcao4(num1=15, nume2 = 10){
+    console.log(num1 + nume2);
+}
+funcao4();
+
+
 
 
