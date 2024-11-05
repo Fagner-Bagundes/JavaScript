@@ -60,6 +60,24 @@ function funcao4(num1=15, nume2 = 10){
     console.log(num1 + nume2);
 }
 funcao4();
+barra();
+
+console.log(`Usando restOperator(...)`);
+let multiplicadores = [1,2,3,4,5,6,7,8,9,10]
+
+function funcao5(...numeros){
+    for(let numero of numeros){
+        console.log(`Esta é a tabuada de ${numero}`);
+        for (let multiplicador of multiplicadores){
+            
+            console.log(`${numero} x ${multiplicador} = `, numero * multiplicador)
+        }
+        espaco()
+    }
+    
+}
+
+funcao5(1,2,3,4,5,6);
 
 
 
