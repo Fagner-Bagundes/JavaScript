@@ -23,7 +23,7 @@ function criaPessoa(nome, sobrenome, idade, altura, peso){
         set nomeCompleto(valor){
             valor = valor.split(` `);
             this.nome = valor.shift()
-            this.sobrenome = valor.slice(0, valor.length)
+            this.sobrenome = valor.join(` `)
             
         }
 
@@ -40,5 +40,8 @@ console.log(`----------------------------------------------------`);
 console.log(p1.nomeCompleto);
 p1.nomeCompleto = `Nalda Maria Ferreira Bagundes`
 console.log(p1.nomeCompleto);
+
+console.log(p1.falaOi(`O Uso de anabolizantes é algo extremamente aceitável`))
+
 
 
