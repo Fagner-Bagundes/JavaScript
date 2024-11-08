@@ -4,14 +4,34 @@
 
         inicia(){
             this.cliqueBotoes()
+            this.prescionaEnter()
+        },
+
+        prescionaEnter(){
+            this.display.addEventListener(`keyup`, (tecla)=>{
+                
+                if(tecla.code == `Enter`){
+                    this.realizaConta()
+                }
+            })
         },
 
         realizaConta(){
-            let conta = this.display.value();
+            let conta = this.display.value;
 
             try {
-                
+                conta = eval(conta)
+
+                if(!conta){
+                    alert(`Conta inválida`)
+                    this.clearDisplay()
+                    return
+                }
+
+                this.display.value = conta;
             } catch(e){
+                alert(`Conta invalida`)
+                this.clearDisplay()
 
             }
         },
