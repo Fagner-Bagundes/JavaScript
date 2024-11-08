@@ -20,9 +20,10 @@ function criaPessoa(nome, sobrenome, idade, altura, peso){
            return this.nome +` `+  this.sobrenome
         },
         // setter
-        set nomeCompleto(nome){
-            nome = nome.split(` `);
-            console.log(nome);
+        set nomeCompleto(valor){
+            valor = valor.split(` `);
+            this.nome = valor.shift()
+            this.sobrenome = valor.slice(0, valor.length)
             
         }
 
@@ -36,6 +37,8 @@ let p2 = criaPessoa(`Francisco`, `Santana`, 57, 1.65, 90)
 
 console.log(p1.falaOi(`eu quero é ser dev pleno`));
 console.log(`----------------------------------------------------`);
-p1.nomeCompleto = `Nalda Maria`
 console.log(p1.nomeCompleto);
+p1.nomeCompleto = `Nalda Maria Ferreira Bagundes`
+console.log(p1.nomeCompleto);
+
 
