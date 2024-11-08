@@ -1,0 +1,66 @@
+body{ 
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(4, 26, 36, 0.947);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    
+}
+
+
+main{
+    margin-top: 60px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 10px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.calculadora{
+    height: 350px;
+    width: 300px;
+}
+.display{
+    width: 97%;
+    height: 50px;
+    text-align: end;
+    font-size: 1.5rem;
+
+}
+textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+
+    border: solid 1px;
+    width: 98%;
+    height: 52px;
+}
+
+.btn{
+    padding: 20px;
+    width: 70px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn-fc{
+    background-color: rgb(64, 79, 92);
+    border: none;
+    color: white;
+}
+
+.btn-calcs{
+    background-color: rgb(17, 26, 34);
+    color: aliceblue;
+    border: none;
+}
