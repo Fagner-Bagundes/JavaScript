@@ -35,6 +35,35 @@ console.log(g2.next().value);
 console.log(g2.next().value);
 console.log(g2.next().value);
 
+console.log(`--------------------------------------`);
+
+// Gerador que delega tareda para outra gerado
+
+function* geradora3(){
+    yield 0;
+    yield 1;
+    yield 2;
+}
+let g3 = geradora3()
+
+function* geradora4(){
+    yield* g3
+    yield 3;
+    yield 4;
+    yield 5;
+}
+let g4 = geradora4();
+
+for(let valor of geradora4()){
+    console.log(valor);
+}
+
+console.log(`------------------------------------------`);
+
+function* geradora5(){
+    
+}
+
 
 
 
