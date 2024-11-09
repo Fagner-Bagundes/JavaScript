@@ -61,8 +61,25 @@ for(let valor of geradora4()){
 console.log(`------------------------------------------`);
 
 function* geradora5(){
-    
+ yield function(){
+    console.log(`vim do da função 1`);
+ }   
+
+ yield function(){
+    console.log(`Vim da função 2`);
+ }
 }
+
+const g5 = geradora5();
+const funcao1 = g5.next().value;
+const funcao2 = g5.next().value;
+
+funcao1()
+funcao2()
+
+
+// o Return acaba com a função e esquece dos yields que vem depois
+
 
 
 
