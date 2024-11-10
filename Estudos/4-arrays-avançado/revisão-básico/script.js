@@ -26,6 +26,21 @@ const numeros = [1,2,3,4,5,6]
 
 console.log(numeros.slice(-2));
 
+console.log(`---------------------------------------------`);
+
+// convertendo string para array
+
+const nomeCompleto = `Fagner Ferreira Bagundes`
+
+let nomeCompletoArray = nomeCompleto.split(` `);
+
+console.log(nomeCompletoArray);
+let nomeCompletoString = nomeCompletoArray.join(` `)
+
+console.log(nomeCompletoString);
+
+
+
 
 
 
