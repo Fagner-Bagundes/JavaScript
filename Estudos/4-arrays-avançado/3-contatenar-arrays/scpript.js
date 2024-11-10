@@ -24,6 +24,10 @@ const array4 = array1.concat(array2, [70, 80 ,90], `100!!`)
 console.log(array4);
 
 
+console.log(array1 instanceof Array);
+
+
+
 
 
 
