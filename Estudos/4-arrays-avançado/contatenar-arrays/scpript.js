@@ -6,6 +6,9 @@ console.log(a2);
 console.log(`Concatenado:`)
 let a3 = [...a1, ...a2]
 console.log(a3);
+console.log(`Concatenando com arrays criadas no spread: `);
+let a4 = [...a1, ...a2,...[7,8,9], `10!`]
+console.log(a4);
 console.log(`---------------------------------------`);
 console.log(`Concatenando essas duas Arrays usando concant(): `);
 const array1 = [10,20,30];
