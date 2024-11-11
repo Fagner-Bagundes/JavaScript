@@ -54,6 +54,23 @@ console.log(novoID);
 console.log(`--------------------------------------------------------`);
 console.log(`Array original:`);
 console.log(pessoas);
+console.log(`--------------------------------------------------------`);
+
+console.log(`Adicionando uma chave peso em cada objeto: `);
+let addPeso = pessoas.map((pessoa)=>{
+    let random = parseInt(Math.random() * (20-90) + 90)
+    let newObj = {...pessoa};
+    newObj.peso = random;
+    return newObj  
+});
+
+console.log(addPeso);
+console.log(pessoas);
+
+
+
+
+
 
 
 
