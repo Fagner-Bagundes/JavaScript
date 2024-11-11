@@ -15,7 +15,7 @@ console.log(pessoa[`sobrenome`]);
 
 const pessoa1 = new Object();
 pessoa1.nome = `Fagner`;
-pessoa1.idade = 17;
+pessoa1.idade = 19;
 console.log(pessoa1);
 // voce pode usar o spread(...)
 const pessoa2 = {...pessoa}
@@ -28,12 +28,14 @@ console.log(pessoa2);
 
 // metodos dentro de objetos
 pessoa1.maior18 = (id)=>{
-    if (id>17){
-        return `maior de idade`  
-    } else{
-        return `menor de idade`
+    if (id>17) return `maior de idade`  
+    return `menor de idade`
     }
+pessoa1.nascimento = (id) =>{
+    const data = new Date()
+    return data.getFullYear() - id;
+    
 }
 
-console.log(`${pessoa1.nome} maioridade: ${pessoa1.maior18(pessoa1.idade)}`);
+console.log(`${pessoa1.nome}, data de nascimento: ${pessoa1.nascimento(pessoa1.idade)} maioridade: ${pessoa1.maior18(pessoa1.idade)}`);
 
