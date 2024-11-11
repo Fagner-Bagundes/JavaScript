@@ -20,14 +20,15 @@ console.log(soma);
 console.log(` `);
 console.log(`retornado os numeros pares: `);
 
-let Npares = []
+
 let pares = numeros.reduce((acumulador, elementoAtual)=>{
     if (elementoAtual % 2 === 0){
-        Npares.push(elementoAtual)
+        acumulador.push(elementoAtual)
     }
-}, 0)
+    return acumulador;
+}, [ ])
 
-console.log(Npares);
+console.log(pares);
 
 
 
