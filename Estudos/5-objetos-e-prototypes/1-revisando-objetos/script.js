@@ -80,11 +80,15 @@ function Pessoa(nome, sobreNome, idade, peso, altura) {
     this.sobreNome = sobreNome;
     this.idade = idade;
     this.imc = IMC()
+    // return o this (this é o objeto new)
 
 }
-
-p1 = new Pessoa(`Francisco`, `Santana`, 57, 90, 1.64)
+//  new é a mesma coisa de {} e o this se refera ao objeto new
+// a palavra new retorna o  obejeto automaticamente
+const p1 = new Pessoa(`Francisco`, `Santana`, 57, 90, 1.64)
 console.log(p1);
+
+
 
 // Classes em js para criar novos objetos
 
