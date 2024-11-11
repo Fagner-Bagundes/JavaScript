@@ -20,15 +20,25 @@ console.log(soma);
 console.log(` `);
 console.log(`retornado os numeros pares: `);
 
-
 let pares = numeros.reduce((acumulador, elementoAtual)=>{
     if (elementoAtual % 2 === 0){
         acumulador.push(elementoAtual)
     }
     return acumulador;
 }, [ ])
-
 console.log(pares);
+console.log(` `);
+
+
+console.log(`retornando um array com o sobro dos valores`);
+
+let dobro = numeros.reduce((acumulador, valorAtual)=>{
+    acumulador.push(valorAtual * 2)
+    return acumulador
+}, [])
+
+console.log(dobro);
+
 
 
 
