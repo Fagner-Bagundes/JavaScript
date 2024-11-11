@@ -39,7 +39,29 @@ let dobro = numeros.reduce((acumulador, valorAtual)=>{
 
 console.log(dobro);
 
+console.log(`Usando reduce em obejtos`);
+const pessoas = [
+    {nome: `larissa`, idade: 35},
+    {nome: `Fagner`, idade: 19},
+    {nome: `kiko`, idade: 57},
+    {nome: `João`, idade: 22},
+    {nome: `Iberê`, idade: 64},
+    {nome: `Guanabara`, idade: 51},
+];
+console.log(` `);
+console.log(`retornando o mais velhor`);
+
+const maisVelho = pessoas.reduce((acumulador, valor)=>{
+    if (acumulador.idade > valor.idade) return acumulador
+    return valor
+    
+})
+
+
+console.log(maisVelho);
 
 
 
 
+
+ 
