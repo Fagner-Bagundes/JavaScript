@@ -73,3 +73,34 @@ p2.estoque = 8;
 console.log(p2.estoque);
 
 
+let p3 = {};
+
+Object.defineProperties(p3, {
+nome: {
+    value: `Fagner`,
+    enumerable: true
+},
+sobrenome: {
+    value: `fereira`,
+    enumerable: true
+},
+nomeCompleto: {
+    get(){
+        return `${this.nome}, ${this.sobrenome}`
+    },
+    enumerable: true,
+   set(valor){
+    
+   }
+}
+
+})
+
+console.log(p3);
+p3.nomeCompleto = `fagnerso`
+console.log(p3.nomeCompleto);
+
+
+
+
+
