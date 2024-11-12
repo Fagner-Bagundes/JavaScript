@@ -58,6 +58,10 @@ function  criaProduto(nome, valor, estoque) {
             return estoquePrivado
         },
         set estoque(valor){
+            if(typeof valor !== `number`){
+                throw new Error("valor de estoque invalido");  
+            } 
+            
             estoquePrivado = valor
         }
     }
@@ -65,7 +69,7 @@ function  criaProduto(nome, valor, estoque) {
 
 let p2 = criaProduto(`mesa`, 300, 4)
 console.log(p2.estoque);
-p2.estoque = 2;
+p2.estoque = 8;
 console.log(p2.estoque);
 
 
