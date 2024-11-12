@@ -73,32 +73,28 @@ p2.estoque = 8;
 console.log(p2.estoque);
 
 
-let p3 = {};
 
-Object.defineProperties(p3, {
-nome: {
-    value: `Fagner`,
-    enumerable: true
-},
-sobrenome: {
-    value: `fereira`,
-    enumerable: true
-},
-nomeCompleto: {
-    get(){
-        return `${this.nome}, ${this.sobrenome}`
-    },
-    enumerable: true,
-   set(valor){
+const produto = {};
+Object.defineProperty(produto, 'preco', {
     
-   }
-}
+  get() {
+    return this._preco;
+  },
+  set(valor) {
+    if (valor < 0) {
+      console.log("O preço não pode ser negativo.");
+    } else {
+      this._preco = valor;
+    }
+  },
+  enumerable: true,
+  configurable: true
+});
 
-})
-
-console.log(p3);
-p3.nomeCompleto = `fagnerso`
-console.log(p3.nomeCompleto);
+produto.preco = 50;    // define o preço
+console.log(produto.preco); // 50
+produto.preco = -10;   // Tenta definir um valor inválido
+// Saída: "O preço não pode ser negativo."
 
 
 
