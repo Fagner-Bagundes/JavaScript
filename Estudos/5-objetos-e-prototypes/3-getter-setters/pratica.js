@@ -1,5 +1,5 @@
 const heroi = {};
-
+let habilidades =  [`velocidade`, `magnetismo`, `desenrolo`]
 Object.defineProperties(heroi, {
     nome: {
         value: `SuperShoki`,
@@ -11,13 +11,23 @@ Object.defineProperties(heroi, {
         enumerable: true,
         configurable: false,
     },
+    
     habilidades: {
-        value: [`alto Qi`, `desenrolo`, `magnetismo`],
-        writable: true,
-        enumerable: true,
-        configurable: true
+       get(){
+         return habilidades
+       },
+       set(valor){
+        valor = valor.split(` `)
+        habilidades = valor
+    
+       }
     }
 })
 
 
-console.log(heroi);
+console.log(heroi.habilidades);
+
+console.log(`  `);
+heroi.habilidades = `Inteligencia, raios de laser, velocidade`
+console.log(heroi.habilidades);
+
