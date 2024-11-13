@@ -4,7 +4,7 @@
 3.Object.assign(des, any) --> copia um objeto a uma nova variável 
 4.Object.getOwnPropertyDescriptor(objt, `chave`) --> mostra a configuração da propriedade
 5. (...) spread
-
+ 
 // já vimos:
 object.keys (retorna as chaves)
 object.freeze (congela o objeto)

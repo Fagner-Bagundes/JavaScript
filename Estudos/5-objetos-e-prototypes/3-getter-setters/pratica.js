@@ -64,10 +64,20 @@ function criaCamisa(cor, estampa, tecido) {
 
 
 const camisa = criaCamisa(`preto`, `metal`, `lã`)
-console.log(camisa.qualidade);
 
-camisa.qualidade = `roupa Linda, dura muita, qualidade altíssima `
+console.log(Object.keys(camisa));
+console.log(Object.values(camisa))
+console.log(Object.assign({}, camisa));
+console.log(Object.getOwnPropertyDescriptor(camisa, `cor`));
 console.log(camisa.qualidade);
+console.log(Object.values(camisa));
+
+Object.freeze(camisa)
+camisa.cor = `Rosa`
+console.log(Object.values(camisa));
+console.log(Object.entries(camisa));
+
+
 
 
 
