@@ -15,9 +15,9 @@ Todos objetos tem uma referência interna para o protótipo (__proto__), que vem
 function Pessoa(nome, sorbrenome){
     this.nome = nome;
     this.sobrenome = sorbrenome;
-    this.nomeCompleoto = () =>{
-        return `Original: ` + this.nome + ` ` + this.sobrenome
-    }
+    // this.nomeCompleoto = () =>{
+    //     return `Original: ` + this.nome + ` ` + this.sobrenome
+    // }
     
 }
 
@@ -59,6 +59,10 @@ function Car(model, year) {
 
   
 let myCar = new Car("Toyota", 2020);
-console.log(myCar); // "Toyota - 2020"
+console.log(myCar.getDetails()); // "Toyota - 2020"
+
+let data = new Date();
+
+console.dir(data)
 
 
