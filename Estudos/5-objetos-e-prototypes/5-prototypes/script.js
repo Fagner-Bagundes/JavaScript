@@ -15,16 +15,18 @@ Todos objetos tem uma referência interna para o protótipo (__proto__), que vem
 function Pessoa(nome, sorbrenome){
     this.nome = nome;
     this.sobrenome = sorbrenome;
-    this.nomeCompleto = ()=> this.nome + ` ` + this.sobrenome
+    
 }
 
-Pessoa.prototype.estouAqui = `salveeee`
+
+Pessoa.prototype.nomeCompleoto = function(){
+    return this.nome + ` ` + this.sobrenome;
+};
 
 // instância
 const p1 = new Pessoa(`Fag`, `Ferreira`)
 console.dir(p1)
-const data = new Date();
-console.dir(data)
+
 
 
 // Quando você usa um mesmo método em cada objeto que você cria, exemplo:
