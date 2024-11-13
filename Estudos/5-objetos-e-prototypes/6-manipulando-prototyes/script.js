@@ -18,5 +18,12 @@ const objB = {
 Object.setPrototypeOf(objB, objA)
 console.log(objB);
 
-console.log(objB.chaveA)
-console.log(objB.chaveB);
+const objC = new Object();
+
+objC.chaveC = `C`
+Object.setPrototypeOf(objC, objB)
+console.log(objC);
+
+// em ves de usar Objeto__proto__ para saber qual é o protótipo de um objeto, use:
+
+Object.getPrototypeOf(objA)
