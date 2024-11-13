@@ -15,6 +15,9 @@ Todos objetos tem uma referência interna para o protótipo (__proto__), que vem
 function Pessoa(nome, sorbrenome){
     this.nome = nome;
     this.sobrenome = sorbrenome;
+    this.nomeCompleoto = () =>{
+        return `Original: ` + this.nome + ` ` + this.sobrenome
+    }
     
 }
 
@@ -26,8 +29,14 @@ Pessoa.prototype.nomeCompleoto = function(){
 // instância
 const p1 = new Pessoa(`Fag`, `Ferreira`)
 console.dir(p1)
+console.dir(p1.nomeCompleoto())
 
 
+function soma(a, b){
+    return a + b
+}
+
+console.dir(soma)
 
 // Quando você usa um mesmo método em cada objeto que você cria, exemplo:
 
@@ -35,6 +44,21 @@ console.dir(p1)
 
 // os Prototypes foram criados para resolver esse problema!!
 
-// __proto__ --> é o prototype, ele link o objeto a uma propriedade da função construtora chamada prototype
+// __proto__ --> é o prototype, ele linka o objeto a uma propriedade da função construtora chamada prototype
 // prototype é como se fosse um lugar onde você guarda metodos de um objeto, em que ele não se repete ao longo do código, e sim é referênciado
+
+function Car(model, year) {
+    this.model = model;
+    this.year = year;
+  }
+
+
+  Car.prototype.getDetails = function() {
+    return `${this.model} - ${this.year}`
+};
+
+  
+let myCar = new Car("Toyota", 2020);
+console.log(myCar); // "Toyota - 2020"
+
 
