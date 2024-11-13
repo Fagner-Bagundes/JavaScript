@@ -44,4 +44,31 @@ console.log(lutador1);
 console.log(lutador1.skills);
 lutador1.skills = `Fraco, Buxa, lento, hiperbólico`
 console.log(lutador1.skills);
+console.log(` `);
+
+
+function criaCamisa(cor, estampa, tecido) {
+    let qualidade = [`Baixa qualidade`, `dura Pouco`, `feia`]
+    return {
+        cor,
+        estampa,
+        tecido,
+        get qualidade(){
+            return qualidade;
+        },
+        set qualidade(valor){
+            qualidade = valor.split(`, `)
+        }
+    }
+}
+
+
+const camisa = criaCamisa(`preto`, `metal`, `lã`)
+console.log(camisa.qualidade);
+
+camisa.qualidade = `roupa Linda, dura muita, qualidade altíssima `
+console.log(camisa.qualidade);
+
+
+
 
