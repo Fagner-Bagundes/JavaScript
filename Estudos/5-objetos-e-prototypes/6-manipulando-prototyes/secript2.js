@@ -49,3 +49,11 @@ const p3 = Object.create(Produto.prototype, {
 console.log(p3);
 
 console.log(p3.resultadoVendas());
+Array.prototype.firfsfsfsfsfsdfsst = function() {
+    return this[0];
+  };
+  
+  const numbers = [1, 2, 3];
+  console.log(numbers.firfsfsfsfsfsdfsst()); // 1
+console.dir(Array);
+
