@@ -20,8 +20,8 @@ function Camiseta(nome, preco, cor) {
 Camiseta.prototype = Object.create(Produto.prototype)
 Camiseta.prototype.constructor = Camiseta;
 
-Camiseta.prototype.aumento = function(percentual) {
-    this.preco = this.preco + (this.preco * (percentual /100))
+Camiseta.prototype.aumento = function (percentual) {
+    this.preco = this.preco + (this.preco * (percentual / 100))
 }
 
 
@@ -29,21 +29,19 @@ function Copo(nome, preco, material) {
     Produto.call(this, nome, preco)
     let estoque = 5;
     this.material = material;
-    Object.defineProperty(this, `estoque`,{
-        get : function(){
-            if(estoque<0 || typeof estoque != `number`){
-                return console.log(`digite numeros válidos`);  
-            } else{
-                return this.estoque = estoque
-            }
-            
+    Object.defineProperty(this, `estoque`, {
+        get: function () {
+            return this.estoque = estoque
+
         },
-        set: function(valor){
+        set: function (valor) {
+            if(estoque<0 || typeof estoque != `number`)
+                return console.log(`digite numeros`)
             estoque = valor
         },
         enumerable: true
     });
-    
+
 }
 
 Copo.prototype = Object.create(Produto.prototype);
