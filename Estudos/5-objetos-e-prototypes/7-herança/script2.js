@@ -35,7 +35,7 @@ function Copo(nome, preco, material) {
 
         },
         set: function (valor) {
-            if(estoque<0 || typeof estoque != `number`)
+            if(estoque<0 || typeof estoque !==`number`)
                 return console.log(`digite numeros`)
             estoque = valor
         },
