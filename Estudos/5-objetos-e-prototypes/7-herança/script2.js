@@ -25,8 +25,24 @@ Camiseta.prototype.aumento = function(percentual) {
 }
 
 
-function Copo(nome, preco, meterial) {
+function Copo(nome, preco, material) {
     Produto.call(this, nome, preco)
+    let estoque = 5;
+    this.material = material;
+    Object.defineProperty(this, `estoque`,{
+        get : function(){
+            if(estoque<0 || typeof estoque != `number`){
+                return console.log(`digite numeros válidos`);  
+            } else{
+                return this.estoque = estoque
+            }
+            
+        },
+        set: function(valor){
+            estoque = valor
+        },
+        enumerable: true
+    });
     
 }
 
@@ -34,9 +50,9 @@ Copo.prototype = Object.create(Produto.prototype);
 Copo.prototype.constructor = Copo;
 const caneca = new Copo(`caneca`, 5, `porcelana`)
 console.log(caneca);
-caneca.aumento(20)
-console.log(caneca);
-
+console.log(caneca.estoque);
+caneca.estoque = 30;
+console.log(caneca.estoque);
 
 
 
