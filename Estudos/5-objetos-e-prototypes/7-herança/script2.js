@@ -25,13 +25,31 @@ Camiseta.prototype.aumento = function(percentual) {
 }
 
 
+function Copo(nome, preco, meterial) {
+    Produto.call(this, nome, preco)
+    
+}
 
-const produto = new Produto(`gen`, 111)
+Copo.prototype = Object.create(Produto.prototype);
+Copo.prototype.constructor = Copo;
+const caneca = new Copo(`caneca`, 5, `porcelana`)
+console.log(caneca);
+caneca.aumento(20)
+console.log(caneca);
 
-const camiseta = new Camiseta(`Regata`, 7.5, `Preta`)
-camiseta.aumento(10)
 
-console.dir(produto);
 
-console.dir(camiseta);
+
+
+
+
+
+// const produto = new Produto(`gen`, 111)
+
+// const camiseta = new Camiseta(`Regata`, 7.5, `Preta`)
+// camiseta.aumento(10)
+
+// console.dir(produto);
+
+// console.dir(camiseta);
 
