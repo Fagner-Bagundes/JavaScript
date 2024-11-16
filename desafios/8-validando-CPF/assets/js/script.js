@@ -5,9 +5,6 @@ let cpfCalculavel;
 let cpfMultiplicado1;
 let cpfMultiplicado2;
 
-
-
-
 function TornaCpfCalculavel() {
     let cpfLimpo = cpf.replace(/\D+/g, ``)
     let cpfArray = Array.from(cpfLimpo);
