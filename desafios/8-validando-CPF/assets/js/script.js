@@ -68,14 +68,31 @@ multiplicador1(10)
 multiplicador2(11)
 
 let resultados = [resultado1(cpfMultiplicado1),resultado2(cpfMultiplicado2)]
-let ultimosDigitosCPF = cpfNumber.splice(-2, 2)
+let ultimoDigCPF = cpfNumber.splice(-2, 2)
 
-
-
-function ValidaCpf(params) {
-
-
+let passou = 0;
+function falaCpfVálido(params) {
+    if (passou > 0) {
+        console.log(`Cpf Válido`);
+        
+    }
+    
 }
+for(let i in ultimoDigCPF){
+    if (resultados[i] === ultimoDigCPF[i]) {
+        falaCpfVálido()
+        ++passou
+    } else{
+        console.log(`cpf Inválido`);
+        
+    }
+}
+
+
+
+
+
+
 
 
 
