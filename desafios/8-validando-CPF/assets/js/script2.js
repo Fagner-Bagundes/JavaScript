@@ -2,11 +2,7 @@
 let cpf = `064.794.352-22`
 let cpfNumber;
 let cpfCalculavel;
-let cpfMultiplicado1;
-let cpfMultiplicado2;
-
-
-
+const multiplicado = []
 
 function TornaCpfCalculavel() {
     let cpfLimpo = cpf.replace(/\D+/g, ``)
@@ -26,7 +22,7 @@ function multiplicador1(mult) {
             --mult
             return multiplicado
     })
-    cpfMultiplicado1 = multCpf1
+    multiplicado[0] = multCpf1
 
 }
 
@@ -42,13 +38,13 @@ function resultado1(cpf) {
 
 
 function multiplicador2(mult) {
-    cpfCalculavel.push(resultado1(cpfMultiplicado1))
+    cpfCalculavel.push(resultado1(multiplicado[0]))
     let multCpf = cpfCalculavel.map((valor) => {
             let multiplicado = valor * mult
             --mult
             return multiplicado
     })
-    cpfMultiplicado2 = multCpf
+    multiplicado[1] = multCpf
 }
 
 
@@ -65,7 +61,7 @@ function resultado2(cpf) {
 multiplicador1(10)
 multiplicador2(11)
 
-let resultados = [resultado1(cpfMultiplicado1),resultado2(cpfMultiplicado2)]
+let resultados = [resultado1(multiplicado[0]),resultado2(multiplicado[1])]
 let ultimoDigCPF = cpfNumber.splice(-2, 2)
 
 
