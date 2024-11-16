@@ -70,20 +70,21 @@ multiplicador2(11)
 let resultados = [resultado1(cpfMultiplicado1),resultado2(cpfMultiplicado2)]
 let ultimoDigCPF = cpfNumber.splice(-2, 2)
 
-let passou = 0;
-function falaCpfVálido(params) {
-    if (passou > 0) {
-        console.log(`Cpf Válido`);
+
+function avisaCPF(i, invalido) {
+    if(invalido === true && i> 0) return console.log(`cpf Inválido`);
+    if (i > 0) return console.log(`Cpf Válido`);
+    
         
-    }
     
 }
 for(let i in ultimoDigCPF){
     if (resultados[i] === ultimoDigCPF[i]) {
-        falaCpfVálido()
-        ++passou
+        avisaCPF(i, false)
+ 
     } else{
-        console.log(`cpf Inválido`);
+
+        avisaCPF(i, true)
         
     }
 }
