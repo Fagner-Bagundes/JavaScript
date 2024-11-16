@@ -1,8 +1,10 @@
 
-let cpf = `370.974.822-49`
+let cpf = `064.794.352-22`
 let cpfNumber;
 let cpfMultiplicado1;
 let cpfMultiplicado2;
+let cpfCalculavel;
+
 
 
 
@@ -10,7 +12,8 @@ function TornaCpfCalculavel() {
     let cpfLimpo = cpf.replace(/\D+/g, ``)
     let cpfArray = Array.from(cpfLimpo);
     cpfNumber = cpfArray.map((valor) => parseInt(valor))
-    cpfNumber.splice(-2, 2)
+    cpfCalculavel = [...cpfNumber]
+    cpfCalculavel.splice(-2, 2)
 }
 TornaCpfCalculavel()
 
@@ -19,7 +22,7 @@ TornaCpfCalculavel()
 function multiplicador1(mult1) {
 
     // fazendo a primeira multiplicação
-    let multCpf1 = cpfNumber.map((valor, indice) => {
+    let multCpf1 = cpfCalculavel.map((valor, indice) => {
             let multiplicado = valor * mult1
             --mult1
             return multiplicado
@@ -40,9 +43,9 @@ function resultado1(cpf) {
 
 
 function multiplicador2(mult) {
-    cpfNumber.push(resultado1(cpfMultiplicado1))
+    cpfCalculavel.push(resultado1(cpfMultiplicado1))
     // fazendo a primeira multiplicação
-    let multCpf = cpfNumber.map((valor, indice) => {
+    let multCpf = cpfCalculavel.map((valor, indice) => {
             let multiplicado = valor * mult
             --mult
             return multiplicado
@@ -63,11 +66,22 @@ function resultado2(cpf) {
 
 multiplicador1(10)
 multiplicador2(11)
-let resultados = [resultado1(cpfMultiplicado1),resultado2(cpfMultiplicado2)]
 
-TornaCpfCalculavel()
-const resultadoFinal = [...cpfNumber, ...resultados]
-console.log(resultadoFinal);
+let resultados = [resultado1(cpfMultiplicado1),resultado2(cpfMultiplicado2)]
+let ultimosDigitosCPF = cpfNumber.splice(-2, 2)
+
+
+
+function ValidaCpf(params) {
+
+
+}
+
+
+
+    
+
+
 
 
 
