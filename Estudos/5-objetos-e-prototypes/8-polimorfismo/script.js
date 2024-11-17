@@ -1,6 +1,6 @@
 // classe = função construtora
 
-// Plomorfismo é uma maneira de fazer metodos se comportarem de uma maneira  diferente dentro de sub classes, que são filhas de uma classe mãe
+// Polimorfismo é uma maneira de fazer metodos se comportarem de uma maneira  diferente dentro de sub classes, que são filhas de uma classe mãe
 
 /* 
 Fazer uma classe de conta bancária;
