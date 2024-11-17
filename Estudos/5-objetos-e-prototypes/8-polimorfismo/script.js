@@ -36,9 +36,36 @@ Conta.prototype.verSaldo = function(){
     console.log(`AG/C: ${this.agencia}/${this.conta} \nSaldo R$${this.saldo.toFixed(2)}`)
 }
 
-Object.create().prototype = Conta.prototype
 
-function ContaCorrente(agencia, conta, saldo) {
+function CC(agencia, conta, saldo, limite) {
     Conta.call(this, agencia, conta, saldo)
+    this.limite = limite
 }
- 
+
+CC.prototype = Object.create(Conta.prototype)
+CC.prototype.constructor = CC
+
+CC.prototype.sacar = function(valor){
+    if (valor > (this.saldo + this.limite)){
+        console.log(`saldo insuficiente: ${this.saldo}`);
+        return
+    }
+
+    this.saldo -= valor
+    this.verSaldo()
+}
+
+const CC1 = new CC(13, 34, 100, 100)
+CC1.sacar(50)
+console.log(` `);
+CC1.sacar(10)
+console.log(` `);
+CC1.sacar(40)
+console.log(` `);
+CC1.sacar(50)
+console.log(` `);
+CC1.sacar(50)
+console.log(` `);
+CC1.sacar(10)
+
+
