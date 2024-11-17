@@ -18,12 +18,13 @@ function Conta(agencia, conta, saldo) {
 }
 
 Conta.prototype.sacar = function(valor){
-    if (this.saldo < 0){
-        this.verSaldo();
+    if (this.saldo <= 0){
+        console.log(`saldo insuficiente`);
         return
     };
 
     this.saldo -= valor
+    this.verSaldo()
 }
 
 Conta.prototype.depositar = function(valor){
@@ -32,7 +33,12 @@ Conta.prototype.depositar = function(valor){
 }
 
 Conta.prototype.verSaldo = function(){
-    console.log(`AG/C: ${this.agencia}/${this.conta} \n Saldos R$${this.saldo.toFixed(2)}`)
+    console.log(`AG/C: ${this.agencia}/${this.conta} \nSaldo R$${this.saldo.toFixed(2)}`)
 }
 
-const conta1 new Conta
+Object.create().prototype = Conta.prototype
+
+function ContaCorrente(agencia, conta, saldo) {
+    Conta.call(this, agencia, conta, saldo)
+}
+ 
