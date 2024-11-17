@@ -18,7 +18,7 @@ function Conta(agencia, conta, saldo) {
 }
 
 Conta.prototype.sacar = function(valor){
-    if (this.saldo <= 0){
+    if (this.saldo < valor){
         console.log(`saldo insuficiente`);
         return
     };
@@ -56,16 +56,17 @@ CC.prototype.sacar = function(valor){
 }
 
 const CC1 = new CC(13, 34, 100, 100)
-CC1.sacar(50)
-console.log(` `);
-CC1.sacar(10)
-console.log(` `);
-CC1.sacar(40)
-console.log(` `);
-CC1.sacar(50)
-console.log(` `);
-CC1.sacar(50)
-console.log(` `);
-CC1.sacar(10)
+CC1.sacar(95)
 
+
+
+function CP(agencia, conta, saldo) {
+    Conta.call(this, agencia, conta, saldo)
+}
+
+CP.prototype = Object.create(Conta.prototype)
+CP.prototype.constructor = CP
+
+const CP1 = new CP(12, 33, 100 );
+CP1.sacar(101)
 
