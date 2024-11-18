@@ -1,5 +1,5 @@
 
-let cpf = `064.794.352-22`
+let cpf = `429.959.310-30`
 let cpfNumber;
 let cpfCalculavel;
 const multiplicado = []
