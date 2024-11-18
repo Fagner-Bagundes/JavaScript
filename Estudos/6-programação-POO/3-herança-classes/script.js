@@ -27,6 +27,24 @@ class Celular extends DispositivoEletronico {
     }
 }
 
-const nokia = new Celular(`Nokia`, `black`)
-nokia.ligar()
-console.log(nokia);
+const cel1 = new Celular(`Nokia`, `black`)
+cel1.ligar()
+console.log(cel1);
+
+class Tablet extends DispositivoEletronico{
+    constructor(nome, cor, modelo){
+        super(nome);
+        this.cor = cor;
+        this.modelo = modelo;
+    }
+
+    // ligar(){
+    //     console.log(`Ligar foi alterado`)
+    // }
+}
+
+const tablet1 = new Tablet(`Ipad`, `rose`, `Aple`)
+tablet1.ligar()
+console.log(tablet1);
+
+
