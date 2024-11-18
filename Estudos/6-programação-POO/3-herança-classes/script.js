@@ -21,9 +21,12 @@ class DispositivoEletronico {
 };
 
 class Celular extends DispositivoEletronico {
-
+    constructor(nome, cor){
+        super(nome)
+        this.cor = cor;
+    }
 }
 
-const nokia = new Celular(`Nokia`)
+const nokia = new Celular(`Nokia`, `black`)
 nokia.ligar()
 console.log(nokia);
