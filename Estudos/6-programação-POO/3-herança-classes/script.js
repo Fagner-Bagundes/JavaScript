@@ -31,6 +31,11 @@ const cel1 = new Celular(`Nokia`, `black`)
 cel1.ligar()
 console.log(cel1);
 
+
+
+
+
+
 class Tablet extends DispositivoEletronico{
     constructor(nome, cor, modelo){
         super(nome);
