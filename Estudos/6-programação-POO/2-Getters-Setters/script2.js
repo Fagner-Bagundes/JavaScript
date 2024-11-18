@@ -1,16 +1,14 @@
-const _Ncompleto = Symbol
+const _Ncompleto = Symbol()
 
 class Pessoa {
     constructor(nome, sobrenome) {
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this[_Ncompleto] = ``
+        this[_Ncompleto] = this[_Ncompleto] = `${this.nome} ${this.sobrenome}`
     }
-
     get nomeCompleto(){
-     this[_Ncompleto] = `${this.nome} ${this.sobrenome}`
      return this[_Ncompleto]
-    }
+    } 
 
     set nomeCompleto(valor){
         valor = valor.split(` `)

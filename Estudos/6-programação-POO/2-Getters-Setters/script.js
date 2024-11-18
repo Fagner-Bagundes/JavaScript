@@ -45,7 +45,9 @@ const c1 = new Carro(`Fusca`)
 // }
 // já que voce criou o symbol, não pode mais acessar a chave velocidade
 // para poder acessar, vc deve usar getter e setter
-c1.velocidade = 200
+c1.velocidade = 99
+console.log(c1);
+
 console.log(c1.velocidade);
 
 
