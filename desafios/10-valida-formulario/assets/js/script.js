@@ -9,84 +9,9 @@ class ValidaFormulario {
         this.senha = document.querySelector(`#senha`)
         this.repSenha = document.querySelector(`#repetir-senha`)
         this.btn = document.querySelector(`#btn`)
-        this.inicia();
-
+        this.pegaSubmit();
+        
     }
-    inicia() {
-        this.pegaSubmit()
-    }
-
-    naoPreenchidos() {
-        let contador = 0;
-        for (let i = 0; i <= 5; i++) {
-            if (!this.inputs[i].value) {
-                ++contador
-            }
-            if (contador > 5) {
-                this.mostraErros()
-            } else {
-                this.removeErros(true);
-            }
-        }
-    }
-
-    validaNome(){
-        let contemNumESimb = /[0-9!@#\$%\^\&*\)\(+=._-]/.test(this.nome.value)
-
-        if (contemNumESimb) {
-            let nomeError = this.criaDivs(false, true)
-            nomeError.textContent = `Só é permitido letras no nome`
-            nomeError.classList.add(`nomeError`)
-            this.nome.insertAdjacentElement("afterend", nomeError)
-
-            
-        } else{
-            this.removeErros(false, true)
-        }
-    }
-
-    verificaPreenchidos() {
-        this.naoPreenchidos();
-        this.validaNome()
-    }
-
-    criaDivs(erro) {
-        if (erro) {
-            const novaDiv = document.createElement(`div`)
-            novaDiv.style.color = `red`;
-            return novaDiv
-        }
-    }
-
-    mostraErros() {
-        let erros = document.querySelectorAll(`.erros`)
-        for (let i = 0; i <= 5; i++) {
-            if (erros[i]) {
-                erros[i].remove()
-            }
-            this.inputs[i].insertAdjacentElement("afterend", this.criaDivs(true))
-        }
-    }
-
-    removeErros(erros, erro) {
-        if (erros) {
-            let erros = document.querySelectorAll(`.erros`)
-            for (let i = 0; i <= 5; i++) {
-                if (erros[i]) {
-                    erros[i].remove()
-                }
-            }
-        }
-        if (erro) {
-            let nomeErrorInput = document.querySelector(`.nomeError`)
-            if (nomeErrorInput) {
-                nomeErrorInput.remove()
-            }
-        }
-
-    }
-
-   
 
     pegaSubmit() {
         this.form.addEventListener(`submit`, (e) => {
@@ -94,6 +19,76 @@ class ValidaFormulario {
             this.verificaPreenchidos();
         })
     }
+
+    verificaPreenchidos() {
+        this.validaNome()
+        this.validaSobrenome()
+        this.validaCPF();
+        this.validaUsuario();
+        this.validaSenha();
+        this.validaRepSenha();
+    }
+
+    validaNome(){
+        this.ErrrorInputVazio(this.nome, `nome`)
+
+        let contemNumESimb = /[0-9!@#\$%\^\&*\)\(+=._-]/.test(this.nome.value)
+        if (contemNumESimb) {
+            this.erro()
+        }
+    }
+
+    validaSobrenome(){
+        this.ErrrorInputVazio(this.sobrenome, `sobrenome`)
+    }
+
+    validaCPF(){
+        this.ErrrorInputVazio(this.cpf, `cpf`)
+    }
+
+    validaUsuario(){
+        this.ErrrorInputVazio(this.usuario, `usuario`)
+    }
+
+    validaSenha(){
+        this.ErrrorInputVazio(this.senha, `senha`)
+    }
+
+    validaRepSenha(){
+        this.ErrrorInputVazio(this.repSenha, `repSenha`)
+    }
+
+    
+    erro(){
+        let error = this.criaDivs()
+        error.textContent = `digite apenas letras no campo`
+    }
+
+    ErrrorInputVazio(nome, classe){
+        if (!nome.value) {
+            this.removeErros(classe)
+            let error = this.criaDivs();
+            error.textContent = `Digite algo no campo`;
+            error.classList = `erroVazio-${classe}`
+            nome.insertAdjacentElement('afterend', error)   
+        } else{
+            this.removeErros(classe)
+        }
+    }
+
+    criaDivs() {
+            const novaDiv = document.createElement(`div`)
+            novaDiv.style.color = `red`;
+            return novaDiv
+        
+    }
+
+    removeErros(classe) {
+            let Error = document.querySelector(`.erroVazio-${classe}`)
+            if(Error){
+                Error.remove()
+            }
+        }
 }
 
 const valida1 = new ValidaFormulario()
