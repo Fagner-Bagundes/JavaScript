@@ -26,18 +26,26 @@ class ValidaFormulario {
     }
 
     validaNome(){
-        this.ErrrorInputVazio(this.nome, `nome`)
-        let contemNumESimb = /[0-9!@#\$%\^\&*\)\(+=._-]/.test(this.nome.value)
-        if (contemNumESimb) {
-            this.criaErros(`errorName`, this.nome, `nome`);
+        if (!this.ErrrorInputVazio(this.nome, `nome`)) {
+            let contemNumESimb = /[0-9!@#\$%\^\&*\)\(+=._-]/.test(this.nome.value)
+            if (contemNumESimb) {
+                this.criaErros(`errorName`, this.nome, `nome`);
+            }else{
+                this.mudaEstilos(this.nome, true)
+            } 
         }
+        
+ 
     }
 
     validaSobrenome(){
-        this.ErrrorInputVazio(this.sobrenome, `sobrenome`)
-        let contemNumESimb = /[0-9!@#\$%\^\&*\)\(+=._-]/.test(this.sobrenome.value)
-        if (contemNumESimb) {
-            this.criaErros(`errorName`, this.sobrenome, `sobrenome`);
+        if (!this.ErrrorInputVazio(this.sobrenome, `sobrenome`)) {
+            let contemNumESimb = /[0-9!@#\$%\^\&*\)\(+=._-]/.test(this.sobrenome.value)
+            if (contemNumESimb) {
+                this.criaErros(`errorName`, this.sobrenome, `sobrenome`);
+            }else{
+                this.mudaEstilos(this.sobrenome, true)
+            }    
         }
     }
 
@@ -47,6 +55,8 @@ class ValidaFormulario {
             const cpfValidado = new ValidadeCPF(novoCpf)
             if (!cpfValidado.validar()) {
                 this.criaErros(`cpfError`, this.cpf, `cpf`)
+            } else{
+                this.mudaEstilos(this.cpf, true)
             } 
         }
         
@@ -58,15 +68,17 @@ class ValidaFormulario {
             
             if (contemSimbolos) {
                 this.criaErros(`usuariosSimbulos`, this.usuario, `usuario`)
+                return
             }
-
             if(this.usuario.value.length > 12){
                 this.criaErros(`caracteresLimites`, this.usuario, `usuario`)
+                return
             }
             if(this.usuario.value.length < 3){
                 this.criaErros(`usuarioInsuficiente`, this.usuario, `usuario`)
+                return
             }
-
+            this.mudaEstilos(this.usuario, true)
         }
     }
 
@@ -74,14 +86,15 @@ class ValidaFormulario {
         if(!this.ErrrorInputVazio(this.senha, `senha`)){
             if(this.senha.value.length > 12){
                 this.criaErros(`caracteresLimites`, this.senha, `senha`)
-            }
+            } else{
+                this.mudaEstilos(this.senha, true)
+            } 
         }
 
     }
 
     validaRepSenha(){
         if (!this.ErrrorInputVazio(this.repSenha, `repSenha`)) {
-
             let senha = Array.from(this.senha.value)
             let repSenha = Array.from(this.repSenha.value)
             for(let i in senha){
@@ -89,19 +102,30 @@ class ValidaFormulario {
                     this.criaErros(`senhaDiferente`, this.repSenha, `repSenha`)
                     return
                     
-                }
+                }else{
+                    this.mudaEstilos(this.repSenha, true)
+                } 
             }   
         }
        
     }
 
+    mudaEstilos(classe, valido){
+        if (valido) {
+            classe.classList.add(`valido`)   
+        } else{
+            if (classe) {
+                classe.classList.remove(`valido`)
+            }
+        }
+    }
     adicionaDivs(error, classe, name){
         error.classList = `erro-${name}`
         classe.insertAdjacentElement('afterend', error)
     }
     
     criaErros(erro, classe, name){
-
+        this.mudaEstilos(classe, false)
         if (erro === `errorName`) {
             let error = this.criaDivs()
             error.textContent = `digite apenas letras no campo`

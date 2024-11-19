@@ -70,3 +70,7 @@ main{
     cursor: pointer;
     background-color: rgb(5, 91, 97);
 }
+
+.valido{
+    border: 2px solid rgb(43, 150, 43) ;
+}
