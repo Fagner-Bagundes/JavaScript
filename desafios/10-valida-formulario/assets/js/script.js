@@ -173,6 +173,7 @@ class ValidaFormulario {
     }
 
     ErrrorInputVazio(nome, classe){
+        this.mudaEstilos(nome,false)
         if (!nome.value) {
             this.removeErros(classe)
             let error = this.criaDivs();
@@ -200,19 +201,19 @@ class ValidaFormulario {
     }
 
     enviaFormulario(){
-        let envia;
+        let envia = 0;
         this.inputs.forEach((valor, indice)=>{
             if (!valor.classList.contains(`valido`)) {
-                envia = false               
+                envia--              
             }else{
-                envia = true
+                envia++
             }
         })
-
-        if (envia) alert(`aaaaaaaaaaaaaaaaaaaaaaaaaa`)
-
-
-
+        if (envia >= 6) {
+            setTimeout(() => {
+                alert(`aaaaaaaaaaaaaaaaaa`)
+            }, 500);
+        }
     }
 }
 const valida1 = new ValidaFormulario()
