@@ -59,8 +59,6 @@ class ValidadeCPF {
 
 }
 
-const cpfValido = new ValidadeCPF(`804.023.760-21`)
-console.log(cpfValido.validar())
 
 
 

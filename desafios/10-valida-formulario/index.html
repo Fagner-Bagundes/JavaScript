@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/validaCPF.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <section class="apresentation">
+            <h1>Formulário de Cadastro</h1>
+            <ul class="lista">
+                <li>Nenum campo pode estar vazio</li>
+                <li>Usuáro só poderá conter letras e/ou números</li>
+                <li>Usuário deverá  ter entre 3 e 12 caracteres</li>
+                <li>Senha precisa ter 6 a 12 caracteres</li>
+            </ul>
+        </section>
+
+        <section class="arae-formulario">
+            <form action="" method="post" class="formulario">
+
+                <div class="area-dados">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="input" id="nome">
+                </div>
+
+                <div class="area-dados">
+                    <label for="sobreNome">Sobrenome</label>
+                    <input type="text" class="input" id="sobrenome">
+                </div>
+                <div class="area-dados">
+                    <label for="CPF">CPF</label>
+                    <input type="text" class="input" id="CPF">
+    
+                </div>
+                <div class="area-dados">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" class="input" id="usuario">
+    
+                </div>
+                <div class="area-dados">
+                    <label for="senha">Senha</label>
+                    <input type="text" class="input" id="senha">
+    
+                </div>
+                <div class="area-dados">
+                    <label for="repetir-senha">Repetir Senha</label>
+                    <input type="text" class="input" id="repetir-senha">
+    
+                </div>
+
+                <div>
+                    <button type="submit" id="btn"> Enviar</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>

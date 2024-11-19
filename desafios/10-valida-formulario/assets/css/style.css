@@ -1,0 +1,65 @@
+body{
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(4, 26, 36, 0.947);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    
+}
+
+
+main{
+    
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.arae-formulario{
+    margin-block: 20px;
+    width: 100%;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.area-dados{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input{
+    height: 35px;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+
+#btn{
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(0, 119, 128);
+    border: none;
+    color: white;
+
+}
