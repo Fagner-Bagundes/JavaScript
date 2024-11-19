@@ -7,13 +7,17 @@ class ValidadeCPF {
         this.ultimoDigCPF = []
         this.resultados = []
         this.DigitosArray = []        
-        if (this.cpfNumber.length > 11){
-            console.log(`oiii`);
-        } else{
-            this.inicia()
-        }
-        
     };
+
+    inicia(){
+        if (this.cpfNumber.length > 11) return false;
+        this.TornaCpfCalculavel()
+        this.multiplicador(10, 0)
+        this.cpfCalculavel.push(this.resultado(this.multiplicado[0]))
+        this.multiplicador(11, 1)
+        this.resultados = [this.resultado(this.multiplicado[0]), this.resultado(this.multiplicado[1])]
+        this.ultimoDigCPF = this.cpfNumber.splice(-2, 2)
+    } 
 
     TornaCpfCalculavel() {
         let cpfLimpo = this.cpf.replace(/\D+/g, ``)
@@ -31,17 +35,12 @@ class ValidadeCPF {
     })
     
     this.multiplicado[i] = multCpf1
-    
     };
 
-
     resultado(cpf) {
-        // soma
         let soma = cpf.reduce((acumulador, valor) => {
             return acumulador + valor
         }, 0)
-
-        // divisão
         let resultado =  11 - (soma % 11)
         if(resultado >=10) resultado = 0;
         return resultado
@@ -49,33 +48,19 @@ class ValidadeCPF {
 
     validar(){
         let validado = true;
-        
         for (let i = 0; i < 4; i++) {
             if (this.resultados[i] !== this.ultimoDigCPF[i]) {
                 validado = false;
                 break;
             }
         }
-        
         return validado
-        
-    }
+    };
 
-    inicia(){
-        if (this.cpfNumber.length > 11) return false;
-        this.TornaCpfCalculavel()
-        this.multiplicador(10, 0)
-        this.cpfCalculavel.push(this.resultado(this.multiplicado[0]))
-        this.multiplicador(11, 1)
-        this.resultados = [this.resultado(this.multiplicado[0]), this.resultado(this.multiplicado[1])]
-        this.ultimoDigCPF = this.cpfNumber.splice(-2, 2)
-    } 
 }
 
 
 const cpfValido = new ValidadeCPF(`804.023.760-21`)
-console.log([...cpfValido.ultimoDigCPF, ...cpfValido.resultados]);
-
 console.log(cpfValido.validar())
 
 
