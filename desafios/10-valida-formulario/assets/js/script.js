@@ -16,17 +16,13 @@ class ValidaFormulario {
     pegaSubmit() {
         this.form.addEventListener(`submit`, (e) => {
             e.preventDefault();
-            this.verificaPreenchidos();
+            this.validaNome()
+            this.validaSobrenome()
+            this.validaCPF();
+            this.validaUsuario();
+            this.validaSenha();
+            this.validaRepSenha();
         })
-    }
-
-    verificaPreenchidos() {
-        this.validaNome()
-        this.validaSobrenome()
-        this.validaCPF();
-        this.validaUsuario();
-        this.validaSenha();
-        this.validaRepSenha();
     }
 
     validaNome(){
@@ -94,59 +90,63 @@ class ValidaFormulario {
                     return
                     
                 }
-            }
-
-            
+            }   
         }
        
     }
 
+    adicionaDivs(error, classe, name){
+        error.classList = `erro-${name}`
+        classe.insertAdjacentElement('afterend', error)
+    }
+    
     criaErros(erro, classe, name){
+
         if (erro === `errorName`) {
             let error = this.criaDivs()
             error.textContent = `digite apenas letras no campo`
-            error.classList = `erro-${name}`
-            classe.insertAdjacentElement('afterend', error)
+            this.adicionaDivs(error, classe, name)`{
+            }`
         }
 
         if (erro === `cpfError`) {
             this.removeErros(name)
             let error = this.criaDivs()
             error.textContent = `Cpf invalido`
-            error.classList = `erro-${name}`
-            classe.insertAdjacentElement('afterend', error)
+            this.adicionaDivs(error, classe, name)`{
+            }`
         }
 
         if (erro === `usuariosSimbulos`) {
             this.removeErros(name)
             let error = this.criaDivs()
             error.textContent = `Digite apenas letras ou numeros`
-            error.classList = `erro-${name}`
-            classe.insertAdjacentElement('afterend', error)
+            this.adicionaDivs(error, classe, name)`{
+            }`
         }
 
         if (erro === `caracteresLimites`) {
             this.removeErros(name)
             let error = this.criaDivs()
             error.textContent = `${name} deve ter no máximo 12 caracteres`
-            error.classList = `erro-${name}`
-            classe.insertAdjacentElement('afterend', error)
+            this.adicionaDivs(error, classe, name)`{
+            }`
         }
 
         if (erro === `usuarioInsuficiente`){
             this.removeErros(name)
             let error = this.criaDivs()
             error.textContent = `Usuário deve ter no mínimo 3 caracteres`
-            error.classList = `erro-${name}`
-            classe.insertAdjacentElement('afterend', error)
+            this.adicionaDivs(error, classe, name)`{
+            }`
         }
 
         if (erro === `senhaDiferente`) {
             this.removeErros(name)
             let error = this.criaDivs()
             error.textContent = `A senha está diferente!`
-            error.classList = `erro-${name}`
-            classe.insertAdjacentElement('afterend', error)
+            this.adicionaDivs(error, classe, name)`{
+            }`
         }
 
     }
@@ -165,8 +165,6 @@ class ValidaFormulario {
         }
     }
 
-
-
     criaDivs() {
             const novaDiv = document.createElement(`div`)
             novaDiv.style.color = `red`;
@@ -179,8 +177,7 @@ class ValidaFormulario {
             if(Error){
                 Error.remove()
             }
-        }
+    }
 }
-
 const valida1 = new ValidaFormulario()
 
