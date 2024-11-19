@@ -34,12 +34,16 @@ class ValidaFormulario {
 
         let contemNumESimb = /[0-9!@#\$%\^\&*\)\(+=._-]/.test(this.nome.value)
         if (contemNumESimb) {
-            this.erro()
+            this.criaErros(`errorName`, this.nome, `nome`);
         }
     }
 
     validaSobrenome(){
         this.ErrrorInputVazio(this.sobrenome, `sobrenome`)
+        let contemNumESimb = /[0-9!@#\$%\^\&*\)\(+=._-]/.test(this.sobrenome.value)
+        if (contemNumESimb) {
+            this.criaErros(`errorName`, this.sobrenome, `sobrenome`);
+        }
     }
 
     validaCPF(){
@@ -58,10 +62,13 @@ class ValidaFormulario {
         this.ErrrorInputVazio(this.repSenha, `repSenha`)
     }
 
-    
-    erro(){
-        let error = this.criaDivs()
-        error.textContent = `digite apenas letras no campo`
+    criaErros(erro, classe, name){
+        if (erro === `errorName`) {
+            let error = this.criaDivs()
+            error.textContent = `digite apenas letras no campo`
+            error.classList = `erroVazio-${name}`
+            classe.insertAdjacentElement('afterend', error)
+        }
     }
 
     ErrrorInputVazio(nome, classe){
@@ -75,6 +82,8 @@ class ValidaFormulario {
             this.removeErros(classe)
         }
     }
+
+
 
     criaDivs() {
             const novaDiv = document.createElement(`div`)
