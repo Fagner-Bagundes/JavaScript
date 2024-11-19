@@ -64,6 +64,13 @@ class ValidaFormulario {
                 this.criaErros(`usuariosSimbulos`, this.usuario, `usuario`)
             }
 
+            if(this.usuario.value.length > 12){
+                this.criaErros(`usuarioLimite`, this.usuario, `usuario`)
+            }
+            if(this.usuario.value.length < 3){
+                this.criaErros(`usuarioInsuficiente`, this.usuario, `usuario`)
+            }
+
         }
     }
 
@@ -98,6 +105,25 @@ class ValidaFormulario {
             error.classList = `erro-${name}`
             classe.insertAdjacentElement('afterend', error)
         }
+
+        if (erro === `usuarioLimite`) {
+            this.removeErros(name)
+            let error = this.criaDivs()
+            error.textContent = `Usuário deve ter no máximo 12 caracteres`
+            error.classList = `erro-${name}`
+            classe.insertAdjacentElement('afterend', error)
+        }
+
+        if (erro === `usuarioInsuficiente`){
+            this.removeErros(name)
+            let error = this.criaDivs()
+            error.textContent = `Usuário deve ter no mínimo 3 caracteres`
+            error.classList = `erro-${name}`
+            classe.insertAdjacentElement('afterend', error)
+        }
+
+
+
     }
 
     ErrrorInputVazio(nome, classe){
