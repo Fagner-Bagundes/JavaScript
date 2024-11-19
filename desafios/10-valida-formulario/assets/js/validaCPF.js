@@ -47,6 +47,7 @@ class ValidadeCPF {
     };
 
     validar(){
+        this.inicia()
         let validado = true;
         for (let i = 0; i < 4; i++) {
             if (this.resultados[i] !== this.ultimoDigCPF[i]) {
@@ -56,8 +57,9 @@ class ValidadeCPF {
         }
         return validado
     };
-
 }
+
+
 
 
 

@@ -47,6 +47,7 @@ class ValidadeCPF {
     };
 
     validar(){
+        this.inicia()
         let validado = true;
         for (let i = 0; i < 4; i++) {
             if (this.resultados[i] !== this.ultimoDigCPF[i]) {
@@ -59,7 +60,7 @@ class ValidadeCPF {
 
 }
 
-const cpfValido = new ValidadeCPF(`804.023.760-21`)
+const cpfValido = new ValidadeCPF(`370.974.822-49`)
 console.log(cpfValido.validar())
 
 

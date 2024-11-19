@@ -31,7 +31,6 @@ class ValidaFormulario {
 
     validaNome(){
         this.ErrrorInputVazio(this.nome, `nome`)
-
         let contemNumESimb = /[0-9!@#\$%\^\&*\)\(+=._-]/.test(this.nome.value)
         if (contemNumESimb) {
             this.criaErros(`errorName`, this.nome, `nome`);
@@ -47,7 +46,15 @@ class ValidaFormulario {
     }
 
     validaCPF(){
-        this.ErrrorInputVazio(this.cpf, `cpf`)
+        if (!this.ErrrorInputVazio(this.cpf, `cpf`)) {
+            const novoCpf = this.cpf.value;
+            const cpfValidado = new ValidadeCPF(novoCpf)
+            if (!cpfValidado.validar()) {
+                this.criaErros(`cpfError`, this.cpf, `cpf`)
+            } 
+
+        }
+        
     }
 
     validaUsuario(){
@@ -66,7 +73,15 @@ class ValidaFormulario {
         if (erro === `errorName`) {
             let error = this.criaDivs()
             error.textContent = `digite apenas letras no campo`
-            error.classList = `erroVazio-${name}`
+            error.classList = `erro-${name}`
+            classe.insertAdjacentElement('afterend', error)
+        }
+
+        if (erro === `cpfError`) {
+            this.removeErros(name)
+            let error = this.criaDivs()
+            error.textContent = `Cpf invalido`
+            error.classList = `erro-${name}`
             classe.insertAdjacentElement('afterend', error)
         }
     }
@@ -76,10 +91,12 @@ class ValidaFormulario {
             this.removeErros(classe)
             let error = this.criaDivs();
             error.textContent = `Digite algo no campo`;
-            error.classList = `erroVazio-${classe}`
-            nome.insertAdjacentElement('afterend', error)   
+            error.classList = `erro-${classe}`
+            nome.insertAdjacentElement('afterend', error)
+            return true   
         } else{
             this.removeErros(classe)
+            return false
         }
     }
 
@@ -93,7 +110,7 @@ class ValidaFormulario {
     }
 
     removeErros(classe) {
-            let Error = document.querySelector(`.erroVazio-${classe}`)
+            let Error = document.querySelector(`.erro-${classe}`)
             if(Error){
                 Error.remove()
             }
