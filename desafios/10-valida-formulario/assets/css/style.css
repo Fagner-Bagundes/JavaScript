@@ -54,6 +54,9 @@ main{
     padding-left: 10px;
     font-size: 1rem;
 }
+.input:hover{
+    cursor: pointer;
+}
 
 #btn{
     width: 100%;
@@ -61,5 +64,9 @@ main{
     background-color: rgb(0, 119, 128);
     border: none;
     color: white;
+}
 
+#btn:hover{
+    cursor: pointer;
+    background-color: rgb(5, 91, 97);
 }
