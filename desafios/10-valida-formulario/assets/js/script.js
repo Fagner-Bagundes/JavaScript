@@ -84,7 +84,21 @@ class ValidaFormulario {
     }
 
     validaRepSenha(){
-        this.ErrrorInputVazio(this.repSenha, `repSenha`)
+        if (!this.ErrrorInputVazio(this.repSenha, `repSenha`)) {
+
+            let senha = Array.from(this.senha.value)
+            let repSenha = Array.from(this.repSenha.value)
+            for(let i in senha){
+                if (senha[i] !== repSenha[i] || repSenha.length > senha.length)  {
+                    this.criaErros(`senhaDiferente`, this.repSenha, `repSenha`)
+                    return
+                    
+                }
+            }
+
+            
+        }
+       
     }
 
     criaErros(erro, classe, name){
@@ -127,7 +141,13 @@ class ValidaFormulario {
             classe.insertAdjacentElement('afterend', error)
         }
 
-
+        if (erro === `senhaDiferente`) {
+            this.removeErros(name)
+            let error = this.criaDivs()
+            error.textContent = `A senha está diferente!`
+            error.classList = `erro-${name}`
+            classe.insertAdjacentElement('afterend', error)
+        }
 
     }
 
@@ -154,8 +174,8 @@ class ValidaFormulario {
         
     }
 
-    removeErros(classe) {
-            let Error = document.querySelector(`.erro-${classe}`)
+    removeErros(name) {
+            let Error = document.querySelector(`.erro-${name}`)
             if(Error){
                 Error.remove()
             }
