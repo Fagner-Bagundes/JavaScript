@@ -65,7 +65,7 @@ class ValidaFormulario {
             }
 
             if(this.usuario.value.length > 12){
-                this.criaErros(`usuarioLimite`, this.usuario, `usuario`)
+                this.criaErros(`caracteresLimites`, this.usuario, `usuario`)
             }
             if(this.usuario.value.length < 3){
                 this.criaErros(`usuarioInsuficiente`, this.usuario, `usuario`)
@@ -75,7 +75,12 @@ class ValidaFormulario {
     }
 
     validaSenha(){
-        this.ErrrorInputVazio(this.senha, `senha`)
+        if(!this.ErrrorInputVazio(this.senha, `senha`)){
+            if(this.senha.value.length > 12){
+                this.criaErros(`caracteresLimites`, this.senha, `senha`)
+            }
+        }
+
     }
 
     validaRepSenha(){
@@ -106,10 +111,10 @@ class ValidaFormulario {
             classe.insertAdjacentElement('afterend', error)
         }
 
-        if (erro === `usuarioLimite`) {
+        if (erro === `caracteresLimites`) {
             this.removeErros(name)
             let error = this.criaDivs()
-            error.textContent = `Usuário deve ter no máximo 12 caracteres`
+            error.textContent = `${name} deve ter no máximo 12 caracteres`
             error.classList = `erro-${name}`
             classe.insertAdjacentElement('afterend', error)
         }
