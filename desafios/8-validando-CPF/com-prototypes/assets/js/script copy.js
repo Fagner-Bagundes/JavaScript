@@ -6,6 +6,8 @@ class ValidadeCPF {
         this.multiplicado = []
         this.ultimoDigCPF = 0
         this.resultados = 0
+        this.final = `oii`
+        
         if (this.cpfNumber.length > 11){
             console.log(`oiii`);
         } else{
@@ -44,12 +46,21 @@ class ValidadeCPF {
         let resultado =  11 - (soma % 11)
         if(resultado >=10) resultado = 0;
         return resultado
-    }
+    };
+    
+    validacaoFinal(invalido, ac) {
 
-    avisaCPF(i, invalido) {
-        if(invalido === true && i> 0) return console.log(`Cpf inValido`);
-        if (i > 0) return console.log(`Cpf Valido`);
-    }
+        if (invalido) {
+            this.final = false
+            console.log(`falso`);
+            
+        } else if(invalido){
+            this.final = true
+            console.log(`vdd`);
+        }
+        
+        
+        }
 
     inicia(){
         if (this.cpfNumber.length > 11) return false;
@@ -58,22 +69,28 @@ class ValidadeCPF {
         this.cpfCalculavel.push(this.resultado(this.multiplicado[0]))
         this.multiplicador(11, 1)
         this.resultados = [this.resultado(this.multiplicado[0]), this.resultado(this.multiplicado[1])]
+
         this.ultimoDigCPF =  this.cpfNumber.splice(-2, 2)
         for(let i in this.ultimoDigCPF){
-            this.resultados[i] === this.ultimoDigCPF[i] ? this.avisaCPF(i, false) :  this.avisaCPF(i, true)      
+            this.resultados[i] === this.ultimoDigCPF[i] ? this.validacaoFinal(false) :  this.validacaoFinal(true)      
         }
     } 
 }
 
 
-const cpfValido = new ValidadeCPF(`108.840.020-55`)
+const cpfValido = new ValidadeCPF(`064.794.352-22`)
+
+// console.log(cpfValido);
+console.log(` `);
 
 
 
+cpfValido.validacaoFinal()
+console.log(cpfValido.final);
+
+// console.log(cpfValido.final);
 
 
-
-    
 
 
 
