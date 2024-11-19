@@ -50,8 +50,8 @@ class ValidadeCPF {
     validar(){
         let validado = true;
         
-        for (let i = 1; i < 4; i++) {
-            if (this.digitosArray[i] !== this.digitosArray[0]) {
+        for (let i = 0; i < 4; i++) {
+            if (this.resultados[i] !== this.ultimoDigCPF[i]) {
                 validado = false;
                 break;
             }
@@ -69,21 +69,15 @@ class ValidadeCPF {
         this.multiplicador(11, 1)
         this.resultados = [this.resultado(this.multiplicado[0]), this.resultado(this.multiplicado[1])]
         this.ultimoDigCPF = this.cpfNumber.splice(-2, 2)
-   
-        this.digitosArray = [...this.ultimoDigCPF ,...this.resultados]
-        console.log(this.digitosArray);
-        
-        
-
-       
-
     } 
 }
 
 
-const cpfValido = new ValidadeCPF(`064.794.352-22`)
+const cpfValido = new ValidadeCPF(`804.023.760-21`)
+console.log([...cpfValido.ultimoDigCPF, ...cpfValido.resultados]);
 
 console.log(cpfValido.validar())
+
 
 
 
