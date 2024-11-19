@@ -52,13 +52,19 @@ class ValidaFormulario {
             if (!cpfValidado.validar()) {
                 this.criaErros(`cpfError`, this.cpf, `cpf`)
             } 
-
         }
         
     }
 
     validaUsuario(){
-        this.ErrrorInputVazio(this.usuario, `usuario`)
+        if (!this.ErrrorInputVazio(this.usuario, `usuario`)) {
+            let contemSimbolos = /[^\w\s]/.test(this.usuario.value);
+            
+            if (contemSimbolos) {
+                this.criaErros(`usuariosSimbulos`, this.usuario, `usuario`)
+            }
+
+        }
     }
 
     validaSenha(){
@@ -81,6 +87,14 @@ class ValidaFormulario {
             this.removeErros(name)
             let error = this.criaDivs()
             error.textContent = `Cpf invalido`
+            error.classList = `erro-${name}`
+            classe.insertAdjacentElement('afterend', error)
+        }
+
+        if (erro === `usuariosSimbulos`) {
+            this.removeErros(name)
+            let error = this.criaDivs()
+            error.textContent = `Digite apenas letras ou numeros`
             error.classList = `erro-${name}`
             classe.insertAdjacentElement('afterend', error)
         }
