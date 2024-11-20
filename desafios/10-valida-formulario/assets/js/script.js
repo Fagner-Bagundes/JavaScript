@@ -10,9 +10,8 @@ class ValidaFormulario {
         this.repSenha = document.querySelector(`#repetir-senha`)
         this.btn = document.querySelector(`#btn`)
         this.dadosAprovados = 0; 
-        this.pegaSubmit();
-        
-    }
+        this.pegaSubmit(); 
+    };
 
     pegaSubmit() {
         this.form.addEventListener(`submit`, (e) => {
@@ -26,7 +25,7 @@ class ValidaFormulario {
             this.enviaFormulario()
         })
 
-    }
+    };
 
     validaNome(){
         if (!this.ErrrorInputVazio(this.nome, `nome`)) {
@@ -39,7 +38,7 @@ class ValidaFormulario {
         }
         
  
-    }
+    };
 
     validaSobrenome(){
         if (!this.ErrrorInputVazio(this.sobrenome, `sobrenome`)) {
@@ -50,7 +49,7 @@ class ValidaFormulario {
                 this.mudaEstilos(this.sobrenome, true)
             }    
         }
-    }
+    };
 
     validaCPF(){
         if (!this.ErrrorInputVazio(this.cpf, `cpf`)) {
@@ -63,7 +62,7 @@ class ValidaFormulario {
             } 
         }
         
-    }
+    };
 
     validaUsuario(){
         if (!this.ErrrorInputVazio(this.usuario, `usuario`)) {
@@ -83,7 +82,7 @@ class ValidaFormulario {
             }
             this.mudaEstilos(this.usuario, true)
         }
-    }
+    };
 
     validaSenha(){
         if(!this.ErrrorInputVazio(this.senha, `senha`)){
@@ -94,7 +93,7 @@ class ValidaFormulario {
             } 
         }
 
-    }
+    };
 
     validaRepSenha(){
         if (!this.ErrrorInputVazio(this.repSenha, `repSenha`)) {
@@ -111,25 +110,25 @@ class ValidaFormulario {
             }   
         }
        
-    }
+    };
     
     adicionaDivs(erro, classe, name){
         erro.classList = `erro-${name}`
         classe.insertAdjacentElement('afterend', erro)
-    }
+    };
     
     criaErros(erro, classe, name){
         this.mudaEstilos(classe, false)
         if (erro === `errorName`) {
             let error = this.criaDivs()
-            error.textContent = `digite apenas letras no campo`
+            error.textContent = `Digite apenas letras no campo!`
             this.adicionaDivs(error, classe, name)
         }
 
         if (erro === `cpfError`) {
             this.removeErros(name)
             let error = this.criaDivs()
-            error.textContent = `Cpf invalido`
+            error.textContent = `Cpf inválido!`
             this.adicionaDivs(error, classe, name)
         }
 
@@ -161,7 +160,7 @@ class ValidaFormulario {
             this.adicionaDivs(error, classe, name)
         }
 
-    }
+    };
 
     ErrrorInputVazio(classe, name){
         this.mudaEstilos(classe,false)
@@ -176,20 +175,20 @@ class ValidaFormulario {
             this.removeErros(name)
             return false
         }
-    }
+    };
 
     criaDivs() {
             const novaDiv = document.createElement(`div`)
             novaDiv.style.color = `red`;
             return novaDiv
-    }
+    };
 
     removeErros(name) {
             let Error = document.querySelector(`.erro-${name}`)
             if(Error){
                 Error.remove()
             }
-    }
+    };
         
     mudaEstilos(classe, valido){
         if (valido) {
@@ -199,7 +198,7 @@ class ValidaFormulario {
                 classe.classList.remove(`valido`)
             }
         }
-    }
+    };
 
     enviaFormulario(){
         let envia = 0;
@@ -216,7 +215,7 @@ class ValidaFormulario {
                 this.limpaFormulario(true)
             }, 500);
         }
-    }
+    };
 
     limpaFormulario(passe){
         this.inputs.forEach((valor, i)=>{
@@ -226,8 +225,10 @@ class ValidaFormulario {
                 valor.classList.remove(`valido`)
             }
         })
-    }
+    };
 
-}
-const valida1 = new ValidaFormulario()
+};
+
+
+const valida1 = new ValidaFormulario();
 

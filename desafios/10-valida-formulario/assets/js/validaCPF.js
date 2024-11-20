@@ -57,7 +57,7 @@ class ValidadeCPF {
         }
         return validado
     };
-}
+};
 
 
 
