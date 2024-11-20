@@ -223,6 +223,7 @@ class ValidaFormulario {
             console.log(i, `: `,valor);
             if (valor.classList.contains(`valido`)) {
                 valor.value = ``
+                valor.classList.remove(`valido`)
             }
         })
     }
