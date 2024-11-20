@@ -112,16 +112,6 @@ class ValidaFormulario {
         }
        
     }
-
-    mudaEstilos(classe, valido){
-        if (valido) {
-            classe.classList.add(`valido`)   
-        } else{
-            if (classe) {
-                classe.classList.remove(`valido`)
-            }
-        }
-    }
     
     adicionaDivs(erro, classe, name){
         erro.classList = `erro-${name}`
@@ -203,7 +193,7 @@ class ValidaFormulario {
 
     enviaFormulario(){
         let envia = 0;
-        this.inputs.forEach((valor, indice)=>{
+        this.inputs.forEach((valor)=>{
             if (!valor.classList.contains(`valido`)) {
                 envia--              
             }else{
@@ -212,8 +202,18 @@ class ValidaFormulario {
         })
         if (envia >= 6) {
             setTimeout(() => {
-                alert(`aaaaaaaaaaaaaaaaaa`)
+                alert(`Formulário Enviado`)
             }, 500);
+        }
+    }
+
+    mudaEstilos(classe, valido){
+        if (valido) {
+            classe.classList.add(`valido`)   
+        } else{
+            if (classe) {
+                classe.classList.remove(`valido`)
+            }
         }
     }
 }
