@@ -190,6 +190,16 @@ class ValidaFormulario {
                 Error.remove()
             }
     }
+        
+    mudaEstilos(classe, valido){
+        if (valido) {
+            classe.classList.add(`valido`)   
+        } else{
+            if (classe) {
+                classe.classList.remove(`valido`)
+            }
+        }
+    }
 
     enviaFormulario(){
         let envia = 0;
@@ -203,19 +213,20 @@ class ValidaFormulario {
         if (envia >= 6) {
             setTimeout(() => {
                 alert(`Formulário Enviado`)
+                this.limpaFormulario(true)
             }, 500);
         }
     }
 
-    mudaEstilos(classe, valido){
-        if (valido) {
-            classe.classList.add(`valido`)   
-        } else{
-            if (classe) {
-                classe.classList.remove(`valido`)
+    limpaFormulario(passe){
+        this.inputs.forEach((valor, i)=>{
+            console.log(i, `: `,valor);
+            if (valor.classList.contains(`valido`)) {
+                valor.value = ``
             }
-        }
+        })
     }
+
 }
 const valida1 = new ValidaFormulario()
 
