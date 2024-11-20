@@ -217,7 +217,7 @@ class ValidaFormulario {
         }
     };
 
-    limpaFormulario(passe){
+    limpaFormulario(){
         this.inputs.forEach((valor, i)=>{
             console.log(i, `: `,valor);
             if (valor.classList.contains(`valido`)) {
@@ -226,9 +226,6 @@ class ValidaFormulario {
             }
         })
     };
-
 };
-
-
 const valida1 = new ValidaFormulario();
 
