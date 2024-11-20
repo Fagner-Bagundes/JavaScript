@@ -122,9 +122,10 @@ class ValidaFormulario {
             }
         }
     }
-    adicionaDivs(error, classe, name){
-        error.classList = `erro-${name}`
-        classe.insertAdjacentElement('afterend', error)
+    
+    adicionaDivs(erro, classe, name){
+        erro.classList = `erro-${name}`
+        classe.insertAdjacentElement('afterend', erro)
     }
     
     criaErros(erro, classe, name){
@@ -172,17 +173,17 @@ class ValidaFormulario {
 
     }
 
-    ErrrorInputVazio(nome, classe){
-        this.mudaEstilos(nome,false)
-        if (!nome.value) {
-            this.removeErros(classe)
+    ErrrorInputVazio(classe, name){
+        this.mudaEstilos(classe,false)
+        if (!classe.value) {
+            this.removeErros(name)
             let error = this.criaDivs();
             error.textContent = `Digite algo no campo`;
-            error.classList = `erro-${classe}`
-            nome.insertAdjacentElement('afterend', error)
+            error.classList = `erro-${name}`
+            classe.insertAdjacentElement('afterend', error)
             return true   
         } else{
-            this.removeErros(classe)
+            this.removeErros(name)
             return false
         }
     }
