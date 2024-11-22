@@ -17,33 +17,31 @@ function rodape() {
 function criarMatriz(nLinhas, nColunas) {
     let matriz = [];
     let array = []
-    let contador = 1;
+    let contador = 0;
 
     for (let linha = 0; linha < nLinhas; linha++) {
         for (let coluna = 0; coluna < nColunas; coluna++) {
-            if (contador <=3) {
                 array.push(input.question(`Digite um valor:`))
-                ++contador
-            }
-            return
+                contador++
+                if (contador===3) {
+                    matriz.push(array)
+                    array =[]
+                    contador = 0
+                }
+
         }
+    }
+    for (let i = 0; i <=2; i++) {
+        console.log(matriz[i]);
+        
         
     }
-    console.log(array);
-    console.log(matriz);
-    
-    return matriz
 }
 
-
-
-criarMatriz(3, 3)
-// declaraçao de variáveis
-
-
-let matriz3x3 = []
 const NUMERO_DE_LINHAS = 3
 const NUMERO_DE_COLUNAS = 3
+let matriz3x3 = [criarMatriz(NUMERO_DE_LINHAS, NUMERO_DE_COLUNAS)]
+
 
 
 
