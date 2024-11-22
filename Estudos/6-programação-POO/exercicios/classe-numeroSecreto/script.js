@@ -22,10 +22,4 @@ class JogoSecreto {
     }
 }
 
-
-
-
-
-
-
 const jogo1 = new JogoSecreto(4)
