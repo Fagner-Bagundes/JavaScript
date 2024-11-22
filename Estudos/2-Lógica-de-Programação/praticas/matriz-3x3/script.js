@@ -26,7 +26,7 @@ function criarMatriz(nLinhas, nColunas) {
 
     for (let linha = 0; linha < nLinhas; linha++) {
         for (let coluna = 0; coluna < nColunas; coluna++) {
-                array.push(input.question(`Digite um valor ${nColunas}:`))
+                array.push(input.question(`Digite um valor [${linha+ 1}/ ${coluna+1}]:`))
                 contador++
                 if (contador===nColunas) {
                     matriz.push(array)
@@ -40,15 +40,14 @@ function criarMatriz(nLinhas, nColunas) {
     
     console.log(`Essa é uma matriz ${nLinhas}x${nColunas}`);
     for (let i = 0; i <nLinhas; i++) {
-        console.log(matriz[i] );
-        
+        console.log(matriz[i]);
     }
     rodape();
 
     
 }
 
-let matriz3x3 = [criarMatriz(NUMERO_DE_LINHAS, NUMERO_DE_COLUNAS)]
+criarMatriz(NUMERO_DE_LINHAS, NUMERO_DE_COLUNAS)
 
 
 
