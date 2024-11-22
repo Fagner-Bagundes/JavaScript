@@ -3,11 +3,14 @@ const input = require('readline-sync');
 //     input: process.stdin,
 //     output: process.stdout
 //   });
-
+const NUMERO_DE_LINHAS = 3
+const NUMERO_DE_COLUNAS = 3
 function cabecalho(params) {
     console.log(`------------------------------------`);
-    console.log(`           Matriz 3x3               `);
+    console.log(`           Matriz ${NUMERO_DE_LINHAS}x${NUMERO_DE_COLUNAS}               `);
     console.log(`------------------------------------`);
+    console.log(`                                    `);
+    
 }
 
 function rodape() {
@@ -19,11 +22,13 @@ function criarMatriz(nLinhas, nColunas) {
     let array = []
     let contador = 0;
 
+    cabecalho()
+
     for (let linha = 0; linha < nLinhas; linha++) {
         for (let coluna = 0; coluna < nColunas; coluna++) {
-                array.push(input.question(`Digite um valor:`))
+                array.push(input.question(`Digite um valor ${nColunas}:`))
                 contador++
-                if (contador===3) {
+                if (contador===nColunas) {
                     matriz.push(array)
                     array =[]
                     contador = 0
@@ -31,15 +36,18 @@ function criarMatriz(nLinhas, nColunas) {
 
         }
     }
-    for (let i = 0; i <=2; i++) {
-        console.log(matriz[i]);
-        
+    console.log(` `);
+    
+    console.log(`Essa é uma matriz ${nLinhas}x${nColunas}`);
+    for (let i = 0; i <nLinhas; i++) {
+        console.log(matriz[i] );
         
     }
+    rodape();
+
+    
 }
 
-const NUMERO_DE_LINHAS = 3
-const NUMERO_DE_COLUNAS = 3
 let matriz3x3 = [criarMatriz(NUMERO_DE_LINHAS, NUMERO_DE_COLUNAS)]
 
 
