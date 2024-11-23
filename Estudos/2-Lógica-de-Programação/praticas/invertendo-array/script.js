@@ -4,8 +4,8 @@ let arrayinvt = []
 let contador = array.length
 function sla(){
     for(let i of array){
-        arrayinvt.push(array[contador])
         --contador
+        arrayinvt.push(array[contador])
     }
 }
 
