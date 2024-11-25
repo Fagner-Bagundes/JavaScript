@@ -9,7 +9,11 @@ function rand(min, max) {
 function espereaAi(msg, tempo) {
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{  
-            resolve(msg)
+            if (typeof msg !== `string`) {
+                reject(`Mensagem invalida`)
+            } else{
+                resolve(msg)
+            }
         }, tempo)
 
         
@@ -21,12 +25,15 @@ function espereaAi(msg, tempo) {
 espereaAi(`frase 1`, rand(1, 3))
 .then((resultado)=>{
     console.log(resultado)
-    return espereaAi(`frase 2`, rand(1, 3))
+    return espereaAi(3434, rand(1, 3))
 }).then((resultado)=>{
     console.log(resultado);
     return espereaAi(`Frase 3`, rand(1, 3))
 }).then((resultado)=>{
     console.log(resultado);
+})
+.catch((error)=>{
+    console.log(`Error:`, error);
     
 })
 
