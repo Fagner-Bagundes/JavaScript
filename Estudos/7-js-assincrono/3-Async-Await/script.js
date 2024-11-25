@@ -18,14 +18,38 @@ function esperaAi(msg, tempo){
     });
 };
 
-esperaAi(`Fase 1`, rand())
-    .then((resposta)=>{
-        console.log(resposta);
-        return esperaAi(`Frase 2`, rand())})
-    .then((resposta)=>{
-        console.log(resposta)
-        return esperaAi(`Frase 3`, rand())})
-    .then((resposta)=>{
-        console.log(resposta)})
-    .catch((error)=>{
-        console.log( error);})
+// esperaAi(`Fase 1`, rand())
+//     .then((resposta)=>{
+//         console.log(resposta);
+//         return esperaAi(`Frase 2`, rand())})
+//     .then((resposta)=>{
+//         console.log(resposta)
+//         return esperaAi(`Frase 3`, rand())})
+//     .then((resposta)=>{
+//         console.log(resposta)})
+//     .catch((error)=>{
+//         console.log( error); console.log(` `);
+//         })
+
+
+
+// Async - Awayt 
+// Permite que usemos promisses dentro do corpo da função como se fossem sicronas, como se fosse os then()
+
+async function executa(params) {
+    try {
+        const fase1 = await esperaAi(`Fase 1`, rand())
+        console.log(fase1);
+        const fase2 = await esperaAi(4, rand())
+        console.log(fase2);
+        const fase3 = await esperaAi(`Fase 3`, rand())
+        console.log(fase3);
+    } catch (error) {
+        console.log(error);
+        
+    }
+ 
+}
+
+executa()
+
