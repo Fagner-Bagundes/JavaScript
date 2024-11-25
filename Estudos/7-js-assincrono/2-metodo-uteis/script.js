@@ -24,7 +24,7 @@ function esperaAi(msg, tempo){
 const promises = [
     esperaAi(`promese 1`, rand(1,3)),
     esperaAi(`promese 2`, rand(1,3)),
-    esperaAi(32, rand(1,3)) 
+    esperaAi(`promese 3`, rand(1,3)) 
 ];
 
 Promise.all(promises).then(function(valor) {
@@ -43,4 +43,21 @@ Promise.race(promises).then((resultado)=>{
     
 })
 
-console.log(` `);
+
+// Promise.resolve() - entrega uma promise já resolvida
+
+
+function baixaPagina(){
+    console.log(` `);
+    const emCache = false;
+    if (emCache) {
+        return Promise.resolve(`Página já em cache`)
+    } else{
+        return esperaAi(34, rand(1,5))
+    }
+}
+baixaPagina()
+.then((resposta)=>console.log(resposta))
+.catch((err)=>console.log(err))
+
+    
