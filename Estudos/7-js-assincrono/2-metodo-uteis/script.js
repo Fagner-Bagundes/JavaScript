@@ -47,17 +47,17 @@ Promise.race(promises).then((resultado)=>{
 // Promise.resolve() - entrega uma promise já resolvida
 
 
-function baixaPagina(){
+function baixaPagina(estado){
     console.log(` `);
-    const emCache = false;
+    const emCache = estado;
     if (emCache) {
         return Promise.resolve(`Página já em cache`)
     } else{
-        return esperaAi(34, rand(1,5))
+        return Promise.reject(`Pagina não baixada`)
     }
 }
-baixaPagina()
+baixaPagina(false)
 .then((resposta)=>console.log(resposta))
-.catch((err)=>console.log(err))
+.catch((err)=>console.log(`Error:`, err))
 
     
