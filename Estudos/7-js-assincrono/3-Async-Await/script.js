@@ -18,20 +18,6 @@ function esperaAi(msg, tempo){
     });
 };
 
-// esperaAi(`Fase 1`, rand())
-//     .then((resposta)=>{
-//         console.log(resposta);
-//         return esperaAi(`Frase 2`, rand())})
-//     .then((resposta)=>{
-//         console.log(resposta)
-//         return esperaAi(`Frase 3`, rand())})
-//     .then((resposta)=>{
-//         console.log(resposta)})
-//     .catch((error)=>{
-//         console.log( error); console.log(` `);
-//         })
-
-
 
 // Async - Awayt 
 // Permite que usemos promisses dentro do corpo da função como se fossem sicronas, como se fosse os then()
@@ -52,4 +38,17 @@ async function executa(params) {
 }
 
 executa()
+
+// esperaAi(`Fase 1`, rand())
+//     .then((resposta)=>{
+//         console.log(resposta);
+//         return esperaAi(`Frase 2`, rand())})
+//     .then((resposta)=>{
+//         console.log(resposta)
+//         return esperaAi(`Frase 3`, rand())})
+//     .then((resposta)=>{
+//         console.log(resposta)})
+//     .catch((error)=>{
+//         console.log( error); console.log(` `);
+//         })
 
