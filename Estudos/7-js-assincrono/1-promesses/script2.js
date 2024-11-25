@@ -36,5 +36,11 @@ espereaAi(`frase 1`, rand(1, 3))
     console.log(`Error:`, error);
     
 })
+.finally(()=>{
+    console.log(`Sempre será rexibido`);
+    
+})
 
 
+console.log(`Sempre será exibido primeiro`);
+console.log(` `);
