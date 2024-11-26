@@ -54,7 +54,27 @@ async function getIndividualPost(id) {
 
   loadingElement.classList.add(`hide`)
   postPage.classList.remove("hide")
+
+  const title = document.createElement(`h1`);
+  const body = document.createElement(`p`)
+
+  title.innerText = dataPost.title;
+  body.innerText = dataPost.body;
+
+  container.appendChild(title)
+  container.appendChild(body)
+
+console.log(dataComments);
+
+  dataComments.map((comment)=>{
+
+
+  })
+  
 }
+
+// criador de comentários
+
 
 
 
