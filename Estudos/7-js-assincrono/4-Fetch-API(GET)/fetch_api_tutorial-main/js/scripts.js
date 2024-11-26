@@ -42,10 +42,26 @@ async function getAllPosts() {
 
 
 //  pega posts individuais
+async function getIndividualPost(id) {
+
+  const [responsePost, responseComments] = await Promise.all([
+    fetch(`${url}/${id}`),
+    fetch(`${url}/${id}/comments`)
+  ])
+
+  const dataPost = await responsePost.json();
+  const dataComments = await responseComments.json()
+
+  loadingElement.classList.add(`hide`)
+  postPage.classList.remove("hide")
+}
+
+
+
 
 if (!postID) {
   getAllPosts()
 } else{
-  console.log(postID);
+  getIndividualPost(postID)
   
 }
