@@ -67,13 +67,28 @@ async function getIndividualPost(id) {
 console.log(dataComments);
 
   dataComments.map((comment)=>{
-
-
+    createComment(comment)
   })
   
 }
 
-// criador de comentários
+// criador de comentários 
+
+function createComment(comment) {
+
+  const div = document.createElement(`div`)
+  const email = document.createElement(`h3`)
+  const commentBody = document.createElement("p")
+
+  email.innerText = comment.email;
+  commentBody.innerText = comment.body;
+  
+  div.appendChild(email)
+  div.appendChild(commentBody)
+
+  commentsContainer.appendChild(div)
+  
+}
 
 
 
