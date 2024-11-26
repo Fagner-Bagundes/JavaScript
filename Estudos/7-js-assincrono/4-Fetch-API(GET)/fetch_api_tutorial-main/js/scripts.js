@@ -7,18 +7,19 @@ const postPage = document.querySelector(`#post`)
 const container = document.querySelector("#post-container")
 const commentsContainer = document.querySelector(`#comments-container`)
 
+const commentForm = document.querySelector(`#comment-form`);
+const emailInput = document.querySelector(`#email`)
+const bodyInput = document.querySelector(`#body`);
+
 
 // get id from URL
 const urlSearchParams = new URLSearchParams(window.location.search)
-
 const postID = urlSearchParams.get("id");
 
 // pega todos os posts
 async function getAllPosts() {
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
-
   loadingElement.classList.add(`hide`);
   
   data.map((post) =>{
@@ -64,7 +65,7 @@ async function getIndividualPost(id) {
   container.appendChild(title)
   container.appendChild(body)
 
-console.log(dataComments);
+  console.log(dataComments);
 
   dataComments.map((comment)=>{
     createComment(comment)
@@ -91,12 +92,42 @@ function createComment(comment) {
 }
 
 
+// postando novos comentários:
 
+async function postComent(comment) {
+
+  const response = await fetch(`${url}/${postID}/comments`, {
+    method: `POST`,
+    body: comment,
+    headers: {
+      "Content-type": `application/json`
+    }
+
+  });
+  
+  const data = await response.json();
+  console.log(data);
+  
+
+}
 
 
 if (!postID) {
   getAllPosts()
 } else{
   getIndividualPost(postID)
-  
+
+  // Add event to comment form
+  commentForm.addEventListener(`submit`, (e)=>{
+    e.preventDefault()
+    console.log(email);
+
+    let comment = {
+      email: emailInput.value,
+      body: bodyInput.value
+    }
+    comment = JSON.stringify(comment)   
+    postComent(comment)
+
+  })
 }
