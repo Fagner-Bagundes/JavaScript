@@ -3,6 +3,15 @@ const url = `https://jsonplaceholder.typicode.com/posts`
 const loadingElement = document.querySelector(`#loading`)
 const postContainer = document.querySelector(`#posts-container`)
 
+const postPage = document.querySelector(`#post`)
+const container = document.querySelector("#post-container")
+const commentsContainer = document.querySelector(`#comments-container`)
+
+
+// get id from URL
+const urlSearchParams = new URLSearchParams(window.location.search)
+
+const postID = urlSearchParams.get("id");
 
 // pega todos os posts
 async function getAllPosts() {
@@ -31,4 +40,12 @@ async function getAllPosts() {
   })
 };
 
-getAllPosts()
+
+//  pega posts individuais
+
+if (!postID) {
+  getAllPosts()
+} else{
+  console.log(postID);
+  
+}
