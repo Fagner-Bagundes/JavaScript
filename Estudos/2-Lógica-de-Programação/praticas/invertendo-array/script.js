@@ -10,5 +10,7 @@ function sla(){
 }
 
 sla();
-console.log(arrayinvt);
+console.log(`Array original: `, array);
+
+console.log(`Array invertida: `, arrayinvt);
 
