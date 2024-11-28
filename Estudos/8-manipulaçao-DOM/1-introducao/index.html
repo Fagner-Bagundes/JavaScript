@@ -14,7 +14,7 @@
 </head>
 <body>
     <h1 class="h1">Iniciando estudos DOM</h1>
-    <p class="sla">Aqui vai o resultado</p>
+    <p class="sla" id="Paragraf">Aqui vai o resultado</p>
     <p class="sla">Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
     <div>clique em mim</div>
 
@@ -22,7 +22,13 @@
         const p1 = window.document.getElementsByTagName(`p`)[1]
         p1.style.background = `black`
         const sla = document.querySelectorAll(`.sla`)
-        console.log(sla);
+        const h1 = document.querySelector(`.h1`)
+        console.log(h1);
+        
+        console.log(document.body.children);
+        const p2 = document.querySelector(`#Paragraf`)
+        console.log(p2.nextElementSibling.innerHTML);
+        
         
     </script>
 </body>

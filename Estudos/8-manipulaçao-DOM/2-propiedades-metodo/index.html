@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body {
+            background-color: rgb(59, 116, 97);
+            color: white;
+            font: normal 18px Arial;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 class="h1">Iniciando estudos DOM</h1>
+        <p id="paragraph">Aqui vai o resultado</p>
+        <p class="sla">Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+        <div>clique em mim</div>
+    </section>
+
+
+    <script>
+        let h1 = document.getElementsByClassName(`h1`)
+        let p = document.querySelector(`.sla`)
+        let sec = document.querySelector(`section`)
+        document.write(p.parentElement)
+        console.log(p.parentElement);
+        console.log(sec.firstElementChild);
+        console.log(sec.lastElementChild);
+        console.log(p.previousElementSibling);
+        console.log(h1[0].nextElementSibling);
+        
+
+        
+        
+    </script>
+</body>
+</html>
