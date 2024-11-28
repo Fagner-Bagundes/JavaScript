@@ -19,17 +19,9 @@
     <div>clique em mim</div>
 
     <script>
-        const h1 = document.querySelector(`.h1`)
-        console.log(h1);
-        
-        document.addEventListener("click",(e)=>{
-            console.log(e.target);
-            
-            if (e.target === h1) {
-                alert(`aaaaaaaaaaaaaa` )
-            }
-
-        })
+        const p1 = window.document.getElementsByTagName(`p`)[1]
+        p1.style.background = `black`
+        document.write(p1.innerHTML)
     </script>
 </body>
 </html>
