@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body {
+            background-color: rgb(59, 116, 97);
+            color: white;
+            font: normal 18px Arial;
+            transition: 5s;
+        }
+
+        img{
+            border-radius: 50%;
+            box-sizing: none;
+        }
+
+        img:hover{
+            cursor: pointer;
+            border: 2px solid rgba(255, 4, 180, 0.404);
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h1 class="h1">Iniciando estudos DOM</h1>
+        <p id="paragraph">Aqui vai o resultado</p>
+        <p class="sla ">Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+        <div>clique em mim</div>
+        <img src="gokuCima.png" alt="sla" width="300px">
+    </section>
+
+
+    <script>
+        let h1 = document.getElementsByClassName(`h1`)
+        let p = document.querySelector(`.sla`)
+        let p2 = document.querySelector(`#paragraph`)
+        let sec = document.querySelector(`section`)
+        const img = document.querySelector(`img`)
+
+        document.addEventListener(`click`,(e)=>{
+            if (e.target === img) {
+                img.setAttribute(`src`,`GokuBaixo.png`)
+            }
+        })
+
+        document.addEventListener(`keydown`, (e)=>{
+            console.log(e);
+            
+            
+            if (e.code === `Enter` || e.code === `Space`) {
+                sec.style.backgroundColor = `black`
+            }
+        })
+
+        document.addEventListener(`mousemove`, (e)=>{
+            
+        })
+
+        document.addEventListener(`keyup`, (e)=>{
+            
+        })
+
+        document.addEventListener(``, (e)=>{
+            console.log(e);
+            
+        })
+    </script>
+</body>
+</html>
