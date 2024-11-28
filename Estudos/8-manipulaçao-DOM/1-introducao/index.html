@@ -14,14 +14,16 @@
 </head>
 <body>
     <h1 class="h1">Iniciando estudos DOM</h1>
-    <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <p class="sla">Aqui vai o resultado</p>
+    <p class="sla">Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
     <div>clique em mim</div>
 
     <script>
         const p1 = window.document.getElementsByTagName(`p`)[1]
         p1.style.background = `black`
-        document.write(p1.innerHTML)
+        const sla = document.querySelectorAll(`.sla`)
+        console.log(sla);
+        
     </script>
 </body>
 </html>
