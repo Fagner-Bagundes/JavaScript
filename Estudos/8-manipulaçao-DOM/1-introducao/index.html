@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body {
+            background-color: rgb(59, 116, 97);
+            color: white;
+            font: normal 18px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1">Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div>clique em mim</div>
+
+    <script>
+        const h1 = document.querySelector(`.h1`)
+        console.log(h1);
+        
+        document.addEventListener("click",(e)=>{
+            console.log(e.target);
+            
+            if (e.target === h1) {
+                alert(`aaaaaaaaaaaaaa` )
+            }
+
+        })
+    </script>
+</body>
+</html>
