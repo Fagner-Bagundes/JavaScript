@@ -24,15 +24,13 @@
     <script>
         let h1 = document.getElementsByClassName(`h1`)
         let p = document.querySelector(`.sla`)
+        let p2 = document.querySelector(`#paragraph`)
         let sec = document.querySelector(`section`)
-        document.write(p.parentElement)
-        console.log(p.parentElement);
-        console.log(sec.firstElementChild);
-        console.log(sec.lastElementChild);
-        console.log(p.previousElementSibling);
-        console.log(h1[0].nextElementSibling);
 
-
+        p2.innerHTML = `oi meu nome é <strong>Fagnernelson<strong>`
+        p.innerHTML = `oi meu nome é <strong>Fagner<strong>`
+        p.outerHTML += `aaaaaaaaaaaaaaa`
+        console.log(p);
         
         
     </script>
