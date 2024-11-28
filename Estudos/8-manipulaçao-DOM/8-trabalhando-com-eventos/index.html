@@ -22,6 +22,14 @@
             border: 2px solid rgba(255, 4, 180, 0.404);
         }
 
+        div{
+            margin: 15px;
+        }
+
+        input{
+            padding: 10px;
+            width: 300px;
+        }
     </style>
 </head>
 <body>
@@ -29,8 +37,27 @@
         <h1 class="h1">Iniciando estudos DOM</h1>
         <p id="paragraph">Aqui vai o resultado</p>
         <p class="sla ">Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
-        <div>clique em mim</div>
-        <img src="gokuCima.png" alt="sla" width="300px">
+        
+        <form action="sla">
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="text">
+            </div>
+            <div>
+                <label for="telefone">telefone</label>
+                <input id="telefone" type="text">
+            </div>
+            <div>
+                <label for="nome">Nome</label>
+                <input id="nome" type="text">
+            </div>
+            <div>
+                <label for="Sobrenome">Sobrenome</label>
+                <input id="Sobrenome" type="text">
+            </div>
+
+            <input type="submit" value="Enviar" >
+        </form>
     </section>
 
 
@@ -40,32 +67,32 @@
         let p2 = document.querySelector(`#paragraph`)
         let sec = document.querySelector(`section`)
         const img = document.querySelector(`img`)
+        const formulario = document.getElementsByTagName(`form`)
 
-        document.addEventListener(`click`,(e)=>{
-            if (e.target === img) {
-                img.setAttribute(`src`,`GokuBaixo.png`)
-            }
+        const nomeInput = document.getElementById(`email`) 
+
+
+        nomeInput.addEventListener(`focus`,(e)=>{
+           
         })
 
-        document.addEventListener(`keydown`, (e)=>{
-            console.log(e);
-            
-            
-            if (e.code === `Enter` || e.code === `Space`) {
-                sec.style.backgroundColor = `black`
-            }
+        nomeInput.addEventListener(`blur`,(e)=>{
+           
         })
 
-        document.addEventListener(`mousemove`, (e)=>{
-            
+        nomeInput.addEventListener(`blur`,(e)=>{
+           
         })
 
-        document.addEventListener(`keyup`, (e)=>{
-            
+        
+        formulario[0].addEventListener(`submit`,(e)=>{
+            e.preventDefault()
+           
         })
 
-        document.addEventListener(``, (e)=>{
-            console.log(e);
+
+        nomeInput.addEventListener(`change`,(e)=>{
+            console.log(e.currentTarget.value);
             
         })
     </script>
