@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body {
+            background-color: rgb(59, 116, 97);
+            color: white;
+            font: normal 18px Arial;
+        }
+
+        .img-redonda{
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h1 class="h1">Iniciando estudos DOM</h1>
+        <p id="paragraph">Aqui vai o resultado</p>
+        <p class="sla ">Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+        <div>clique em mim</div>
+        <img src="image.png" alt="sla" >
+    </section>
+
+
+    <script>
+        let h1 = document.getElementsByClassName(`h1`)
+        let p = document.querySelector(`.sla`)
+        let p2 = document.querySelector(`#paragraph`)
+        let sec = document.querySelector(`section`)
+        const img = document.querySelector(`img`)
+        
+        img.classList.add(`img-redonda`)
+        img.classList.remove(`img-redonda`)
+        // img.classList.toggle(`img-redonda`)
+
+        if (img.classList.contains(`img-redonda`)) {
+            alert( `aaaaaaaaaaaaaa`)
+        } else{
+            alert(`iiiiiiiiiiiiiiiiiiiiiii`);
+            
+        }
+        
+        console.log(img);
+        
+    </script>
+</body>
+</html>
