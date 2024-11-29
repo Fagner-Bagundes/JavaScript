@@ -16,9 +16,7 @@
 
         body, html{
             padding: 0px;
-            margin: 0;background-image: url(../8-trabalhando-com-eventos/GokuBaixo.png);
-            background-repeat: no-repeat;
-            background-size: cover;
+            margin: 0;
         }
 
         .video-antes{
@@ -44,29 +42,30 @@
     </style>
 </head>
 <body>
-    <!-- <main>
+    <main>
         <h1>Este é um áudio: </h1>
         <p> <audio src="Sweating Bullets (Remastered 2004)(MP3_160K).mp3
-            "controls></audio></p>
+            "controls ></audio></p>
 
 
         <p><button class="btn">Play</button></p>
-    </main> -->
+    </main>
     <p><button class="btn">Play</button></p>
     <video src="1. Introdução.mp4" class="video-antes"></video>
 
 <script>
     const video = document.querySelector(`video`)
     const btn = document.querySelector(`.btn`)
-    document.addEventListener(`click`, (e)=>{
-        if (e.target === btn) {
-            btn.style.display = `none`
-            video.classList.remove(`video-antes`)
-            video.classList.add(`video-depois`)
-            video.style.display = `block`
-            video.load()
-            video.play();
-        }
+    const corpo = document.querySelector(`main`)
+    
+    corpo.addEventListener(`click`, (e)=>{
+        let evento = e.target;   
+        console.log(evento);
+             
+    })
+
+    btn.addEventListener(`click`, (e)=>{
+        e.stopPropagation()
     })
 
 </script>
