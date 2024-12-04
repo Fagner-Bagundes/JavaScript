@@ -1,18 +1,20 @@
-const nRandom = Math.ceil(Math.random() * 10)
 
-function calcular(nRandom) {
+function calcular() {
     return new Promise((resolve, reject)=>{
-        let soma = nRandom *2
-        resolve(nRandom * 2)
+        const nRandom = Math.ceil(Math.random() * 10)
+       resolve(nRandom)
         
     })
 } 
 
-calcular(nRandom)
+calcular()
 .then((resolve)=>{
-    console.log(resolve);
+    console.log(`numero inicial: `, resolve);
+    return resolve * 2
 }).then((resolve)=>{
-    console.log(resolve);
+    console.log(`numero X 2 `, resolve);
+    return resolve + 5
+}).then((resolve)=>{console.log(`resultado final: `, resolve);
 })
 
 
