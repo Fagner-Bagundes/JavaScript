@@ -52,7 +52,15 @@ class Ecommerce {
     }
 }
 
+
+function AdicionaBotao(carrinhoInput = carrinhoElement) {
+    const botao = document.createElement(`button`)
+}
 const loja = new Ecommerce()
+
+const carrinhoElement = document.querySelectorAll(`.carrinho-product`)
+
+
 
 loja.registerProcuct(`Caderno`, 20, 5)
 loja.registerProcuct(`Bola`, 10, 4)
