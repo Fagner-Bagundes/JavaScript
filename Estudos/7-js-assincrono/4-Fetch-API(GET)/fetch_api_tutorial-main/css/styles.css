@@ -47,3 +47,10 @@ form input,
 form textarea {
   padding: 5px;
 }
+
+.post{
+  border: solid 1px ;
+  padding: 20px;
+  text-align: center;
+  margin-block: 10px;
+}

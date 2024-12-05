@@ -9,6 +9,7 @@ async function getPosts(params) {
   const response = await fetch(url);
   const data = await response.json()
   console.log(data);
+  loading.classList.add(`hide`)
 
   data.map((post)=>{
     const div = document.createElement(`div`)
@@ -16,11 +17,12 @@ async function getPosts(params) {
     const title = document.createElement(`h1`)
     const body = document.createElement(`p`)
     const link = document.createElement(`a`)
-    link.setAttribute(`href`, `/post.html?id=${post.id}`)
-
+    link.setAttribute(`target`, `_blank`)
+    
     title.innerText = post.title
     body.innerText = post.body
     link.innerHTML = `Ler`
+    link.setAttribute(`href`, `post.html?id=${post.id}`)
 
     div.appendChild(title)
     div.appendChild(body)
