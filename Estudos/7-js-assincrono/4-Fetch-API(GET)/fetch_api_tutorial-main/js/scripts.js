@@ -3,6 +3,14 @@ const url = `https://jsonplaceholder.typicode.com/posts`
 const loading = document.querySelector(`#loading`)
 const postsContainer = document.querySelector(`#posts-container`)
 
+// url do post
+
+const urlPost = new URLSearchParams(window.location.search)
+const postID = urlPost.get(`id`)
+// pagina do post individual
+const postPage = document.querySelector(`#post`);;
+const postContainer = document.querySelector(`.post-container`)
+const commentsContainer= document.querySelector(`#comments-container`);
 
 
 async function getPosts(params) {
@@ -28,9 +36,35 @@ async function getPosts(params) {
     div.appendChild(body)
     div.appendChild(link)
 
-    postsContainer.appendChild(div)
+    postContainer.appendChild(div)
   })
 
 }
 
-getPosts()
+async function getPost(id){
+  const [responsePost, responseComments] = await Promise.all([
+    fetch(`${url}/${id}`),
+    fetch(`${url}/${id}/comments`)
+  ])
+  const dataPost = await responsePost.json();
+  const dataComments = await responseComments.json();
+  loading.classList.add(`hide`)
+  postPage.classList.remove(`hide`)
+
+  const titleElement = document.createElement(`h1`) 
+  const bodyElement = document.createElement(`p`)
+  const div = document.createElement(`div`)
+  titleElement.innerText = dataPost.title
+  bodyElement.innerText = dataPost.body
+  div.appendChild(titleElement)
+  div.appendChild(bodyElement)
+
+  postContainer.appendChild(div)
+}
+
+
+if (!postID) {
+  getPosts()
+} else{
+  getPost(postID)
+}
