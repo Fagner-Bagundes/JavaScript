@@ -5,6 +5,12 @@
 body {
   padding: 15px;
 }
+.div-post{
+  border: solid 1px black;
+  margin-block: 10px;
+  padding: 20px;
+  text-align: center;
+}
 
 .hide {
   display: none;

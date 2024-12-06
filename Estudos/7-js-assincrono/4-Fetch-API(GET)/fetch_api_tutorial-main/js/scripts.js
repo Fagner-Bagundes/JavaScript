@@ -4,9 +4,14 @@ const url = `https://jsonplaceholder.typicode.com/posts`
 const loading = document.querySelector(`#loading`)
 const postsContainer = document.querySelector(`#posts-container`)
 
-// individual post
-// const urlPost = URLSearchParams(window.location.search)
-// const postId = urlPost.get(`id`)
+// Post elemment
+const postElement = document.querySelector(`#post`)
+const postContainer = document.querySelector(`.post-container`)
+const postComment = document.querySelector(`#comments-container`)
+// individual post url
+const urlPost = new URLSearchParams(window.location.search)
+const postId = urlPost.get(`id`)
+
 // get all posts
 async function getAllPosts(){
   const response = await fetch(url)
@@ -21,11 +26,13 @@ async function getAllPosts(){
     const body = document.createElement(`p`)
     const link = document.createElement(`a`)
     // setting atributes
-    link.setAttribute(`href`, `${url}?id=${post.id}`)
+    div.classList.add(`div-post`)
+    link.setAttribute(`target`, `_blank`)
+    link.setAttribute(`href`, `post.html?id=${post.id}`)
     // inserting cotents in elements
     title.innerText = post.title
     body.innerText = post.body
-    link.innerText = `Enviar`
+    link.innerText = `ver`
     // appendChild in elemmnets
     div.appendChild(title)
     div.appendChild(body)
@@ -36,4 +43,40 @@ async function getAllPosts(){
   
 }
 
-getAllPosts()
+// get Individual post
+async function getIndivualPost(id) {
+  let [indPost, indComments ] = await Promise.all([
+     fetch(`${url}/${id}`),
+     fetch(`${url}/${id}/comments`)
+  ])
+  
+  loading.classList.add(`hide`)
+  postElement.classList.remove(`hide`)
+  const post = await indPost.json()
+  const comments = await indComments.json()
+
+  // crating elements
+  const div = document.createElement(`div`)
+  const title = document.createElement(`h1`)
+  const body = document.createElement(`p`)
+  const link = document.createElement(`a`)
+  link.setAttribute(`href`, `index.html`)
+
+  title.innerText = post.title
+  body.innerText = post.body
+  link.innerText = `Voltar`
+  
+  div.appendChild(title)
+  div.appendChild(body)
+  div.appendChild(link)
+  div.classList.add(`div-post`)
+
+  postContainer.appendChild(div)
+}
+
+if (!postId) {
+  getAllPosts()
+}else{
+  getIndivualPost(postId)
+  
+}
