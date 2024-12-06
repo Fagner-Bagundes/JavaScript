@@ -7,7 +7,7 @@ const postsContainer = document.querySelector(`#posts-container`)
 // Post elemment
 const postElement = document.querySelector(`#post`)
 const postContainer = document.querySelector(`.post-container`)
-const postComment = document.querySelector(`#comments-container`)
+const commentsContainer = document.querySelector(`.comments-container`)
 // individual post url
 const urlPost = new URLSearchParams(window.location.search)
 const postId = urlPost.get(`id`)
@@ -47,7 +47,7 @@ async function getAllPosts(){
 async function getIndivualPost(id) {
   let [indPost, indComments ] = await Promise.all([
      fetch(`${url}/${id}`),
-     fetch(`${url}/${id}/comments`)
+     fetch(`${url}/${postId}/comments`)
   ])
   
   loading.classList.add(`hide`)
@@ -70,13 +70,34 @@ async function getIndivualPost(id) {
   div.appendChild(body)
   div.appendChild(link)
   div.classList.add(`div-post`)
-
   postContainer.appendChild(div)
+
+  getComment(comments)
+}
+
+// get comments
+async function getComment(comments) {
+  comments.map((comment)=>{
+    const div = document.createElement(`div`)
+    const email = document.createElement(`h1`)
+    const body = document.createElement(`p`)
+
+    email.innerText = comment.email
+    body.innerText = comment.body
+
+    div.appendChild(email)
+    div.appendChild(body)
+    commentsContainer.appendChild(div)
+  })
+  
 }
 
 if (!postId) {
   getAllPosts()
 }else{
   getIndivualPost(postId)
-  
+  // listener of event submit
+  document.addEventListener(`submit`,(event)=>{
+   event.preventDefault()
+  })
 }
