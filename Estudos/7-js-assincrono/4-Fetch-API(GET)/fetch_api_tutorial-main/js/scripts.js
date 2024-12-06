@@ -13,13 +13,13 @@ const urlPost = new URLSearchParams(window.location.search)
 const postId = urlPost.get(`id`)
 
 // get all posts
-async function getAllPosts(){
+async function getAllPosts() {
   const response = await fetch(url)
   const data = await response.json()
   loading.classList.add(`hide`)
 
-  data.map((post)=>{
-    
+  data.map((post) => {
+
     // creating elements
     const div = document.createElement(`div`)
     const title = document.createElement(`h2`)
@@ -38,18 +38,18 @@ async function getAllPosts(){
     div.appendChild(body)
     div.appendChild(link)
     postsContainer.appendChild(div)
-    
+
   })
-  
+
 }
 
 // get Individual post
 async function getIndivualPost(id) {
-  let [indPost, indComments ] = await Promise.all([
-     fetch(`${url}/${id}`),
-     fetch(`${url}/${postId}/comments`)
+  let [indPost, indComments] = await Promise.all([
+    fetch(`${url}/${id}`),
+    fetch(`${url}/${postId}/comments`)
   ])
-  
+
   loading.classList.add(`hide`)
   postElement.classList.remove(`hide`)
   const post = await indPost.json()
@@ -62,10 +62,11 @@ async function getIndivualPost(id) {
   const link = document.createElement(`a`)
   link.setAttribute(`href`, `index.html`)
 
+
   title.innerText = post.title
   body.innerText = post.body
   link.innerText = `Voltar`
-  
+
   div.appendChild(title)
   div.appendChild(body)
   div.appendChild(link)
@@ -76,8 +77,8 @@ async function getIndivualPost(id) {
 }
 
 // get comments
-async function getComment(comments) {
-  comments.map((comment)=>{
+function getComment(comments) {
+  comments.map((comment) => {
     const div = document.createElement(`div`)
     const email = document.createElement(`h1`)
     const body = document.createElement(`p`)
@@ -89,15 +90,38 @@ async function getComment(comments) {
     div.appendChild(body)
     commentsContainer.appendChild(div)
   })
-  
+
+}
+
+// add comment
+async function addComment(comment) {
+  const response = await fetch(`${url}/${postId}/comments`, {
+    method: `POST`,
+    body: JSON.stringify(comment),
+    headers: {
+      "Content-type": "application/json"
+    }
+  })
+  const data = await response.json()
+  const comments = [data]
+  console.log(data);
+
+  getComment(comments)
 }
 
 if (!postId) {
   getAllPosts()
-}else{
+} else {
   getIndivualPost(postId)
   // listener of event submit
-  document.addEventListener(`submit`,(event)=>{
-   event.preventDefault()
+  document.addEventListener(`submit`, (event) => {
+    event.preventDefault()
+    const email = (document.querySelector(`#email`).value)
+    const body = (document.querySelector(`#body`).value)
+    const comment = {
+      email: email,
+      body: body
+    }
+    addComment(comment)
   })
 }
