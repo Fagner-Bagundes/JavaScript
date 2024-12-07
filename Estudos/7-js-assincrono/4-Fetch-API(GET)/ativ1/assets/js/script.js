@@ -16,6 +16,9 @@ function addPagina(pagina) {
 }
 
 document.addEventListener(`click`,(event)=>{
-    const button = (event.target).className
-    getPage(button)
+    const button = event.target
+    if (button.type === `button`) {
+        const classe = button.className
+        getPage(classe)
+    }
 })
