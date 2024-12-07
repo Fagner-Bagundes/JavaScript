@@ -1,10 +1,11 @@
-fetch(`pessoas.json`)
-.then((response)=> response.json())
-.then((json)=> addSite(json))
+// fetch(`pessoas.json`)
+// .then((response)=> response.json())
+// .then((json)=> addSite(json))
 
+axios(`pessoas.json`)
+.then((response)=> addSite(response.data))
 
 const pessoaInput = document.querySelector(`.pessoas`)
-console.log(pessoaInput);
 
 
 function addSite(json){
