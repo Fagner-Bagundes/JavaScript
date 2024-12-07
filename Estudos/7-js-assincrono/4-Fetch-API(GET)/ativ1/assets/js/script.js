@@ -3,22 +3,19 @@ const divPage = document.querySelector(`#pagina`)
 
 console.log(btn);
 
-// async function getPage(parms) {
-//     const response = await fetch(`pagina1.html`)
-//     const data = await response.text()
-//     addPagina(data)
+async function getPage(className) {
+    const response = await fetch(`pagina${className}.html`)
+    const data = await response.text()
+    addPagina(data)
     
-// }
+}
 
 
-// function addPagina(pagina) {
-//     divPage.innerHTML = pagina
-// }
+function addPagina(pagina) {
+    divPage.innerHTML = pagina
+}
 
-btn.addEventListener(`click`,(event)=>{
-    const button = event.target
-    console.log(button);
-    
-    
-    // getPage()
+document.addEventListener(`click`,(event)=>{
+    const button = (event.target).className
+    getPage(button)
 })
