@@ -18,10 +18,6 @@ function addSite(json){
     tr.appendChild(td)
 
     td = document.createElement(`td`)
-    td.innerHTML = pessoa.idade
-    tr.appendChild(td)
-
-    td = document.createElement(`td`)
     td.innerHTML = pessoa.email
     tr.appendChild(td)
 
