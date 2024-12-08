@@ -1,5 +1,7 @@
-const nome = `Luis`
-const objeto =  {nome}
-const novoObj = {...objeto}
+class fag {
+    constructor(nome) {
+        this.nome = nome
+    }
+}
 
-console.log(novoObj);
+const p = new fag(`FAG`)
