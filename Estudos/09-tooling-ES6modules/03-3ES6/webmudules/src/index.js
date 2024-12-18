@@ -1,4 +1,5 @@
 // import * as meuModulo from "./modulo1"
-import algo from "./modulo1"
 
-console.log(algo(5,5));
+import soma from "./modulo1"
+
+console.log(soma(2,5));
