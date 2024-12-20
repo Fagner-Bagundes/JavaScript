@@ -14,10 +14,10 @@ export default class ValidaCPF {
         const cpfSemDigitos = this.cpfLimpo.slice(0, -2)
         const digito1 = this.geraDigito(cpfSemDigitos);
         const digito2 = this.geraDigito(cpfSemDigitos + digito1)
-        this.novoCpf = this.cpfSemDigitos + digito1 + digito2;
+        this.novoCpf = cpfSemDigitos + digito1 + digito2;
     }
 
-    geraDigito(cpfSemdigitos) {
+    static geraDigito(cpfSemdigitos) {
         let total = 0;
         let reverso = cpfSemdigitos.length + 1;
 
@@ -32,15 +32,15 @@ export default class ValidaCPF {
     }
 
     valida(){
-        if(!this.cpfLimpo) return false;
+
+        this.geraNovoCpf()
+        
+        if(!this.cpfLimpo) return false;;
         if(typeof this.cpfLimpo !== `string`) return false;
         if(this.cpfLimpo.length !== 11) return false;
-        this.geraNovoCpf()
-        console.log(this.novoCpf);
-        
+        return true   
     }
 }
 
-const validaCPF = new ValidaCPF(`070.987.720-03`)
 
-console.log(validaCPF.valida());
+
