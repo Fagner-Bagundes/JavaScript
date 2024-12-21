@@ -2,9 +2,12 @@
 class ElementsOfPassword{
     static Number(N = 10){return Math.floor(Math.random() * N)}
     
-    static Word(upper){
+    static WordUp(){
         const letras = String.fromCharCode(Math.floor(Math.random() * (90 -65) + 65))
-        if (upper === `UpperCase`) return  letras.toLocaleUpperCase()
+        return   letras.toLocaleUpperCase()
+    }
+    static WordL(){
+        const letras = String.fromCharCode(Math.floor(Math.random() * (90 -65) + 65))
         return letras.toLocaleLowerCase()
     }
     static Simbol(){
@@ -37,14 +40,14 @@ export default class GeneratePassword {
     };
 
     geraSenha(el){
-        let senhaArray = [el.Number(), el.Word(`UpperCase`), el.Word(), el.Simbol()]
+        let senhaArray = [el.Number, el.WordUp, el.WordL, el.Simbol]
         let senha = ``;
         if (this.limit.value) {
             for (let i = 0; i < this.limit.value; i++) {
-                console.log(senhaArray[el.Number(4)]);
+                senha += senhaArray[el.Number(4)]();
                  
-                // console.log(senha)
             }         
+            console.log(senha)
         }
    
         
