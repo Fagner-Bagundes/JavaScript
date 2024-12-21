@@ -29,24 +29,16 @@ export default class GeneratePassword {
     }
     novaSenha(){
         this.btn.addEventListener(`click`, (event)=>{
-            const botao = event.target
             this.geraSenha(ElementsOfPassword)
-            // console.log(ElementsOfPassword.newNumber());
-            // console.log(ElementsOfPassword.newWord(`UpperCase`));
-            // console.log(ElementsOfPassword.newWord(`LowerCase`));
-            // console.log(ElementsOfPassword.newSimbol());
 
         })
     };
 
     geraSenha(el){
         let senhaArray = [el.Number, el.WordUp, el.WordL, el.Simbol]
-        let senha = ``;
+        let senha =``;
         if (this.limit.value) {
-            for (let i = 0; i < this.limit.value; i++) {
-                senha += senhaArray[el.Number(4)]();
-                 
-            }         
+            for (let i = 0; i < this.limit.value; i++) {senha += senhaArray[el.Number(4)]();}         
             console.log(senha)
         }
    
