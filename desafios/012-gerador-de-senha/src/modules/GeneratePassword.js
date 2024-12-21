@@ -25,16 +25,28 @@ export default class GeneratePassword {
     constructor(){
         this.limit = (document.querySelector(`#password-lengh`))
         this.btn = document.querySelector(`.btn`)
+        // checkboxers
+        this.numbersCheckbox = document.querySelector(`#numbers-checkbox`)
+        this.minusculasCheckbox = document.querySelector(`#minusculas-checkbox`)
+        this.maiusculasCheckbox = document.querySelector(`#maiusculas-checkbox`)
+        this.simbolsCheckbox = document.querySelector(`#simbulos-checkbox`)
 
+        console.log(this.numbersCheckbox.checked);
+        console.log(this.minusculasCheckbox.checked);
+        console.log(this.maiusculasCheckbox.checked);
+        console.log(this.simbolsCheckbox.checked);
+        
     }
-    novaSenha(){
+    
+    
+    geraNovaSenha(){
         this.btn.addEventListener(`click`, (event)=>{
-            this.geraSenha(ElementsOfPassword)
+            this.PasswordComplet(ElementsOfPassword)
 
         })
     };
 
-    geraSenha(el){
+    PasswordComplet(el){
         let senhaArray = [el.Number, el.WordUp, el.WordL, el.Simbol]
         let senha =``;
         if (this.limit.value) {
@@ -42,8 +54,5 @@ export default class GeneratePassword {
             console.log(senha)
         }
    
-        
-        
-        
     };
 }

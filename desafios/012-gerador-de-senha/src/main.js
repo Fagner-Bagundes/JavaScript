@@ -1,6 +1,6 @@
 import GeneratePassword from './modules/generatePassword';
 const algo = new GeneratePassword
-algo.novaSenha()
+algo.geraNovaSenha()
 import './assets/css/style.css';
 
 
