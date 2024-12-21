@@ -1,28 +1,28 @@
 
-class ElementsOfPassword{
-    static Number(N = 10){return Math.floor(Math.random() * N)}
-    
-    static WordUp(){
-        const letras = String.fromCharCode(Math.floor(Math.random() * (90 -65) + 65))
-        return   letras.toLocaleUpperCase()
+class ElementsOfPassword {
+    static Number(N = 10) { return Math.floor(Math.random() * N) }
+
+    static WordUp() {
+        const letras = String.fromCharCode(Math.floor(Math.random() * (90 - 65) + 65))
+        return letras.toLocaleUpperCase()
     }
-    static WordL(){
-        const letras = String.fromCharCode(Math.floor(Math.random() * (90 -65) + 65))
+    static WordL() {
+        const letras = String.fromCharCode(Math.floor(Math.random() * (90 - 65) + 65))
         return letras.toLocaleLowerCase()
     }
-    static Simbol(){
+    static Simbol() {
         const simbolsArray = [
             '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',
             ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`',
             '{', '|', '}', '~'
-          ]
+        ]
         const simbols = (Math.floor(Math.random() * 31))
         return simbolsArray[simbols]
     }
 }
 
 export default class GeneratePassword {
-    constructor(){
+    constructor() {
         this.limit = (document.querySelector(`#password-lengh`))
         this.btn = document.querySelector(`.btn`)
         // checkboxers
@@ -32,42 +32,35 @@ export default class GeneratePassword {
         this.simbolsCheckbox = document.querySelector(`#simbulos-checkbox`)
         // lista de geradores de elementos
         this.senhaArray = []
-        
+
     }
-    
-    verificaCheckbox(el){
-            if (this.numbersCheckbox.checked) {
-                this.senhaArray.push(el.Number)
-            }
-            if (this.minusculasCheckbox.checked) {
-                this.senhaArray.push(el.WordL)
-            }
-            if (this.maiusculasCheckbox.checked) {
-                this.senhaArray.push(el.WordUp)
-            }
-            if (this.simbolsCheckbox.checked) {
-                this.senhaArray.push(el.Simbol)
-            }
-            this.PasswordComplet(ElementsOfPassword)
+
+    verificaCheckbox(el) {
+        if (this.numbersCheckbox.checked) this.senhaArray.push(el.Number)
+        if (this.maiusculasCheckbox.checked) this.senhaArray.push(el.WordUp)
+        if (this.minusculasCheckbox.checked) this.senhaArray.push(el.WordL)
+        if (this.simbolsCheckbox.checked) this.senhaArray.push(el.Simbol)
+
+        this.PasswordComplet(ElementsOfPassword)
         this.senhaArray = []
 
     }
-    
-    geraNovaSenha(){
-        this.btn.addEventListener(`click`, (event)=>{
+
+    geraNovaSenha() {
+        this.btn.addEventListener(`click`, (event) => {
             this.verificaCheckbox(ElementsOfPassword)
 
         })
     };
 
-    PasswordComplet(el){
+    PasswordComplet(el) {
         // let senhaArray = [el.Number, el.WordUp, el.WordL, el.Simbol]
-        let senha =``;
+        let senha = ``;
         if (this.limit.value) {
             const rand = this.senhaArray.length
-            for (let i = 0; i < this.limit.value; i++) {senha += this.senhaArray[el.Number(rand)]();}         
+            for (let i = 0; i < this.limit.value; i++) { senha += this.senhaArray[el.Number(rand)](); }
             console.log(senha)
         }
-   
+
     };
 }
