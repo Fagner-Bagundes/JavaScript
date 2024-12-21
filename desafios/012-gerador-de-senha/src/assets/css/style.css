@@ -65,3 +65,17 @@ input[type="checkbox"] {
   height: 40px;
   margin-left: 10px;
 }
+
+.btn{
+  display: flex;
+  justify-content: center;
+}
+.btn>input{
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn>input:hover{
+  cursor: pointer;
+  background-color: var(--primary-color-darker);
+}
