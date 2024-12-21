@@ -30,27 +30,42 @@ export default class GeneratePassword {
         this.minusculasCheckbox = document.querySelector(`#minusculas-checkbox`)
         this.maiusculasCheckbox = document.querySelector(`#maiusculas-checkbox`)
         this.simbolsCheckbox = document.querySelector(`#simbulos-checkbox`)
-
-        console.log(this.numbersCheckbox.checked);
-        console.log(this.minusculasCheckbox.checked);
-        console.log(this.maiusculasCheckbox.checked);
-        console.log(this.simbolsCheckbox.checked);
+        // lista de geradores de elementos
+        this.senhaArray = []
         
     }
     
+    verificaCheckbox(el){
+            if (this.numbersCheckbox.checked) {
+                this.senhaArray.push(el.Number)
+            }
+            if (this.minusculasCheckbox.checked) {
+                this.senhaArray.push(el.WordL)
+            }
+            if (this.maiusculasCheckbox.checked) {
+                this.senhaArray.push(el.WordUp)
+            }
+            if (this.simbolsCheckbox.checked) {
+                this.senhaArray.push(el.Simbol)
+            }
+            this.PasswordComplet(ElementsOfPassword)
+        this.senhaArray = []
+
+    }
     
     geraNovaSenha(){
         this.btn.addEventListener(`click`, (event)=>{
-            this.PasswordComplet(ElementsOfPassword)
+            this.verificaCheckbox(ElementsOfPassword)
 
         })
     };
 
     PasswordComplet(el){
-        let senhaArray = [el.Number, el.WordUp, el.WordL, el.Simbol]
+        // let senhaArray = [el.Number, el.WordUp, el.WordL, el.Simbol]
         let senha =``;
         if (this.limit.value) {
-            for (let i = 0; i < this.limit.value; i++) {senha += senhaArray[el.Number(4)]();}         
+            const rand = this.senhaArray.length
+            for (let i = 0; i < this.limit.value; i++) {senha += this.senhaArray[el.Number(rand)]();}         
             console.log(senha)
         }
    
