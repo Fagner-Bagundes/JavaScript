@@ -51,9 +51,6 @@ export default class GeneratePassword {
 
     geraNovaSenha() {
         this.btn.addEventListener(`click`, (event) => {
-            if () {
-                
-            }
             this.verificaCheckbox(ElementsOfPassword)
 
         })
@@ -65,9 +62,22 @@ export default class GeneratePassword {
         if (this.limit.value) {
             const rand = this.senhaArray.length
             try {
-                for (let i = 0; i < this.limit.value; i++) { senha += this.senhaArray[el.Number(rand)](); }
+                
+                for (let i = 0; i < this.limit.value; i++) { 
+                    // if (this.limit.value > 11) {
+                    //     console.log(`pareeee`);
+                    // }
+                    
+                    senha += this.senhaArray[el.Number(rand)](); 
+                }
+                if (this.limit.value <=10) {
                 this.PasswordInput.innerHTML = senha
-                this.error.classList.add(`remove`)
+                this.error.classList.add(`remove`)    
+                } else{
+                    this.error.classList.remove(`remove`)  
+                    this.error.innerHTML = `A Senha deve ter no máximo 10 caracteres`
+                }
+                
             } catch (e) {
                 this.error.innerHTML = `Selecione algum opção para gerar a senha`
             }
