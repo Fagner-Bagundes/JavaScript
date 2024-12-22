@@ -25,13 +25,16 @@ export default class GeneratePassword {
     constructor() {
         this.limit = (document.querySelector(`#password-lengh`))
         this.btn = document.querySelector(`.btn`)
+        this.PasswordInput = document.querySelector(`.generated-password`)
         // checkboxers
         this.numbersCheckbox = document.querySelector(`#numbers-checkbox`)
         this.minusculasCheckbox = document.querySelector(`#minusculas-checkbox`)
         this.maiusculasCheckbox = document.querySelector(`#maiusculas-checkbox`)
         this.simbolsCheckbox = document.querySelector(`#simbulos-checkbox`)
+        this.error = document.querySelector(`.error`)
         // lista de geradores de elementos
         this.senhaArray = []
+        
 
     }
 
@@ -48,6 +51,9 @@ export default class GeneratePassword {
 
     geraNovaSenha() {
         this.btn.addEventListener(`click`, (event) => {
+            if () {
+                
+            }
             this.verificaCheckbox(ElementsOfPassword)
 
         })
@@ -58,8 +64,13 @@ export default class GeneratePassword {
         let senha = ``;
         if (this.limit.value) {
             const rand = this.senhaArray.length
-            for (let i = 0; i < this.limit.value; i++) { senha += this.senhaArray[el.Number(rand)](); }
-            console.log(senha)
+            try {
+                for (let i = 0; i < this.limit.value; i++) { senha += this.senhaArray[el.Number(rand)](); }
+                this.PasswordInput.innerHTML = senha
+                this.error.classList.add(`remove`)
+            } catch (e) {
+                this.error.innerHTML = `Selecione algum opção para gerar a senha`
+            }
         }
 
     };
