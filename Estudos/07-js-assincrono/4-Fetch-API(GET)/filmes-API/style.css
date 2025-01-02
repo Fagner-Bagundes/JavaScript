@@ -25,4 +25,30 @@ main{
     border-radius: 15px;
 }
 
+#film{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+#buscar{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: rgb(40, 40, 40);
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+
+#buscar:hover{
+    cursor: pointer;
+    background-color: rgb(96, 96, 96);
+}
+
+
 

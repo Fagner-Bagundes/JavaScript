@@ -1,16 +1,37 @@
 const container = document.querySelector(`.container`)
 const poster = document.querySelector(`.poster`)
 const description = document.querySelector(`.description`)
+const filmePesquisa = document.querySelector(`#film`)
+const botao = document.querySelector(`#buscar`)
 
 const Key = "4e017230"
-const filme = "titanic"
-const url = `http://www.omdbapi.com/?apikey=${Key}&t=${filme}`
+let url = `http://www.omdbapi.com/?apikey=${Key}&t=`
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
+function getInputcontent(film) {
+    removeAllChildNodes(poster)
+    removeAllChildNodes(description)
+    requisicao(film)
 
-async function requisicao() {
+}
+
+botao.addEventListener(`click`,(e)=>{
+    if (filmePesquisa.value) {
+        getInputcontent(filmePesquisa.value)
+    }else{
+        console.log(`digite um filme valido`);
+        
+    }
+})
+
+async function requisicao(film) {
     try{
-        const response = await fetch(url)
+        const response = await fetch(`${url}${film}`)
         const data = await response.json()
         console.log(data)
         let post = data.Poster
@@ -28,13 +49,8 @@ async function requisicao() {
         poster.appendChild(img)
 
          descri.map((valor, i)=>{
-            // console.log(valor);
-            
-            // adicionadno no html
-
             const p = criaTags(`p`)
-            p.innerHTML = `${descriNomes[i]}: ${valor}`
-            console.log(p);  
+            p.innerHTML = `${descriNomes[i]}: ${valor}` 
             description.appendChild(p)
          })  
      
@@ -43,7 +59,3 @@ async function requisicao() {
         console.log(`ERROR:`, error);
     }
 }
-
-
-
-requisicao()
