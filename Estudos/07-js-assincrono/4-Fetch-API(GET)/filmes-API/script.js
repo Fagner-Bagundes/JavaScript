@@ -16,6 +16,7 @@ async function requisicao() {
         let post = data.Poster
         let [titulo, ano, atores, diretor] = [data.Title, data.Year, data.Actors, data.Director]
         const descri = [titulo, ano, atores, diretor]
+        const descriNomes = [`Titulo`, `ano`, `Atores`, `Diretor`]
 
         function criaTags(tag) {
             if (tag === `p`) return p = document.createElement(`p`)
@@ -25,13 +26,14 @@ async function requisicao() {
         const img = criaTags(`img`)
         img.setAttribute("src", post)
         poster.appendChild(img)
-         descri.map((valor)=>{
+
+         descri.map((valor, i)=>{
             // console.log(valor);
             
             // adicionadno no html
 
             const p = criaTags(`p`)
-            p.innerHTML = valor
+            p.innerHTML = `${descriNomes[i]}: ${valor}`
             console.log(p);  
             description.appendChild(p)
          })  
@@ -41,6 +43,7 @@ async function requisicao() {
         console.log(`ERROR:`, error);
     }
 }
+
 
 
 requisicao()
