@@ -90,3 +90,5 @@ async function requisicao(film) {
         console.log(`ERROR:`, error);
     }
 }
+
+
