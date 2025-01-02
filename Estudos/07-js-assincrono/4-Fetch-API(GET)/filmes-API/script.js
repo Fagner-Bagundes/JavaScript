@@ -13,10 +13,12 @@ async function requisicao() {
         const response = await fetch(url)
         const data = await response.json()
         console.log(data)
-        let content = [poster,titulo, ano, atores, diretor] = [data.Poster,data.Title, data.Year, data.Actors, data.director]
+        let [post,titulo, ano, atores, diretor] = [data.Poster,data.Title, data.Year, data.Actors, data.director]
 
-        
-        
+        const img = document.createElement(`img`)
+        img.setAttribute("src", "https://m.media-amazon.com/images/M/MV5BYzYyN2FiZmUtYWYzMy00MzViLWJkZTMtOGY1ZjgzNWMwN2YxXkEyXkFqcGc@._V1_SX300.jpg")
+
+        poster.appendChild(img)        
         
 
     }
