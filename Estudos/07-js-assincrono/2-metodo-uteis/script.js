@@ -14,7 +14,7 @@ function esperaAi(msg, tempo){
     });
 };
 
-// Promese.all Promese.rave Promese.resolve Promese.reject
+// Promese.all Promese.race Promese.resolve Promese.reject
 
 
 // Promese.all:
@@ -33,7 +33,7 @@ Promise.all(promises).then(function(valor) {
     console.log(`Error:`, err);
 })
 
-// Promise.rave:
+// Promise.race:
 // semelhante ao Promise.all, Porem ele retorna apenas um valor, e esse valor é 
 // primeira promise que foi resolvida
 Promise.race(promises).then((resultado)=>{

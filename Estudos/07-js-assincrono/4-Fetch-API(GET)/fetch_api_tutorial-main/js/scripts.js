@@ -19,7 +19,6 @@ async function getAllPosts() {
   loading.classList.add(`hide`)
 
   data.map((post) => {
-
     // creating elements
     const div = document.createElement(`div`)
     const title = document.createElement(`h2`)
