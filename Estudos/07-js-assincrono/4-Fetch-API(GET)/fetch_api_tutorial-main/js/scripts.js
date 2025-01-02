@@ -3,7 +3,7 @@ const url = `https://jsonplaceholder.typicode.com/posts`
 // Posts elemments
 const loading = document.querySelector(`#loading`)
 const postsContainer = document.querySelector(`#posts-container`)
-
+ 
 // Post elemment
 const postElement = document.querySelector(`#post`)
 const postContainer = document.querySelector(`.post-container`)
@@ -91,7 +91,7 @@ function getComment(comments) {
   })
 
 }
-
+ 
 // add comment
 async function addComment(comment) {
   const response = await fetch(`${url}/${postId}/comments`, {
