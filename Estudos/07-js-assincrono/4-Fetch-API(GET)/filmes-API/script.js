@@ -13,14 +13,29 @@ async function requisicao() {
         const response = await fetch(url)
         const data = await response.json()
         console.log(data)
-        let [post,titulo, ano, atores, diretor] = [data.Poster,data.Title, data.Year, data.Actors, data.director]
+        let post = data.Poster
+        let [titulo, ano, atores, diretor] = [data.Title, data.Year, data.Actors, data.Director]
+        const descri = [titulo, ano, atores, diretor]
 
-        const img = document.createElement(`img`)
-        img.setAttribute("src", "https://m.media-amazon.com/images/M/MV5BYzYyN2FiZmUtYWYzMy00MzViLWJkZTMtOGY1ZjgzNWMwN2YxXkEyXkFqcGc@._V1_SX300.jpg")
-
-        poster.appendChild(img)        
+        function criaTags(tag) {
+            if (tag === `p`) return p = document.createElement(`p`)
+            if (tag === `img`) return document.createElement(`img`)
+        }
         
+        const img = criaTags(`img`)
+        img.setAttribute("src", post)
+        poster.appendChild(img)
+         descri.map((valor)=>{
+            // console.log(valor);
+            
+            // adicionadno no html
 
+            const p = criaTags(`p`)
+            p.innerHTML = valor
+            console.log(p);  
+            description.appendChild(p)
+         })  
+     
     }
     catch(error){
         console.log(`ERROR:`, error);
