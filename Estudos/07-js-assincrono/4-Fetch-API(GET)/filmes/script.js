@@ -6,7 +6,7 @@ const botao = document.querySelector(`#buscar`)
 const aviso = document.querySelector(`.aviso`)
 
 const Key = "4e017230"
-let url = `http://www.omdbapi.com/?apikey=${Key}&t=`
+let url = `https://www.omdbapi.com/?apikey=${Key}&t=`
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
