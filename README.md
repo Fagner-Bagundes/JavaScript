@@ -20,8 +20,8 @@ Criei esse repositório com o objetivo de documentar todo o meu caminho de estud
 7. -[X] JavaScript-assíncrono
 8. -[X] Manipulação do DOM
 9. -[X] tooling e ES6 Modules
-11. -[ ] JavaScript moderno
-12. -[ ] npm
+11. -[X] JavaScript moderno
+12. -[X] npm
 10. -[ ] Vite
 
 ### Páginas feitas do Repositório 
