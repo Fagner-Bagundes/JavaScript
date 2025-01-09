@@ -36,3 +36,9 @@ function ocutaEmail(email){
 
 console.log(ocutaEmail(`Edinaldoperreira@hotmail`));
 
+// parametizando uma string
+
+let paramet = string => (string.replace(/ /g, `-`)).toLowerCase()
+console.log(paramet(`Fagner Ferreira Bagundes`));
+
+// 
