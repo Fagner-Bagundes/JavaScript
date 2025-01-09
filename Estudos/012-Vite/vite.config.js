@@ -1,3 +1,7 @@
-export default defineConfig({
-    root: `.`
-})
+export default {
+    root: './src',
+    base: '/',
+    build: {
+        outDir: '../dist'
+    },
+};
