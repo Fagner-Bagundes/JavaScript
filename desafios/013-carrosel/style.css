@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(60, 60, 60);
+    padding: 20px;
+}
+
+.container{
+    background-color: red;
+    width: 50%;
+    margin: 20vh auto;
+    display: flex;
+
+}
+
+.poster{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    
+}
+
+.btn{
+    position: absolute;
+    top: 31%;
+}
+
+#avancar{
+    margin-left: 100px;
+}
