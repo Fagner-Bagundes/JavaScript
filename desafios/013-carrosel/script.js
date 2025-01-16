@@ -2,10 +2,6 @@ const postersContainer = document.querySelector(`.posters-container`)
 const avancarb = document.querySelector(`#avancar`)
 const voltarb = document.querySelector(`#voltar`)
 
-
-
-console.log(postersContainer);
-
 const imgs = [
     {id: `id1`, url: `./imgs/berserk.png`},
     {id: `id2`, url: `./imgs/bleach.png`},
@@ -26,18 +22,16 @@ function addPosts() {
 
 addPosts()
 postersContainer.firstElementChild.classList.add(`first`)
+
 voltarb.addEventListener(`click`,(e)=>{
     const posters = document.querySelectorAll(`.poster`)
     postersContainer.appendChild(posters[0])
-    postersContainer.firstElementChild.classList.add(`first`)
-    postersContainer.lastElementChild.classList.remove(`first`)
     
 })
 
+avancarb.addEventListener(`click`, (e)=>{
+    const ultimo = postersContainer.lastElementChild
+    postersContainer.prepend(ultimo)
+})
 
-
-// posters.forEach((post)=>{
-    
-    
-// })
 
