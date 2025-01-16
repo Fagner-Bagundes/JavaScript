@@ -1,6 +1,6 @@
 const postersContainer = document.querySelector(`.posters-container`)
-const avancarb = document.querySelector(`#avancarb`)
-const voltarb = document.querySelector(`#voltarb`)
+const avancarb = document.querySelector(`#avancar`)
+const voltarb = document.querySelector(`#voltar`)
 
 
 
